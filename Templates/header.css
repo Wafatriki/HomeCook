@@ -1,6 +1,6 @@
 header {
     background-color: #FBDBDB;
-    color: white;
+    color: #A86D6D;
     padding: 20px;
     text-align: center;
 }
@@ -16,7 +16,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: #A86D6D;
     text-decoration: none;
 }
 form {
