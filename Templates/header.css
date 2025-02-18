@@ -1,3 +1,7 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 header {
     background-color: #FBDBDB;
     color: #A86D6D;
@@ -6,10 +10,19 @@ header {
 }
 
 nav ul {
+    display: flex;
+    justify-content: center;
     list-style: none;
+
     padding: 0;
 }
 
+#LoginButton{
+    background-color: #FBDBDB;
+    color: #A86D6D;
+    border-radius: 15px;
+    padding: 10px;
+}
 nav ul li {
     display: inline;
     margin: 0 15px;
