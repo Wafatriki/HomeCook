@@ -1,0 +1,26 @@
+header {
+    background-color: #FBDBDB;
+    color: #A86D6D;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #A86D6D;
+    text-decoration: none;
+}
+form {
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+}
