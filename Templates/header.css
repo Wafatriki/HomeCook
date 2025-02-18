@@ -1,5 +1,5 @@
 header {
-    background-color: #333;
+    background-color: #FBDBDB;
     color: white;
     padding: 20px;
     text-align: center;
@@ -18,4 +18,9 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
+}
+form {
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
 }
