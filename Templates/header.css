@@ -16,12 +16,24 @@ nav ul {
 
     padding: 0;
 }
+input{
+    border-radius: 10px;
+    padding: 3px;
+}
 
 #LoginButton{
-    background-color: #FBDBDB;
-    color: #A86D6D;
+    background-color: #A86D6D;
+    color: black;
+    border-color: #A86D6D;
     border-radius: 15px;
-    padding: 10px;
+    padding: 5px;
+}
+#Sign-inButton{
+    background-color: #E89090;
+    color: black;
+    border-color: #A86D6D;
+    border-radius: 15px;
+    padding: 5px;
 }
 nav ul li {
     display: inline;
