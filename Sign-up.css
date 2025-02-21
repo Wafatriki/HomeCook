@@ -44,7 +44,6 @@ iframe {
     text-align: left;
     display: block;
     margin-bottom: 5px;
-    font-family: "Inria", sans-serif;
 }
 
 .input-bar {
@@ -66,6 +65,7 @@ iframe {
     cursor: pointer;
     width: 100px;
     float: left;
+    font-family: "Inria", sans-serif;
 }
 
 .login-button:hover {
