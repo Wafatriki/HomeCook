@@ -29,7 +29,7 @@ body {
 .avatar {
     width: 100px;
     height: 100px;
-    background-image: url('./Images/account.png');
+    background-image: url('../Images/account.png');
     background-size: cover;
     background-position: center;
     border-radius: 50%;
@@ -69,12 +69,12 @@ body {
 }
 
 .gear-icon::before {
-    background: url('./Images/gear.png') no-repeat center center;
+    background: url('../Images/gear.png') no-repeat center center;
     background-size: contain;
 }
 
 .power-icon::before {
-    background: url('./Images/power.png') no-repeat center center;
+    background: url('../Images/power.png') no-repeat center center;
     background-size: contain;
 }
 
@@ -83,4 +83,34 @@ iframe {
     width: 100%;
     height: 150px;
     border: none;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    border-bottom: 2px solid #e0e0e0;
+    width: 80%;
+}
+
+.tab {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s;
+}
+
+.tab img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.tab:hover {
+    border-bottom: 2px solid #000;
 }

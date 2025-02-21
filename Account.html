@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil de Usuario</title>
-    <link rel="stylesheet" href="Account.css">
+    <link rel="stylesheet" href="Styles/Account.css">
 </head>
 <body>
 
@@ -13,7 +13,6 @@
 <div class="content-wrapper">
     <div class="profile-container">
         <div class="avatar"></div>
-
         <div class="info">
             <div class="text-field">Lorem Ipsum</div>
             <div class="text-field">Dolor sit amet</div>
@@ -30,15 +29,45 @@
         </div>
     </div>
 
-    <main>
-        <h2>Mi Cuenta</h2>
-        <p>Aquí puedes gestionar tu cuenta.</p>
-        <!-- Resto del contenido de tu página -->
-    </main>
+    <div class="tabs">
+        <div class="tab" onclick="loadContent('guardado')">
+            <img src="./Images/saved.png" alt="Guardado">
+            <span>Guardado</span>
+        </div>
+        <div class="tab" onclick="loadContent('me-gusta')">
+            <img src="./Images/megusta.png" alt="Me gusta">
+            <span>Me gusta</span>
+        </div>
+        <div class="tab" onclick="loadContent('ultimas-vistas')">
+            <img src="./Images/history-icon.png" alt="Últimas vistas">
+            <span>Últimas vistas</span>
+        </div>
+    </div>
+
+    <div id="content-area">
+        <!-- Aquí se cargará el contenido dinámicamente -->
+    </div>
 </div>
 
 <!-- Inclusión del pie de página usando iframe -->
-<iframe src="./Templates/footer.html" width="100%" height="150px" border = "none" scrolling="no"></iframe>
+<iframe src="./Templates/footer.html" width="100%" height="150px" border="none" scrolling="no"></iframe>
+
+<!-- JavaScript para cargar contenido dinámicamente -->
+<script>
+    function loadContent(tab) {
+        const contentArea = document.getElementById('content-area');
+        const fileName = "./Templates/ListOfRecipes.html";
+        fetch(fileName)
+            .then(response => response.text())
+            .then(data => {
+                contentArea.innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error al cargar el contenido:', error);
+                contentArea.innerHTML = '<p>Error al cargar el contenido.</p>';
+            });
+    }
+</script>
 
 </body>
 </html>
