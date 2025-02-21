@@ -8,11 +8,13 @@ body {
 .footer {
     background-color: #FBDBDB;
     padding: 20px;
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    box-sizing: border-box;
 }
 
 .footer-container {
     max-width: 1200px;
-    margin: auto;
+    margin: 0 auto;
 }
 
 .footer h1 {
