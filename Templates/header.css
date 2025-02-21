@@ -1,51 +1,104 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+}
+
 header {
     background-color: #FBDBDB;
     color: #A86D6D;
-    padding: 20px;
-    text-align: center;
+    padding: 0;
+    border: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center; /* Centra los elementos del menú */
+    align-items: center; /* Centra los elementos verticalmente */
+    padding: 10px 20px;
+}
+
+.logo{
+    position: absolute;
+    left: 0; /* Coloca el logo a la izquierda */ /* Centra verticalmente */
+    height: 4em;
+    width: 4em;
+}
+
+nav .logo {
+    height: 60px;
+    width: 60px;
 }
 
 nav ul {
     display: flex;
-    justify-content: center;
     list-style: none;
-
     padding: 0;
-}
-input{
-    border-radius: 10px;
-    padding: 3px;
+    margin: 0;
+    justify-content: center; /* Centra los elementos de la lista */
 }
 
-#LoginButton{
-    background-color: #A86D6D;
-    color: black;
-    border-color: #A86D6D;
-    border-radius: 15px;
-    padding: 5px;
-}
-#Sign-inButton{
-    background-color: #E89090;
-    color: black;
-    border-color: #A86D6D;
-    border-radius: 15px;
-    padding: 5px;
-}
 nav ul li {
-    display: inline;
+    display: inline-flex;
+    align-items: center;
     margin: 0 15px;
 }
 
 nav ul li a {
     color: #A86D6D;
     text-decoration: none;
+    font-size: 16px;
 }
-form {
+
+nav ul li a:hover {
+    color: #E89090;
+}
+
+.search-form {
     display: flex;
     align-items: center;
     border-radius: 20px;
+    background-color: #fff;
+    border: 1px solid #A86D6D;
+    padding: 4px;
+}
+
+.search-input {
+    border: none;
+    padding: 5px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    font-size: 14px;
+}
+
+.search-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #E89090;
+}
+
+.nav-button {
+    background-color: #A86D6D;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.nav-button:hover {
+    background-color: #E89090;
 }

@@ -9,7 +9,7 @@
 <body>
 
 <header>
-    <h1>HomeCook</h1>
+    <a href="../index.html"><img src="../Images/Icone.png" alt="HomeCook Logo" class="logo"></a>
     <nav>
         <ul>
             <li><a href="../index.html">Inicio</a></li>
@@ -17,14 +17,13 @@
             <li><a href="#">Saved</a></li>
             <li><a href="#">Contacto</a></li>
             <li>
-                <form action="#" method="GET">
-                    <label for="BusquedaDeReceta"></label>
-                    <input id="BusquedaDeReceta" type="text" name="q" placeholder="Buscar..." />
-                    <button id="SearchButton" type="submit">🔍</button>
+                <form action="#" method="GET" class="search-form">
+                    <input id="BusquedaDeReceta" type="text" name="q" placeholder="Buscar..." class="search-input" />
+                    <button id="SearchButton" type="submit" class="search-button"></button>
                 </form>
             </li>
-            <li><button id="LoginButton">Log in</button></li>
-            <li><button id="Sign-inButton">Sign-In</button></li>
+            <li><button id="LoginButton" class="nav-button">Log in</button></li>
+            <li><button id="Sign-inButton" class="nav-button">Sign-In</button></li>
         </ul>
     </nav>
 </header>
