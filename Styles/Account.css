@@ -29,7 +29,7 @@ body {
 .avatar {
     width: 100px;
     height: 100px;
-    background-image: url('./Images/account.png');
+    background-image: url('../Images/account.png');
     background-size: cover;
     background-position: center;
     border-radius: 50%;
@@ -69,12 +69,12 @@ body {
 }
 
 .gear-icon::before {
-    background: url('./Images/gear.png') no-repeat center center;
+    background: url('../Images/gear.png') no-repeat center center;
     background-size: contain;
 }
 
 .power-icon::before {
-    background: url('./Images/power.png') no-repeat center center;
+    background: url('../Images/power.png') no-repeat center center;
     background-size: contain;
 }
 
