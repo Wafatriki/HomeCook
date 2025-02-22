@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EditProfile</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: "Inria", sans-serif;
+            background-color: #f4f4f4;
+        }
+        .iframe-container {
+            width: 100%;
+            text-align: center;
+        }
+        iframe {
+            width: 100%;
+            border: none;
+        }
+        .header-frame {
+            height: 150px;
+        }
+
+        .container h1 {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .profile-section img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto 10px;
+        }
+        .profile-section input[type="file"] {
+            display: block;
+            margin: 10px auto;
+        }
+        .label {
+            font-weight: bold;
+            text-align: left;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .input-bar {
+            width: 100%;
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+            background: gray;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .login-button {
+            background: #e08b89;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100px;
+            float: left;
+        }
+        .login-button:hover {
+            background: #d46b6a;
+        }
+    </style>
+</head>
+<body>
+<header class="iframe-container">
+    <iframe src="./Templates/header.html" class="header-frame" scrolling="no"></iframe>
+</header>
+<div class="container">
+    <h1>Editar Perfil</h1>
+    <div class="profile-section">
+        <img src="/Images/account.png" alt="Foto de Perfil">
+        <input type="file" name="profile-pic">
+    </div>
+    <form>
+        <div class="form-group">
+            <label class="label" for="name">Nombre de la Cuenta</label>
+            <input class="input-bar" type="text" id="name" name="name" value="Tu Nombre">
+        </div>
+        <div class="form-group">
+            <label class="label" for="email">Email</label>
+            <input class="input-bar" type="email" id="email" name="email" value="tucorreo@ejemplo.com">
+        </div>
+        <div class="form-group">
+            <label class="label" for="current-password">Contraseña Actual</label>
+            <input class="input-bar" type="password" id="current-password" name="current-password">
+        </div>
+        <div class="form-group">
+            <label class="label" for="new-password">Nueva Contraseña</label>
+            <input class="input-bar" type="password" id="new-password" name="new-password">
+        </div>
+        <div class="form-group">
+            <input class="login-button" type="submit" value="Guardar Cambios">
+        </div>
+    </form>
+</div>
+<footer class="iframe-container">
+    <iframe src="Templates/footer.html" width="100%" height="500" scrolling="no"></iframe>
+</footer>
+</body>
+</html>
