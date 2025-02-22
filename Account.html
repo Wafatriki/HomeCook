@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil de Usuario</title>
     <link rel="stylesheet" href="Styles/Account.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
 </head>
+
 <body>
 
-<iframe src="./Templates/header.html" width="100%" height="150px" style="border:none;" scrolling="no"></iframe>
+<iframe src="./Templates/header.html" width="100%" height="150pm" style="border:none;" scrolling="no"></iframe>
 
 <div class="content-wrapper">
     <div class="profile-container">
@@ -35,7 +37,7 @@
             <span>Guardado</span>
         </div>
         <div class="tab" onclick="loadContent('me-gusta')">
-            <img src="./Images/megusta.png" alt="Me gusta">
+            <img src="./Images/heart_icon.png" alt="Me gusta">
             <span>Me gusta</span>
         </div>
         <div class="tab" onclick="loadContent('ultimas-vistas')">
@@ -50,7 +52,7 @@
 </div>
 
 <!-- Inclusión del pie de página usando iframe -->
-<iframe src="./Templates/footer.html" width="100%" height="150px" border="none" scrolling="no"></iframe>
+<iframe src="./Templates/footer.html" width="100%" height="150px" scrolling="no"></iframe>
 
 <!-- JavaScript para cargar contenido dinámicamente -->
 <script>
@@ -61,6 +63,16 @@
             .then(response => response.text())
             .then(data => {
                 contentArea.innerHTML = data;
+                // Clonar elementos para mostrar más recetas
+                const recipes = contentArea.querySelectorAll('.recipe'); // Ajusta '.recipe' según la clase de tus elementos de receta
+                const numberOfClones = 2; // Ajusta el número de copias que quieres
+
+                for (let i = 0; i < numberOfClones; i++) {
+                    recipes.forEach(recipe => {
+                        const clone = recipe.cloneNode(true);
+                        contentArea.appendChild(clone);
+                    });
+                }
             })
             .catch(error => {
                 console.error('Error al cargar el contenido:', error);
@@ -68,6 +80,7 @@
             });
     }
 </script>
+
 
 </body>
 </html>
