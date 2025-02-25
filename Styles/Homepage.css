@@ -1,5 +1,6 @@
 header{
-
+    margin: 0;
+    padding: 0;
 }
 iframe {
     width: 100%;
@@ -10,9 +11,10 @@ iframe {
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 h2{
+    display: flex;
+    justify-content: center;
     color: #9F6A6A
 }
 body {
@@ -31,6 +33,7 @@ body {
 
 }
 .container {
+    margin: 2em;
     position: relative;
     align-self: center;
     display: flex;
