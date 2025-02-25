@@ -9,9 +9,9 @@
 </head>
 
 <body>
-
-<iframe src="./Templates/header.html" width="100%" height="150pm" style="border:none;" scrolling="no"></iframe>
-
+<div class="iframe-container">
+    <iframe src="Templates/header.html" scrolling="no" class="header-frame"></iframe>
+</div>
 <div class="content-wrapper">
     <div class="profile-container">
         <div class="avatar"></div>
@@ -52,8 +52,9 @@
 </div>
 
 <!-- Inclusión del pie de página usando iframe -->
-<iframe src="./Templates/footer.html" width="100%" height="150px" scrolling="no"></iframe>
-
+<div class="iframe-container">
+    <iframe src="Templates/footer.html" width="100%" height="500" scrolling="no"></iframe>
+</div>
 <!-- JavaScript para cargar contenido dinámicamente -->
 <script>
     function loadContent(tab) {
