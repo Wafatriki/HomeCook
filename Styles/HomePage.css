@@ -1,6 +1,8 @@
 iframe {
     width: 100%;
     border: none;
+    margin: 0;
+    padding: 0;
 }
 * {
     margin: 0;
@@ -17,8 +19,10 @@ body {
 
 .iframe-container {
     width: 100%;
+    height: auto;
     text-align: center;
-    margin-top: auto; /* Empuja el footer hacia abajo */
+    padding: 0;
+
 }
 .container {
     position: relative;
@@ -78,6 +82,12 @@ body {
     font-size: 0.9em;
     cursor: pointer;
 }
+ul{
+    padding: 1em;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -86,4 +96,90 @@ body {
     .text-section {
         font-size: 1em;
     }
+}
+.icon_type{
+    position: relative;
+    flex: 2;
+    background: #c4c4c4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon_type::before,
+.icon_type::after {
+    content: "";
+    position: absolute;
+    width: 0.2em;
+    background: black;
+    transform: rotate(45deg);
+}
+.icon_type::before {
+    height: 70%;
+}
+.icon_type::after {
+    height: 70%;
+    transform: rotate(-45deg);
+}
+.Lista_De_Tipos_Item {
+    position: relative;
+    align-self: center;
+    display: flex;
+    width: 100%;
+    max-width: 10em;
+    border-radius: 10em;
+    overflow: hidden;
+    background-color: #d3d3d3;
+    aspect-ratio: 16 / 9;
+    margin: 5em;
+}
+.text_type{
+    flex: 1;
+    padding: 20px;
+    font-family: serif;
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+.SectionHeader{
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    color: #9F6A6A;
+}
+
+.Why_icon{
+    background: #c4c4c4;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.Why_icon::before,
+.Why_icon::after {
+    content: "";
+    position: absolute;
+    width: 0.1em;
+    background: black;
+    transform: rotate(45deg) translate(4em, -1em);
+}
+.Why_icon::before {
+    height: 10%;
+}
+.Why_icon::after {
+    height: 10%;
+    transform: rotate(-45deg) translate(1em, 4em);;
+}
+.Why_item {
+    display: block;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+.Why_text{
+    justify-self: center;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
 }
