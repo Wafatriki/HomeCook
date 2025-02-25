@@ -24,6 +24,7 @@ nav {
     justify-content: center; /* Centra los elementos del menú */
     align-items: center; /* Centra los elementos verticalmente */
     padding: 10px 20px;
+    margin: 0;
 }
 
 .logo{
