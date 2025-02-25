@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HomePage</title>
     <link rel="stylesheet" href="Styles/HomePage.css">
+    <script src="Scripts/xlu-include-file.js"></script>
 </head>
     <body>
+
+        <!--
         <div class="iframe-container">
             <iframe src="Templates/header.html" scrolling="no" class="header-frame"></iframe>
         </div>
+        -->
+        <header id="main_header" xlu-include-file="header.html"></header>
         <div class="container">
             <div class="image-placeholder">
                 <div class="buttons">
@@ -153,5 +158,10 @@
         <div class="iframe-container" id="footer">
             <iframe src="Templates/footer.html" width="100%" height="500" scrolling="no"></iframe>
         </div>
+        <script>
+
+            xLuIncludeFile();
+
+        </script>
     </body>
 </html>
