@@ -4,129 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EditProfile</title>
+    <link rel="stylesheet" href="Styles/EditProfile.css">
     <script src="Scripts/xlu-include-file.js"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
-
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: flex-start;
-            min-height: 100vh;
-            margin: 0;
-            font-family: 'Raleway', sans-serif;
-            background-color: #f4f4f4;
-        }
-        .iframe-container {
-            width: 100%;
-            text-align: left;
-            margin-bottom: 20px; /* Añadir margen inferior */
-        }
-        iframe {
-            width: 100%;
-            border: none;
-        }
-        .header-frame {
-            height: 150px;
-        }
-
-        .container {
-            width: 100%;
-            padding: 0 20px;
-            margin-bottom: 20px; /* Añadir margen inferior */
-        }
-
-        .container h1 {
-            font-size: 20px;
-            font-weight: 500;
-            margin-bottom: 30px; /* Incrementar margen inferior */
-        }
-        .profile-section {
-            display: flex;
-            align-items: center;
-            gap: 30px; /* Incrementar espacio entre imagen y botón */
-            margin-bottom: 30px; /* Añadir margen inferior */
-        }
-        .profile-section img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-        .profile-section input[type="file"] {
-            display: none;
-        }
-        .profile-section label {
-            display: inline-block;
-            padding: 10px 20px; /* Incrementar padding */
-            border-radius: 20px;
-            background-color: #e08b89;
-            color: black;
-            cursor: pointer;
-            font-size: 14px;
-            text-align: center;
-            font-family: 'Raleway', sans-serif;
-        }
-        .profile-section label:hover {
-            background-color: #d46b6a;
-        }
-        .label {
-            font-weight: 500;
-            text-align: left;
-            display: block;
-            margin-bottom: 10px; /* Incrementar margen inferior */
-            font-size: 14px;
-        }
-        .input-bar {
-            width: 80%;
-            max-width: 400px;
-            padding: 10px; /* Incrementar padding */
-            border-radius: 20px;
-            border: none;
-            background: gray;
-            margin-bottom: 20px; /* Incrementar margen inferior */
-            text-align: left;
-            font-size: 14px;
-        }
-        .login-button, .logout-button, .delete-button {
-            background: #e08b89;
-            color: black;
-            border: none;
-            padding: 10px 20px; /* Incrementar padding */
-            border-radius: 20px;
-            font-size: 14px;
-            cursor: pointer;
-            width: 150px;
-            margin-top: 20px; /* Incrementar margen superior */
-            font-family: 'Raleway', sans-serif;
-        }
-        .login-button:hover, .logout-button:hover, .delete-button:hover {
-            background: #d46b6a;
-        }
-        .form-group-horizontal {
-            display: flex;
-            gap: 90px;
-            align-items: center;
-            margin-bottom: 30px; /* Añadir margen inferior */
-        }
-        .form-group-horizontal .input-bar {
-            width: 130%;
-        }
-        .form-group-right {
-            display: flex;
-            justify-content: flex-end; /* Alinear a la derecha */
-            gap: 20px; /* Incrementar espacio entre los botones */
-            width: 100%;
-            margin-top: 30px; /* Incrementar margen superior */
-        }
-        p {
-            font-size: 14px;
-            margin-bottom: 20px; /* Añadir margen inferior */
-        }
-    </style>
 </head>
+
 <body>
 <header class="iframe-container">
     <header id="main_header" xlu-include-file="Templates/header.html"></header>
@@ -178,6 +59,6 @@
 <script>
     xLuIncludeFile();
 </script>
-
 </body>
 </html>
+

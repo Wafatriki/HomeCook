@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
 header{
     margin: 0;
     padding: 0;
@@ -15,7 +18,9 @@ iframe {
 h2{
     display: flex;
     justify-content: center;
-    color: #9F6A6A
+    color: #9F6A6A;
+    font-family: 'Raleway', sans-serif; /* Estilo de letra cambiado */
+
 }
 body {
     display: flex;
@@ -23,6 +28,7 @@ body {
     min-height: 100vh; /* El body ocupa toda la pantalla */
     background-color: #f0f0f0;
     padding: 20px;
+    font-family: 'Raleway', sans-serif; /* Estilo de letra cambiado */
 }
 
 .iframe-container {
@@ -43,6 +49,7 @@ body {
     overflow: hidden;
     background-color: #d3d3d3;
     aspect-ratio: 16 / 9;
+
 }
 .image-placeholder {
     position: relative;
@@ -70,7 +77,7 @@ body {
 .text-section {
     flex: 1;
     padding: 20px;
-    font-family: serif;
+    font-family: 'Raleway', sans-serif; /* Estilo de letra cambiado */
     font-size: 1.2em;
     line-height: 1.6;
 }
@@ -87,7 +94,7 @@ body {
     padding: 8px 12px;
     background-color: #7a7a7a;
     color: white;
-    font-family: sans-serif;
+    font-family: 'Raleway', sans-serif; /* Estilo de letra cambiado */
     font-size: 0.9em;
     cursor: pointer;
 }
@@ -144,7 +151,7 @@ ul{
 .text_type{
     flex: 1;
     padding: 20px;
-    font-family: serif;
+    font-family: 'Raleway', sans-serif; /* Estilo de letra cambiado */
     font-size: 1.2em;
     line-height: 1.6;
 }
@@ -177,7 +184,7 @@ ul{
 }
 .Why_icon::after {
     height: 10%;
-    transform: rotate(-45deg) translate(1em, 4em);;
+    transform: rotate(-45deg) translate(1em, 4em);
 }
 .Why_item {
     display: block;
@@ -191,4 +198,5 @@ ul{
     margin-top: 10px;
     font-size: 16px;
     color: #333;
+    font-family: 'Raleway', sans-serif; /* Estilo de letra cambiado */
 }

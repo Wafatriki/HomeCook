@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +6,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Raleway', sans-serif; /* Estilo de letra cambiado */
     background-color: #fff;
 }
 
@@ -78,12 +79,15 @@ nav ul li a:hover {
     border-radius: 5px 0 0 5px;
     outline: none;
     font-size: 14px;
+    font-family: 'Raleway', sans-serif; /* Estilo de letra cambiado */
+
 }
 
 .search-button {
     background-color: transparent;
     border: none;
     cursor: pointer;
+
 }
 
 .search-button:hover {
@@ -98,6 +102,8 @@ nav ul li a:hover {
     padding: 5px 10px;
     cursor: pointer;
     font-size: 14px;
+    font-family: 'Raleway', sans-serif; /* Estilo de letra cambiado */
+
 }
 
 .nav-button:hover {

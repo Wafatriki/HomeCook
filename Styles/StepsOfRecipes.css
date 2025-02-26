@@ -1,20 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap');
+
 h1 {
     font-weight: bold;
     font-size: 20px;
-    font-family: "Inria", sans-serif;
+    font-family: 'Raleway', sans-serif; /* Estilo de letra cambiado */
 }
 
 h2 {
     font-size: 16px;
-    font-family: "Inria", sans-serif;
+    font-family: 'Raleway', sans-serif; /* Estilo de letra cambiado */
     font-weight: normal;
 }
 
-#main_step{
+#main_step {
     float: left;
     width: 660px;
     margin: 20px;
 }
+
 article {
     background: #CCCCCC;
     padding: 20px;

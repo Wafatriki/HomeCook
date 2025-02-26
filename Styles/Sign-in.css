@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap');
+
 body {
     display: flex;
     flex-direction: column;
@@ -5,7 +7,7 @@ body {
     justify-content: center;
     min-height: 100vh;
     margin: 0;
-    font-family: "Inria", sans-serif;
+    font-family: 'Raleway', sans-serif; /* Estilo de letra cambiado */
 }
 
 .iframe-container {
@@ -35,7 +37,7 @@ iframe {
 .container h1 {
     font-size: 22px;
     font-weight: bold;
-    font-family: "Inria", sans-serif;
+    font-family: 'Raleway', sans-serif; /* Estilo de letra cambiado */
     margin-bottom: 20px;
 }
 
@@ -44,6 +46,7 @@ iframe {
     text-align: left;
     display: block;
     margin-bottom: 5px;
+    font-family: 'Raleway', sans-serif; /* Estilo de letra cambiado */
 }
 
 .input-bar {
@@ -65,7 +68,7 @@ iframe {
     cursor: pointer;
     width: 100px;
     float: left;
-    font-family: "Inria", sans-serif;
+    font-family: 'Raleway', sans-serif; /* Estilo de letra cambiado */
 }
 
 .login-button:hover {

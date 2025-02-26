@@ -1,20 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap');
+
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Raleway', sans-serif; /* Estilo de letra cambiado */
 }
+
 .container h1 {
     font-size: 26px;
     font-weight: bold;
-    font-family: "Inria", sans-serif;
+    font-family: 'Raleway', sans-serif; /* Estilo de letra cambiado */
     max-width: 1050px;
     margin: 0 auto 20px;
     padding-left: 10px;
 }
 
-.list-container{
+.list-container {
     display: grid;
     width: 100%;
-    grid-template-columns: repeat(auto-fill , minmax(1000px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(1000px, 1fr));
     gap: 10px;
     max-width: 1000px;
     margin: 0 auto;
@@ -40,5 +44,3 @@ iframe {
 .header-frame {
     height: 100px;
 }
-
-
