@@ -7,27 +7,25 @@
     <link rel="stylesheet" href="Styles/Account.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
     <script src="Scripts/xlu-include-file.js"></script>
-
 </head>
 
 <body>
-
 <header id="main_header" xlu-include-file="Templates/header.html"></header>
 
 <div class="content-wrapper">
     <div class="profile-container">
         <div class="avatar"></div>
         <div class="info">
-            <div class="text-field">Lorem Ipsum</div>
-            <div class="text-field">Dolor sit amet</div>
+            <div class="text-field">Nombre de usuario</div>
+            <div class="text-field">Email</div>
             <div class="icons">
                 <div class="icon">
                     <span class="gear-icon"></span>
-                    <span>Lorem Ipsum</span>
+                    <a href="EditProfile.html"><span>Ajustes</span></a>
                 </div>
                 <div class="icon">
                     <span class="power-icon"></span>
-                    <span>Lorem Ipsum</span>
+                    <a href="index.html"><span>Cerrar Sesión</span></a>
                 </div>
             </div>
         </div>
@@ -54,9 +52,6 @@
 </div>
 
 <footer id="main_footer" xlu-include-file="Templates/footer.html"></footer>
-<script>
-    xLuIncludeFile();
-</script>
 
 <script>
     function loadContent(tab) {
@@ -68,7 +63,7 @@
                 contentArea.innerHTML = data;
                 // Clonar elementos para mostrar más recetas
                 const recipes = contentArea.querySelectorAll('.recipe'); // Ajusta '.recipe' según la clase de tus elementos de receta
-                const numberOfClones = 2; // Ajusta el número de copias que quieres
+                const numberOfClones = 3; // Ajusta el número de copias que quieres
 
                 for (let i = 0; i < numberOfClones; i++) {
                     recipes.forEach(recipe => {
@@ -82,8 +77,8 @@
                 contentArea.innerHTML = '<p>Error al cargar el contenido.</p>';
             });
     }
+
+    xLuIncludeFile();
 </script>
-
-
 </body>
 </html>
