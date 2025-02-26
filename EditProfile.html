@@ -138,7 +138,7 @@
         <input type="file" id="profile-pic" name="profile-pic">
         <label for="profile-pic">Seleccionar Archivo</label>
     </div>
-    <form>
+    <form action="Account.html">
         <div class="form-group">
             <label class="label" for="name">Nombre de la Cuenta</label>
             <input class="input-bar" type="text" id="name" name="name" value="Tu Nombre">
@@ -166,8 +166,8 @@
             <input class="delete-button" type="button" value="Eliminar cuenta">
         </div>
         <div class="form-group-right">
-            <input class="login-button" type="submit" value="Guardar Cambios">
-            <input class="logout-button" type="button" value="Cerrar sesión">
+            <input class="login-button" type="submit" value="Guardar Cambios" formaction="Account.html">
+            <input class="logout-button" type="button" value="Cerrar sesión" onclick="window.location.href='index.html'">
         </div>
     </form>
 </div>
@@ -175,11 +175,8 @@
     <footer id="main_footer" xlu-include-file="Templates/footer.html"></footer>
 </footer>
 
-
 <script>
-
     xLuIncludeFile();
-
 </script>
 
 </body>
