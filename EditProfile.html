@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EditProfile</title>
+    <script src="Scripts/xlu-include-file.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
@@ -128,7 +129,7 @@
 </head>
 <body>
 <header class="iframe-container">
-    <iframe src="./Templates/header.html" class="header-frame" scrolling="no"></iframe>
+    <header id="main_header" xlu-include-file="Templates/header.html"></header>
 </header>
 <div class="container">
     <h1>Editar Perfil</h1>
@@ -171,7 +172,15 @@
     </form>
 </div>
 <footer class="iframe-container">
-    <iframe src="Templates/footer.html" width="100%" height="500" scrolling="no"></iframe>
+    <footer id="main_footer" xlu-include-file="Templates/footer.html"></footer>
 </footer>
+
+
+<script>
+
+    xLuIncludeFile();
+
+</script>
+
 </body>
 </html>
