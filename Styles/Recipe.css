@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap');
+
+html, body {
+    height: 100%;
+    overflow-y: auto; /* Permitir el desplazamiento vertical */
+    margin: 0; /* Eliminar márgenes predeterminados */
+}
+
+header, footer {
+    width: 100%;
+    height: auto;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+    background-color: #f5f5f5;
+}
+
+#main_step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 900px; /* Ajustar al tamaño máximo del contenedor */
+}
+
+article {
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%
+}
+
+header h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.image-container {
+    text-align: center;
+    flex: 0 0 45%;
+}
+
+figure {
+    margin: 0;
+}
+
+.rating {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.rating .star {
+    cursor: pointer;
+    font-size: 1.5em;
+    margin: 0 5px;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.actions img {
+    width: 30px;
+    height: 30px;
+}
+
+.ingredients {
+    margin-left: 20px;
+    flex: 0 0 45%;
+}
+
+.ingredients h2 {
+    margin-top: 0;
+}
+
+.ingredients label, .ingredients input {
+    display: block;
+    margin: 10px auto;
+}
+
+#ingredient-list {
+    list-style: none;
+    padding: 0;
+}
+
+#ingredient-list li {
+    background: #ececec;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    padding: 10px;
+}
+
+
+
+.nutrition-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.nutrition-section h2 {
+    margin-bottom: 10px;
+    font-size: 1.2em; /* Tamaño de fuente más pequeño */
+}
+
+.nutrition-info {
+    background-color: #ececec;
+    border-radius: 20px;
+    padding: 10px 15px; /* Menor padding */
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Espacio entre los elementos */
+    width: 100%;
+    max-width: 300px; /* Ancho máximo más pequeño */
+    margin: 10px 0;
+}
+
+.nutrition-item {
+    margin: 0 5px; /* Menor margen */
+}
+
+.nutrition-item span {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: 0.9em; /* Tamaño de fuente más pequeño */
+}
+
+.nutrition-value {
+    font-size: 1em; /* Tamaño de fuente ajustado */
+}
+
+/* Nueva clase para el título de recomendaciones */
+.recommendations-title {
+    color: #9F6A6A;
+}

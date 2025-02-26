@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steps of recipes</title>
+    <link rel="stylesheet" href="../Styles/Recipe.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="Scripts/xlu-include-file.js"></script>
+</head>
+<body>
+<header id="main_header" xlu-include-file="Templates/header.html"></header>
+
+<section id="main_step">
+    <article>
+        <header>
+            <h1>Title of the Recipe</h1>
+        </header>
+        <div class="content">
+            <div class="image-container">
+                <figure>
+                    <img src="../Images/img.png" width="400" alt="Food Image">
+                </figure>
+                <div class="rating">
+                    <span class="star" data-value="1">⭐</span>
+                    <span class="star" data-value="2">⭐</span>
+                    <span class="star" data-value="3">⭐</span>
+                    <span class="star" data-value="4">⭐</span>
+                    <span class="star" data-value="5">⭐</span>
+                </div>
+                <div class="actions">
+                    <button title="Me Gusta"><img src="../Images/heart_icon.png" alt="Me Gusta" width="30"></button>
+                    <button title="Guardar"><img src="../Images/saved.png" alt="Guardar" width="30"></button>
+                    <button title="Compartir"><img src="../Images/share.png" alt="Compartir" width="30"></button>
+                </div>
+            </div>
+            <div class="ingredients">
+                <h2>Ingredientes</h2>
+                <label for="person-count">Número de personas:</label>
+                <input type="number" id="person-count" name="person-count" value="1" min="1" max="10">
+                <ul id="ingredient-list">
+                    <li data-base-amount="1" data-unit="taza" data-name="de arroz">1 taza de arroz</li>
+                    <li data-base-amount="2" data-unit="tazas" data-name="de agua">2 tazas de agua</li>
+                    <li data-base-amount="1" data-unit="cucharadita" data-name="de sal">1 cucharadita de sal</li>
+                    <!-- Más ingredientes aquí -->
+                </ul>
+            </div>
+        </div>
+        <!-- Nueva sección de nutrición -->
+        <div class="nutrition-section">
+            <h2>Nutrición por ración</h2>
+            <div class="nutrition-info">
+                <div class="nutrition-item">
+                    <span>Cal</span>
+                    <div class="nutrition-value">1088</div>
+                </div>
+                <div class="nutrition-item">
+                    <span>Grasa</span>
+                    <div class="nutrition-value">70 g</div>
+                </div>
+                <div class="nutrition-item">
+                    <span>Proteína</span>
+                    <div class="nutrition-value">52 g</div>
+                </div>
+                <div class="nutrition-item">
+                    <span>Carb</span>
+                    <div class="nutrition-value">61 g</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contenedor para los pasos de la receta -->
+        <div id="steps_content">
+            <iframe id="steps_iframe" src="Templates/StepsOfRecipes.html" width="100%" style="border:none;"></iframe>
+        </div>
+
+        <!-- Otro paso más -->
+        <div id="more_steps_content">
+            <iframe id="more_steps_iframe" src="Templates/StepsOfRecipes.html" width="100%" style="border:none;"></iframe>
+        </div>
+
+        <!-- Sección de recomendaciones -->
+        <h2 class="recommendations-title">Recomendaciones</h2>
+            <iframe id="recommendations_iframe" src="Templates/Recommendations.html" width="100%" style="border:none;"></iframe>
+        </div>
+
+    </article>
+</section>
+
+<footer id="main_footer" xlu-include-file="Templates/footer.html"></footer>
+
+<script>
+    document.getElementById('person-count').addEventListener('input', function() {
+        var personCount = this.value;
+        var ingredientList = document.getElementById('ingredient-list');
+        var ingredients = ingredientList.getElementsByTagName('li');
+
+        for (var i = 0; i < ingredients.length; i++) {
+            var ingredient = ingredients[i];
+            var baseAmount = ingredient.getAttribute('data-base-amount');
+            var unit = ingredient.getAttribute('data-unit');
+
+            ingredient.textContent = (baseAmount * personCount) + ' ' + unit + ' ' + ingredient.getAttribute('data-name');
+        }
+    });
+
+    document.querySelectorAll('.star').forEach(function(star) {
+        star.addEventListener('click', function() {
+            var value = this.getAttribute('data-value');
+            document.querySelectorAll('.star').forEach(function(star, index) {
+                if (index < value) {
+                    star.textContent = '⭐';
+                } else {
+                    star.textContent = '☆';
+                }
+            });
+        });
+    });
+
+    xLuIncludeFile();
+
+    // Ajustar automáticamente la altura de los iframes
+    function adjustIframeHeight(iframe) {
+        iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+    }
+
+    document.getElementById('steps_iframe').onload = function() {
+        adjustIframeHeight(document.getElementById('steps_iframe'));
+    };
+
+    document.getElementById('more_steps_iframe').onload = function() {
+        adjustIframeHeight(document.getElementById('more_steps_iframe'));
+    };
+
+    document.getElementById('recommendations_iframe').onload = function() {
+        adjustIframeHeight(document.getElementById('recommendations_iframe'));
+    };
+</script>
+</body>
+</html>
