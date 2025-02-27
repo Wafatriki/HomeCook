@@ -14,11 +14,23 @@
 - Poder acceder a un listado de recetas guardadas.
 
 ## **Templates**
-- Header: *Templates/header.html*
-- Footer: *Templates/footer.html*
-- Items: *Templates/item.html*
-- List Of Recipes: *Templates/ListOfRecipes.html*
-- Recomendations: *Templates/recomendations.html*
-- Steps Of Recipes: *Templates/StepsOfRecipes.html*
+- **header.html**: *Templates/header.html*
+- **footer.html**: *Templates/footer.html*
+- **Items.html**: *Templates/item.html*
+- **ListOfRecipes.html**: *Templates/ListOfRecipes.html*
+- **Recommendations.html**: *Templates/recomendations.html*
+- **StepsOfRecipes.html**: *Templates/StepsOfRecipes.html*
 
-## **Páginas**
+## Listado de Páginas HTML del Proyecto
+
+- **Account.html**: 
+- **EditProfile.html**:
+- **index.html**:
+- **Log-in.html**: 
+- **Recipe.html**: 
+- **Recipes-filter.html**: 
+- **SearchRecipes.html**: 
+- **Sign-in.html**: 
+
+## Enlace Figma
+https://www.figma.com/design/2niUmMJ2UsHNdK5xQ7Ui7R/HomeCook?node-id=47-2&t=4zfBJrdXHoN6BGBq-0
