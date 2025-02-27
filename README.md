@@ -3,7 +3,7 @@
 ## **Autores:**
 - Nicolás Rey Alonso
 - Greta
-- Wafa
+- Wafa Azdad Triki
 
 ## **Requisitos Funcionales**
 - Que se puedan almacenar recetas.
@@ -14,12 +14,12 @@
 - Poder acceder a un listado de recetas guardadas.
 
 ## **Templates**
-- **header.html**: *Templates/header.html*
-- **footer.html**: *Templates/footer.html*
-- **Items.html**: *Templates/item.html*
-- **ListOfRecipes.html**: *Templates/ListOfRecipes.html*
-- **Recommendations.html**: *Templates/recomendations.html*
-- **StepsOfRecipes.html**: *Templates/StepsOfRecipes.html*
+- **header.html**: Templates/header.html
+- **footer.html**: Templates/footer.html
+- **Items.html**: Templates/item.html
+- **ListOfRecipes.html**: Templates/ListOfRecipes.html
+- **Recommendations.html**: Templates/recomendations.html
+- **StepsOfRecipes.html**: Templates/StepsOfRecipes.html
 
 ## Listado de Páginas HTML del Proyecto
 
