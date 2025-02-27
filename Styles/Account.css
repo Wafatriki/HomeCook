@@ -39,10 +39,10 @@ header, footer {
     box-shadow: none;
     background: none;
     margin: 0;
-    width: 800px; /* Ajusta este valor para hacer el contenedor más grande */
-    position: absolute; /* Para moverlo a la izquierda */
-    left: 0; /* Alineado a la izquierda */
-    top: 50px; /* Ajusta la distancia desde la parte superior según sea necesario */
+    width: 800px;
+    position: absolute;
+    left: 0;
+    top: 50px;
     margin-top: 100px;
     font-family: 'Raleway', Arial, sans-serif;
 }
@@ -118,7 +118,7 @@ header, footer {
     align-items: center;
     border-bottom: 2px solid transparent;
     transition: border-bottom 0.3s;
-    font-family: 'Raleway', sans-serif; /* Aplicar fuente Raleway a las pestañas */
+    font-family: 'Raleway', sans-serif;
 }
 
 .tab img {

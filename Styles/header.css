@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Raleway', sans-serif; /* Estilo de letra cambiado */
+    font-family: 'Raleway', sans-serif;
     background-color: #fff;
 }
 
@@ -22,15 +22,15 @@ header {
 
 nav {
     display: flex;
-    justify-content: center; /* Centra los elementos del menú */
-    align-items: center; /* Centra los elementos verticalmente */
+    justify-content: center;
+    align-items: center;
     padding: 10px 20px;
     margin: 0;
 }
 
 .logo{
     position: absolute;
-    left: 0; /* Coloca el logo a la izquierda */ /* Centra verticalmente */
+    left: 0;
     height: 4em;
     width: 4em;
 }
@@ -45,7 +45,7 @@ nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    justify-content: center; /* Centra los elementos de la lista */
+    justify-content: center;
 }
 
 nav ul li {
@@ -79,7 +79,7 @@ nav ul li a:hover {
     border-radius: 5px 0 0 5px;
     outline: none;
     font-size: 14px;
-    font-family: 'Raleway', sans-serif; /* Estilo de letra cambiado */
+    font-family: 'Raleway', sans-serif;
 
 }
 
@@ -102,7 +102,7 @@ nav ul li a:hover {
     padding: 5px 10px;
     cursor: pointer;
     font-size: 14px;
-    font-family: 'Raleway', sans-serif; /* Estilo de letra cambiado */
+    font-family: 'Raleway', sans-serif;
 
 }
 

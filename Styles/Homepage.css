@@ -19,16 +19,16 @@ h2{
     display: flex;
     justify-content: center;
     color: #9F6A6A;
-    font-family: 'Raleway', sans-serif; /* Estilo de letra cambiado */
+    font-family: 'Raleway', sans-serif;
 
 }
 body {
     display: flex;
-    flex-direction: column; /* Alinea todo en columna */
-    min-height: 100vh; /* El body ocupa toda la pantalla */
+    flex-direction: column;
+    min-height: 100vh;
     background-color: #f0f0f0;
     padding: 20px;
-    font-family: 'Raleway', sans-serif; /* Estilo de letra cambiado */
+    font-family: 'Raleway', sans-serif;
 }
 
 .iframe-container {
@@ -77,7 +77,7 @@ body {
 .text-section {
     flex: 1;
     padding: 20px;
-    font-family: 'Raleway', sans-serif; /* Estilo de letra cambiado */
+    font-family: 'Raleway', sans-serif;
     font-size: 1.2em;
     line-height: 1.6;
 }
@@ -94,7 +94,7 @@ body {
     padding: 8px 12px;
     background-color: #7a7a7a;
     color: white;
-    font-family: 'Raleway', sans-serif; /* Estilo de letra cambiado */
+    font-family: 'Raleway', sans-serif;
     font-size: 0.9em;
     cursor: pointer;
 }
@@ -151,7 +151,7 @@ ul{
 .text_type{
     flex: 1;
     padding: 20px;
-    font-family: 'Raleway', sans-serif; /* Estilo de letra cambiado */
+    font-family: 'Raleway', sans-serif;
     font-size: 1.2em;
     line-height: 1.6;
 }
@@ -198,5 +198,5 @@ ul{
     margin-top: 10px;
     font-size: 16px;
     color: #333;
-    font-family: 'Raleway', sans-serif; /* Estilo de letra cambiado */
+    font-family: 'Raleway', sans-serif;
 }
