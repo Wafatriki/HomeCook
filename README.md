@@ -2,7 +2,7 @@
 
 ## **Autores:**
 - Nicolás Rey Alonso
-- Greta
+- Greta Piccoli
 - Wafa Azdad Triki
 
 ## **Requisitos Funcionales**
