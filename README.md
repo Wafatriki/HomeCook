@@ -2,8 +2,8 @@
 
 ## Autores
 - Nicolás Rey Alonso
-- Greta
-- Wafa
+- Greta Piccoli
+- Wafa Azdad Triki
 
 ## Requisitos Funcionales
 - Que se puedan almacenar recetas.
@@ -62,6 +62,5 @@
 - Log-in: *Log-in.html*(Implementa: *"Mockups/Log- in.png"*)
 - Sign-in: *Sign-in.html*(Implementa: *"Mockups/Sign- up.png"*)
 
-## Scripting
-- Cargador de Templates: *Scripts/xlu-include-file.js*
-### Por desarrollar
+## Enlace Figma
+https://www.figma.com/design/2niUmMJ2UsHNdK5xQ7Ui7R/HomeCook?node-id=47-2&t=4zfBJrdXHoN6BGBq-0
