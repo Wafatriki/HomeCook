@@ -2,8 +2,8 @@
 
 html, body {
     height: 100%;
-    overflow-y: auto; /* Permitir el desplazamiento vertical */
-    margin: 0; /* Eliminar márgenes predeterminados */
+    overflow-y: auto;
+    margin: 0;
 }
 
 header, footer {
@@ -25,7 +25,7 @@ body {
     align-items: center;
     padding: 20px;
     width: 100%;
-    max-width: 900px; /* Ajustar al tamaño máximo del contenedor */
+    max-width: 900px;
 }
 
 article {
@@ -124,37 +124,37 @@ figure {
 
 .nutrition-section h2 {
     margin-bottom: 10px;
-    font-size: 1.2em; /* Tamaño de fuente más pequeño */
+    font-size: 1.2em;
 }
 
 .nutrition-info {
     background-color: #ececec;
     border-radius: 20px;
-    padding: 10px 15px; /* Menor padding */
+    padding: 10px 15px;
     display: flex;
     justify-content: center;
-    gap: 10px; /* Espacio entre los elementos */
+    gap: 10px;
     width: 100%;
-    max-width: 300px; /* Ancho máximo más pequeño */
+    max-width: 300px;
     margin: 10px 0;
 }
 
 .nutrition-item {
-    margin: 0 5px; /* Menor margen */
+    margin: 0 5px;
 }
 
 .nutrition-item span {
     display: block;
     font-weight: 500;
     margin-bottom: 5px;
-    font-size: 0.9em; /* Tamaño de fuente más pequeño */
+    font-size: 0.9em;
 }
 
 .nutrition-value {
-    font-size: 1em; /* Tamaño de fuente ajustado */
+    font-size: 1em;
 }
 
-/* Nueva clase para el título de recomendaciones */
+
 .recommendations-title {
     color: #9F6A6A;
 }

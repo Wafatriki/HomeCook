@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap');
 
 body {
-    font-family: 'Raleway', sans-serif; /* Estilo de letra cambiado */
+    font-family: 'Raleway', sans-serif;
     background-color: #fff;
     margin: 0;
     padding: 0;
@@ -10,7 +10,7 @@ body {
 .footer {
     background-color: #FBDBDB;
     padding: 20px;
-    width: 100%; /* Asegura que ocupe todo el ancho */
+    width: 100%;
     box-sizing: border-box;
 }
 

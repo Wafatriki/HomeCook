@@ -13,7 +13,7 @@ body {
 .iframe-container {
     width: 100%;
     text-align: left;
-    margin-bottom: 20px; /* Añadir margen inferior */
+    margin-bottom: 20px;
 }
 iframe {
     width: 100%;
@@ -26,13 +26,13 @@ iframe {
 .container {
     width: 100%;
     padding: 0 20px;
-    margin-bottom: 20px; /* Añadir margen inferior */
+    margin-bottom: 20px;
 }
 
 .container h1 {
     font-size: 20px;
     font-weight: 500;
-    margin-bottom: 30px; /* Incrementar margen inferior */
+    margin-bottom: 30px;
 }
 .profile-section img {
     width: 150px;
@@ -45,7 +45,7 @@ iframe {
 }
 .profile-section label {
     display: inline-block;
-    padding: 10px 20px; /* Incrementar padding */
+    padding: 10px 20px;
     border-radius: 20px;
     background-color: #e08b89;
     color: black;
@@ -61,17 +61,17 @@ iframe {
     font-weight: 500;
     text-align: left;
     display: block;
-    margin-bottom: 10px; /* Incrementar margen inferior */
+    margin-bottom: 10px;
     font-size: 14px;
 }
 .input-bar {
     width: 80%;
     max-width: 400px;
-    padding: 10px; /* Incrementar padding */
+    padding: 10px;
     border-radius: 20px;
     border: none;
     background: gray;
-    margin-bottom: 20px; /* Incrementar margen inferior */
+    margin-bottom: 20px;
     text-align: left;
     font-size: 14px;
 }
@@ -79,12 +79,12 @@ iframe {
     background: #e08b89;
     color: black;
     border: none;
-    padding: 10px 20px; /* Incrementar padding */
+    padding: 10px 20px;
     border-radius: 20px;
     font-size: 14px;
     cursor: pointer;
     width: 150px;
-    margin-top: 20px; /* Incrementar margen superior */
+    margin-top: 20px; /
     font-family: 'Raleway', sans-serif;
 }
 .login-button:hover, .logout-button:hover, .delete-button:hover {
@@ -94,19 +94,19 @@ iframe {
     display: flex;
     gap: 90px;
     align-items: center;
-    margin-bottom: 30px; /* Añadir margen inferior */
+    margin-bottom: 30px;
 }
 .form-group-horizontal .input-bar {
     width: 130%;
 }
 .form-group-right {
     display: flex;
-    justify-content: flex-end; /* Alinear a la derecha */
-    gap: 20px; /* Incrementar espacio entre los botones */
+    justify-content: flex-end;
+    gap: 20px;
     width: 100%;
-    margin-top: 30px; /* Incrementar margen superior */
+    margin-top: 30px;
 }
 p {
     font-size: 14px;
-    margin-bottom: 20px; /* Añadir margen inferior */
+    margin-bottom: 20px;
 }
