@@ -1,5 +1,9 @@
 # Homecook
 
+## Descripción del proyecto:
+Nuestro proyecto consiste en ofrecer una página web de recetas.
+La idea era disponer de un sitio en el que se pudiera buscar la receta deseada, tener una cuenta, buscar recetas por tipo y filtrar por receta.
+Una vez seleccionada una receta deseada, se mostrarán los pasos para su realización.
 ## Autores
 - Nicolás Rey Alonso
 - Greta Piccoli
