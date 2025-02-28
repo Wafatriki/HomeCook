@@ -7,7 +7,7 @@ body {
     justify-content: center;
     min-height: 100vh;
     margin: 0;
-    font-family: 'Raleway', sans-serif; /* Estilo de letra cambiado */
+    font-family: 'Raleway', sans-serif;
 }
 
 .iframe-container {
@@ -37,7 +37,7 @@ iframe {
 .container h1 {
     font-size: 22px;
     font-weight: bold;
-    font-family: 'Raleway', sans-serif; /* Estilo de letra cambiado */
+    font-family: 'Raleway', sans-serif;
     margin-bottom: 20px;
 }
 
@@ -46,7 +46,7 @@ iframe {
     text-align: left;
     display: block;
     margin-bottom: 5px;
-    font-family: 'Raleway', sans-serif; /* Estilo de letra cambiado */
+    font-family: 'Raleway', sans-serif;
 }
 
 .input-bar {
@@ -68,7 +68,7 @@ iframe {
     cursor: pointer;
     width: 100px;
     float: left;
-    font-family: 'Raleway', sans-serif; /* Estilo de letra cambiado */
+    font-family: 'Raleway', sans-serif;
 }
 
 .login-button:hover {
