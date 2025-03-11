@@ -6,14 +6,13 @@
     <title>Perfil de Usuario</title>
     <link rel="stylesheet" href="Styles/Account.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
-    <script src="Scripts/xlu-include-file.js"></script>
+    <script src="Scripts/Account.js"></script>
 </head>
 
 <body>
 <header>
-    <div class="main_header"></div>
+    <div id="main_header"></div>
 </header>
-
 <div class="content-wrapper">
     <div class="profile-container">
         <div class="avatar"></div>
@@ -54,11 +53,12 @@
 </div>
 
 <footer>
-    <div class="main_footer"></div>
+    <div id="main_footer"></div>
 </footer>
 
 <script>
-    init();
+    loadTemplateFromSource("Templates/header.html", "main_header");
+    loadTemplateFromSource("Templates/footer.html", "main_footer");
 </script>
 </body>
 </html>

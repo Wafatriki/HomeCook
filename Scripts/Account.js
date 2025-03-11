@@ -11,16 +11,11 @@ function loadTemplate(fileName, id, callback) {
         }
     })
 }
+
 function loadTemplateFromSource(source, id){
     loadTemplate(source, id);
 }
-function init() {
-    loadTemplate('Templates/header.html', 'main_header');
-    loadTemplate('Templates/footer.html', 'main_footer');
-}
-function load_template_from_page(template_name, id, callback) {
 
-}
 function loadContent(tab) {
     const contentArea = document.getElementById('content-area');
     const fileName = "./Templates/ListOfRecipes.html";
