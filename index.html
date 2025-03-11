@@ -6,9 +6,13 @@
     <title>HomePage</title>
     <link rel="stylesheet" href="Styles/HomePage.css">
     <script src="Scripts/xlu-include-file.js"></script>
+    <script src="Scripts/HomePage.js"></script>
 </head>
     <body>
-        <header id="main_header" xlu-include-file="Templates/header.html"></header>
+        <!--
+        <header id="header" xlu-include-file="Templates/header.html"></header>
+        -->
+        <div id="header"></div>
         <div class="container">
             <div class="image-placeholder">
                 <div class="buttons">
@@ -147,10 +151,14 @@
                 </div>
             </li>
         </ul>
-
-        <footer id="main_footer" xlu-include-file="Templates/footer.html"></footer>
+        <!--
+        <footer id="footer" xlu-include-file="Templates/footer.html"></footer>
+        -->
+        <div id="footer"></div>
         <script>
+            init();
             xLuIncludeFile();
         </script>
+
     </body>
 </html>
