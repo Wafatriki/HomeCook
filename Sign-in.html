@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-in</title>
     <link rel="stylesheet" href="Styles/Sign-in.css">
-    <script src="Scripts/xlu-include-file.js"></script>
+    <script src="Scripts/Sign-in.js"></script>
 
 </head>
 <body>
 <div class="iframe-container">
-    <header id="main_header" xlu-include-file="Templates/header.html"></header>
+    <header>
+        <div id="main_header"></div>
+    </header>
 </div>
 <div class="container">
     <h1>Sign-in</h1>
@@ -23,14 +25,15 @@
     <button class="login-button">Sign-in</button>
 </div>
 <div class="iframe-container">
-    <footer id="main_footer" xlu-include-file="Templates/footer.html"></footer>
+    <footer>
+        <div id="main_footer"></div>
+    </footer>
 </div>
 
 
 <script>
-
-    xLuIncludeFile();
-
+    loadTemplateFromSource("Templates/header.html", "main_header");
+    loadTemplateFromSource("Templates/footer.html", "main_footer");
 </script>
 </body>
 </html>
