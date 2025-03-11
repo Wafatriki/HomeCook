@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="Styles/Log-in.css">
-    <script src="Scripts/xlu-include-file.js"></script>
+    <script src="Scripts/Log-in.js"></script>
 
 </head>
 <body>
-<div class="iframe-container">
-    <header id="main_header" xlu-include-file="Templates/header.html"></header>
-</div>
+<header>
+    <div id="main_header"></div>
+</header>
 <div class="container">
     <h1>Login</h1>
     <label class="label" for="username">Usuario:</label>
@@ -20,15 +20,14 @@
     <input type="password" id="password" class="input-bar" name="password">
     <button class="login-button">Login</button>
 </div>
-<div class="iframe-container">
-    <footer id="main_footer" xlu-include-file="Templates/footer.html"></footer>
-</div>
+<footer>
+    <div id="main_footer"></div>
+</footer>
 
 
 <script>
-
-    xLuIncludeFile();
-
+    loadTemplateFromSource("/Templates/header.html", "main_header");
+    loadTemplateFromSource("/Templates/footer.html", "main_footer");
 </script>
 
 </body>
