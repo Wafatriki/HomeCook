@@ -10,7 +10,9 @@
 </head>
 
 <body>
-<header id="main_header" xlu-include-file="Templates/header.html"></header>
+<header>
+    <div class="main_header"></div>
+</header>
 
 <div class="content-wrapper">
     <div class="profile-container">
@@ -51,33 +53,12 @@
     </div>
 </div>
 
-<footer id="main_footer" xlu-include-file="Templates/footer.html"></footer>
+<footer>
+    <div class="main_footer"></div>
+</footer>
 
 <script>
-    function loadContent(tab) {
-        const contentArea = document.getElementById('content-area');
-        const fileName = "./Templates/ListOfRecipes.html";
-        fetch(fileName)
-            .then(response => response.text())
-            .then(data => {
-                contentArea.innerHTML = data;
-                const recipes = contentArea.querySelectorAll('.recipe');
-                const numberOfClones = 3;
-
-                for (let i = 0; i < numberOfClones; i++) {
-                    recipes.forEach(recipe => {
-                        const clone = recipe.cloneNode(true);
-                        contentArea.appendChild(clone);
-                    });
-                }
-            })
-            .catch(error => {
-                console.error('Error al cargar el contenido:', error);
-                contentArea.innerHTML = '<p>Error al cargar el contenido.</p>';
-            });
-    }
-
-    xLuIncludeFile();
+    init();
 </script>
 </body>
 </html>
