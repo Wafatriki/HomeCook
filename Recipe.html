@@ -71,18 +71,18 @@
         </div>
 
         <!-- Contenedor para los pasos de la receta -->
-        <div id="steps_content">
-            <iframe id="steps_iframe" src="Templates/StepsOfRecipes.html" width="100%" style="border:none;"></iframe>
+        <div id="steps_content" class="steps">
+            <div id="steps_iframe"></div>
         </div>
 
         <!-- Otro paso más -->
-        <div id="more_steps_content">
-            <iframe id="more_steps_iframe" src="Templates/StepsOfRecipes.html" width="100%" style="border:none;"></iframe>
+        <div id="more_steps_content" class="steps">
+            <div id="more_steps_iframe"></div>
         </div>
 
         <!-- Sección de recomendaciones -->
         <h2 class="recommendations-title">Recomendaciones</h2>
-            <iframe id="recommendations_iframe" src="Templates/Recommendations.html" width="100%" style="border:none;"></iframe>
+            <div id="recommendations_iframe" ></div>
         </div>
 
     </article>
@@ -93,7 +93,9 @@
 </footer>
 
 <script>
-    init();
+    loadTemplateFromSource("Templates/StepsOfRecipes.html", "steps_iframe");
+    loadTemplateFromSource("Templates/header.html", "main_header");
+    loadTemplateFromSource("Templates/footer.html", "main_footer");
 </script>
 
 </body>

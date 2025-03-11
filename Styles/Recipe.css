@@ -10,7 +10,11 @@ header, footer {
     width: 100%;
     height: auto;
 }
-
+.steps{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 body {
     display: flex;
     flex-direction: column;
