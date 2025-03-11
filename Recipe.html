@@ -6,11 +6,12 @@
     <title>Steps of recipes</title>
     <link rel="stylesheet" href="../Styles/Recipe.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
-    <script src="Scripts/xlu-include-file.js"></script>
+    <script src="Scripts/Recipe.js"></script>
 </head>
 <body>
-<header id="main_header" xlu-include-file="Templates/header.html"></header>
-
+<header>
+    <div id="main_header"></div>
+</header>
 <section id="main_step">
     <article>
         <header>
@@ -87,54 +88,13 @@
     </article>
 </section>
 
-<footer id="main_footer" xlu-include-file="Templates/footer.html"></footer>
+<footer>
+    <div id="main_footer"></div>
+</footer>
 
 <script>
-    document.getElementById('person-count').addEventListener('input', function() {
-        var personCount = this.value;
-        var ingredientList = document.getElementById('ingredient-list');
-        var ingredients = ingredientList.getElementsByTagName('li');
-
-        for (var i = 0; i < ingredients.length; i++) {
-            var ingredient = ingredients[i];
-            var baseAmount = ingredient.getAttribute('data-base-amount');
-            var unit = ingredient.getAttribute('data-unit');
-
-            ingredient.textContent = (baseAmount * personCount) + ' ' + unit + ' ' + ingredient.getAttribute('data-name');
-        }
-    });
-
-    document.querySelectorAll('.star').forEach(function(star) {
-        star.addEventListener('click', function() {
-            var value = this.getAttribute('data-value');
-            document.querySelectorAll('.star').forEach(function(star, index) {
-                if (index < value) {
-                    star.textContent = '⭐';
-                } else {
-                    star.textContent = '☆';
-                }
-            });
-        });
-    });
-
-    xLuIncludeFile();
-
-    // Ajustar automáticamente la altura de los iframes
-    function adjustIframeHeight(iframe) {
-        iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
-    }
-
-    document.getElementById('steps_iframe').onload = function() {
-        adjustIframeHeight(document.getElementById('steps_iframe'));
-    };
-
-    document.getElementById('more_steps_iframe').onload = function() {
-        adjustIframeHeight(document.getElementById('more_steps_iframe'));
-    };
-
-    document.getElementById('recommendations_iframe').onload = function() {
-        adjustIframeHeight(document.getElementById('recommendations_iframe'));
-    };
+    init();
 </script>
+
 </body>
 </html>
