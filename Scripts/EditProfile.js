@@ -14,10 +14,19 @@ function loadTemplate(fileName, id, callback) {
 function anadirlistener(){
 
 }
-var Contraseña = document.getElementById("new-password");
-Contraseña.addEventListener("input", function(evt){
 
-});
+function setValidity(){
+    var pass = document.getElementById("new-password");
+    pass.addEventListener("input", function(evt){
+        var oldPass = document.getElementById("current-password");
+        var valueOldPass = oldPass.value;
+        if (pass.value === oldPass.value) {
+            pass.setCustomValidity("");
+        }else{
+            pass.setCustomValidity("Las contraseñas no coinciden");
+        }
+    });
+}
 
 function loadTemplateFromSource(source, id){
     loadTemplate(source, id);
