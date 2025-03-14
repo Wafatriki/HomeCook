@@ -20,7 +20,9 @@
                oninput="this.setCustomValidity('')"
                title="Introduzca una dirección de correo electrónico válida (ejemplo@mail.com)">
         <label class="label" for="password">Contrasena:</label>
-        <input required pattern=".{12,32}" type="password" id="password" class="input-bar" name="password">
+        <input required type="password" id="password" class="input-bar" name="password"
+               pattern="^(?=.*[A-Z])(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+               title="Mínimo 8 caracteres, al menos un número, un carácter especial y una mayúscula">
         <button class="login-button">Login</button>
     </form>
 </div>
