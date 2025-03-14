@@ -14,11 +14,13 @@
 </header>
 <div class="container">
     <h1>Login</h1>
-    <label class="label" for="username">Usuario:</label>
-    <input type="text" id="username" class="input-bar" name="username">
-    <label class="label" for="password">Contrasena:</label>
-    <input type="password" id="password" class="input-bar" name="password">
-    <button class="login-button">Login</button>
+    <form>
+        <label class="label" for="username">Usuario:</label>
+        <input required type="email" id="username" class="input-bar" name="username">
+        <label class="label" for="password">Contrasena:</label>
+        <input required pattern=".{12,32}" type="password" id="password" class="input-bar" name="password">
+        <button class="login-button">Login</button>
+    </form>
 </div>
 <footer>
     <div id="main_footer"></div>

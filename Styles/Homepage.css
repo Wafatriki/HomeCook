@@ -88,15 +88,7 @@ ul{
     display: flex;
     justify-content: center;
 }
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        aspect-ratio: unset;
-    }
-    .text-section {
-        font-size: 1em;
-    }
-}
+
 .icon_type{
     position: relative;
     flex: 2;
