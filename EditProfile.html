@@ -24,25 +24,28 @@
     <form action="Account.html">
         <div class="form-group">
             <label class="label" for="name">Nombre de la Cuenta</label>
-            <input class="input-bar" type="text" id="name" name="name" value="Tu Nombre">
+            <input class="input-bar" type="text" id="name" name="name" placeholder="Tu Nombre" required>
         </div>
         <div class="form-group">
             <label class="label" for="email">Email</label>
-            <input class="input-bar" type="email" id="email" name="email" value="tucorreo@ejemplo.com">
+            <input class="input-bar" type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
         </div>
-        <div class="form-group">
-            <h2>Cambiar la contraseña</h2>
-            <div class="form-group-horizontal">
-                <div>
-                    <label class="label" for="current-password">Contraseña Actual</label>
-                    <input class="input-bar" type="password" id="current-password" name="current-password">
+        <form onsubmit="return validatePasswords()">
+            <div class="form-group">
+                <h2>Cambiar la contraseña</h2>
+                <div class="form-group-horizontal">
+                    <div>
+                        <label class="label" for="current-password">Nueva contraseña</label>
+                        <input class="input-bar" type="password" id="current-password" name="current-password" required>
+                    </div>
+                    <div>
+                        <label class="label" for="new-password">Repita contraseña</label>
+                        <input class="input-bar" type="password" id="new-password" name="new-password" required>
+                    </div>
                 </div>
-                <div>
-                    <label class="label" for="new-password">Nueva Contraseña</label>
-                    <input class="input-bar" type="password" id="new-password" name="new-password">
-                </div>
+                <button type="submit">Guardar Cambios</button>
             </div>
-        </div>
+        </form>
         <div class="form-group">
             <h2>Eliminar cuenta</h2>
             <p>Tu cuenta, así como el contenido creado, guardado y gustado no se podrá restaurar después de la eliminación.</p>
