@@ -14,22 +14,48 @@
     </header>
 </div>
 <div class="container">
-    <h1>Sign-in</h1>
-    <label class="label" for="username">Usuario:</label>
-    <input type="text" id="username" class="input-bar" name="username">
-    <label class="label" for="password">Contraseña:</label>
-    <input type="password" id="password" class="input-bar" name="password">
-    <label class="label" for="password">Repetir contraseña:</label>
-    <input type="password" id="nuevaPassword" class="input-bar" name="password">
-    <button class="login-button">Sign-in</button>
+    <form id="registrationForm">
+        <h1>Sign-in</h1>
+        <label class="label" for="username">Usuario:</label>
+        <input type="email" id="username" class="input-bar" name="username" placeholder="tucorreo@ejemplo.com" required
+               oninput="this.setCustomValidity('')"
+               title="Introduzca una dirección de correo electrónico válida (ejemplo@mail.com)">
+        <label class="label" for="password">Contraseña:</label>
+        <input type="password" id="password" class="input-bar" name="password"
+               pattern="^(?=.*[A-Z])(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+               title="Mínimo 8 caracteres, al menos un número, un carácter especial y una mayúscula" required
+               oninput="this.setCustomValidity('')">
+        <span class="error" id="passwordError"></span>
+        <label class="label" for="nuevaPassword">Repetir contraseña:</label>
+        <input type="password" id="nuevaPassword" class="input-bar" name="nuevaPassword"
+               required oninput="this.setCustomValidity(''); checkPasswordMatch();">
+        <span class="error" id="confirmPasswordError"></span>
+        <button type="submit" class="login-button">Sign-in</button>
+    </form>
 </div>
 <div class="iframe-container">
     <footer>
         <div id="main_footer"></div>
     </footer>
 </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        function checkPasswordMatch() {
+            let password = document.getElementById("password").value;
+            let nuevaPassword = document.getElementById("nuevaPassword").value;
+            let confirmPasswordError = document.getElementById("confirmPasswordError");
 
+            if (password !== nuevaPassword) {
+                document.getElementById("nuevaPassword").setCustomValidity("Las contraseñas no coinciden");
+            } else {
+                document.getElementById("nuevaPassword").setCustomValidity("");
+            }
+        }
 
+        document.getElementById("password").addEventListener("input", checkPasswordMatch);
+        document.getElementById("nuevaPassword").addEventListener("input", checkPasswordMatch);
+    });
+</script>
 <script>
     loadTemplateFromSource("Templates/header.html", "main_header");
     loadTemplateFromSource("Templates/footer.html", "main_footer");

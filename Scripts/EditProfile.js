@@ -11,6 +11,13 @@ function loadTemplate(fileName, id, callback) {
         }
     })
 }
+function anadirlistener(){
+
+}
+var Contraseña = document.getElementById("new-password");
+Contraseña.addEventListener("input", function(evt){
+
+});
 
 function loadTemplateFromSource(source, id){
     loadTemplate(source, id);
