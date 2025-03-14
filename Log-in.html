@@ -16,7 +16,9 @@
     <h1>Login</h1>
     <form>
         <label class="label" for="username">Usuario:</label>
-        <input required type="email" id="username" class="input-bar" name="username">
+        <input required type="email" id="username" class="input-bar" name="username" placeholder="tucorreo@ejemplo.com"
+               oninput="this.setCustomValidity('')"
+               title="Introduzca una dirección de correo electrónico válida (ejemplo@mail.com)">
         <label class="label" for="password">Contrasena:</label>
         <input required pattern=".{12,32}" type="password" id="password" class="input-bar" name="password">
         <button class="login-button">Login</button>
