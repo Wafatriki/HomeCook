@@ -51,12 +51,9 @@
                 document.getElementById("nuevaPassword").setCustomValidity("");
             }
         }
-
         document.getElementById("password").addEventListener("input", checkPasswordMatch);
         document.getElementById("nuevaPassword").addEventListener("input", checkPasswordMatch);
     });
-</script>
-<script>
     loadTemplateFromSource("Templates/header.html", "main_header");
     loadTemplateFromSource("Templates/footer.html", "main_footer");
 </script>
