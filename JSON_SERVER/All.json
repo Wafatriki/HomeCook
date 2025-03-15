@@ -1,0 +1,79 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "first_name": "Robert",
+      "last_name": "Schwartz",
+      "email": "rob23@gmail.com"
+    },
+    {
+      "id": 2,
+      "first_name": "Lucy",
+      "last_name": "Ballmer",
+      "email": "lucyb56@gmail.com"
+    },
+    {
+      "id": 3,
+      "first_name": "Anna",
+      "last_name": "Smith",
+      "email": "annasmith23@gmail.com"
+    },
+    {
+      "id": 4,
+      "first_name": "Robert",
+      "last_name": "Brown",
+      "email": "bobbrown432@yahoo.com"
+    },
+    {
+      "id": 5,
+      "first_name": "Roger",
+      "last_name": "Bacon",
+      "email": "rogerbacon12@yahoo.com"
+    }
+  ],
+  "Tags": [
+    {
+      "id": 1,
+      "title": "Vegan"
+    },
+    {
+      "id": 2,
+      "title": "Gluten-free"
+    },
+    {
+      "id": 3,
+      "title": "Spicy"
+    },
+    {
+      "id": 4,
+      "title": "Sweet"
+    },
+    {
+      "id": 5,
+      "title": "Savory"
+    },
+    {
+      "id": 6,
+      "title": "Acid"
+    }
+
+  ],
+  "RecipeOfTheDay":[
+    {
+      "Name": "Chocolate Vegano",
+      "Tags": "Sweet, Vegan",
+      "Description": "Disfruta de un chocolate vegano casero, elaborado con ingredientes naturales y sin productos de origen animal. Esta receta es perfecta para los amantes del cacao que buscan una alternativa saludable, cremosa y llena de sabor. Con solo unos pocos ingredientes, podrás crear una tableta de chocolate rica en antioxidantes y con una textura suave y fundente."
+    }
+  ],
+  "Recipes": [
+    {
+      "id": 1,
+      "name": "Papas arrugadas con mojo",
+      "Creator": "Robert",
+      "Time": "30 minutes",
+      "Description": "Clásica receta canaria a basa de papas y una salsa tradicional llamada mojo",
+      "Tags": "Vegetarian,Spicy",
+      "Steps": "3; 1: #imagen# Pon las papas a hervir."
+    }
+  ]
+}
