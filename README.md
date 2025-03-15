@@ -148,6 +148,101 @@ Una vez seleccionada una receta deseada, se mostrarán los pasos para su realiza
 - Header
 - Footer
 
+
+
+## Scripts
+- Cada página utiliza su propio script *único*
+
+### Account
+#### Archivo
+- *Scripts/Account.js*
+#### Utilizado por
+- Página Account
+#### Implementa:
+- Integración de templates
+- Carga dinámica de contenido
+
+### EditProfile
+#### Archivo
+- *Scripts/EditProfile.js*
+#### Utilizado por
+- Página EditProfile
+#### Implementa:
+- Integración de templates
+- Validación de formularios
+- Carga dinámica de contenido
+
+### HomePage
+#### Archivo
+- *Scripts/HomePage.js*
+#### Utilizado por
+- Página HomePage
+#### Implementa:
+- Integración de templates
+- Carga dinámica de contenido
+
+### Log-in
+#### Archivo
+- *Scripts/Log-in.js*
+#### Utilizado por
+- Página Log-in
+#### Implementa:
+- Validación de credenciales
+- Manejo de sesiones
+- Integración de templates
+
+### Recipe
+#### Archivo
+- *Scripts/Recipe.js*
+#### Utilizado por
+- Página Recipe
+#### Implementa:
+- Carga dinámica de recetas
+- Integración de templates
+- Interacción con base de datos
+
+### Recipes-filter
+#### Archivo
+- *Scripts/Recipes-filter.js*
+#### Utilizado por
+- Página Recipes-filter
+#### Implementa:
+- Filtros avanzados de recetas
+- Integración de templates
+- Actualización dinámica de resultados
+
+### SearchRecipes
+#### Archivo
+- *Scripts/SearchRecipes.js*
+#### Utilizado por
+- Página SearchRecipes
+#### Implementa:
+- Búsqueda de recetas
+- Integración de templates
+- Manejo de sugerencias
+
+### Sign-in
+#### Archivo
+- *Scripts/Sign-in.js*
+#### Utilizado por
+- Página Sign-in
+#### Implementa:
+- Registro de nuevos usuarios
+- Validación de formularios
+- Integración de templates
+
+
+## Herramientas Externas:
+### JSON-Server
+#### Ubicación
+- *JSON_SERVER*
+#### Archivos
+##### JSON_SERVER/package.json
+- Archivo de datos principal
+##### JSON_SERVER/package-lock.json
+- Archivo de configuracion del JSON server
+
+
 ## Enlaces Externos
 ### Enlace Figma
 - [Figma - HomeCook](https://www.figma.com/design/2niUmMJ2UsHNdK5xQ7Ui7R/HomeCook?node-id=47-2&t=4zfBJrdXHoN6BGBq-0)
