@@ -1,9 +1,3 @@
-iframe {
-    width: 100%;
-    border: none;
-    margin: 0;
-    padding: 0;
-}
 * {
     margin: 0;
     padding: 0;
@@ -17,13 +11,7 @@ body {
     padding: 20px;
 }
 
-.iframe-container {
-    width: 100%;
-    height: auto;
-    text-align: center;
-    padding: 0;
 
-}
 .container {
     position: relative;
     align-self: center;
@@ -88,7 +76,6 @@ ul{
     display: flex;
     justify-content: center;
 }
-
 .icon_type{
     position: relative;
     flex: 2;
