@@ -16,17 +16,12 @@ function init() {
     loadTemplate('Templates/header.html', 'header');
     loadTemplate('Templates/footer.html', 'footer');
 }
-function loadContent(){
-    var datos = fetch("http://localhost:3000/users/1")
-    .then(res => res.json())
-    .then(usuario => {
-        var RecipeOfTheDayTitle =document.getElementById('Recipe_Of_The_Day_Title');
-        console.log(usuario);
-        a.textContent= usuario.first_name;
-    })
+
+function loadTemplateFromSource(source, id){
+    loadTemplate(source, id);
 }
 function loadRecipeOfTheDay(){
-    var datos = fetch("http://localhost:3000/RecipeOfTheDay/")
+    fetch("http://localhost:3000/RecipeOfTheDay/")
         .then(res => res.json())
         .then(recipe => {
             var RecipeOfTheDayTitle =document.getElementById('Recipe_Of_The_Day_Title');
