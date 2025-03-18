@@ -14,14 +14,14 @@
 </header>
 <div class="container">
     <h1>Login</h1>
-    <form id="login" onsubmit="LogIn()">
+    <form id="login">
         <label class="label" for="username">Usuario:</label>
         <input required type="email" id="username" class="input-bar" name="username" placeholder="tucorreo@ejemplo.com"
                oninput="this.setCustomValidity('')"
                title="Introduzca una dirección de correo electrónico válida (ejemplo@mail.com)">
         <label class="label" for="password">Contrasena:</label>
         <input required type="password" id="password" class="input-bar" name="password"
-               pattern="^(?=.*[A-Z])(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+
                title="Mínimo 8 caracteres, al menos un número, un carácter especial y una mayúscula">
         <button type="submit" class="login-button">Login</button>
     </form>
@@ -34,6 +34,7 @@
 <script>
     loadTemplateFromSource("/Templates/header.html", "main_header");
     loadTemplateFromSource("/Templates/footer.html", "main_footer");
+    Log_In_Listener();
 </script>
 
 </body>
