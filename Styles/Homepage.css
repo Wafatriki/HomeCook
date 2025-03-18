@@ -1,3 +1,9 @@
+iframe {
+    width: 100%;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
 * {
     margin: 0;
     padding: 0;
@@ -9,6 +15,14 @@ body {
     min-height: 100vh; /* El body ocupa toda la pantalla */
     background-color: #f0f0f0;
     padding: 20px;
+}
+
+.iframe-container {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding: 0;
+
 }
 .container {
     position: relative;
