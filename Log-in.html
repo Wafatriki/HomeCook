@@ -14,7 +14,7 @@
 </header>
 <div class="container">
     <h1>Login</h1>
-    <form>
+    <form id="login" onsubmit="LogIn()">
         <label class="label" for="username">Usuario:</label>
         <input required type="email" id="username" class="input-bar" name="username" placeholder="tucorreo@ejemplo.com"
                oninput="this.setCustomValidity('')"
@@ -23,7 +23,7 @@
         <input required type="password" id="password" class="input-bar" name="password"
                pattern="^(?=.*[A-Z])(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
                title="Mínimo 8 caracteres, al menos un número, un carácter especial y una mayúscula">
-        <button class="login-button">Login</button>
+        <button type="submit" class="login-button">Login</button>
     </form>
 </div>
 <footer>

@@ -28,7 +28,7 @@ function loadRecipeOfTheDay(){
             var RecipeOfTheDayDescription =document.getElementById('Recipe_Of_The_Day_Text');
             RecipeOfTheDayTitle.textContent= recipe[0].Name;
             RecipeOfTheDayDescription.textContent= recipe[0].Description;
-        })
+        }).catch()
 }
 function load_template_from_page(template_name, id, callback) {
 
