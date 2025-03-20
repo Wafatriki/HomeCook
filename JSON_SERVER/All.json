@@ -51,7 +51,133 @@
       "Time": "30 minutes",
       "Description": "Clásica receta canaria a basa de papas y una salsa tradicional llamada mojo",
       "Tags": "Vegetarian,Spicy",
-      "Steps": "3; 1: #imagen# Pon las papas a hervir."
+      "Steps": [
+        {
+          "number": 1,
+          "Desciption":  "1: #imagen# Pon las papas a hervir."
+        },
+        {
+          "number": 2,
+          "Desciption":  "2: #imagen# Mientras tanto, prepare la salsa de mojo combinando todos los ingredientes que figuran en la descripción."
+        },
+        {
+          "number": 3,
+          "Desciption":  "3: #imagen# Verter la salsa recién preparada sobre las patatas y servir caliente."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Pizza margherita",
+      "Creator": "Giuseppe",
+      "Time": "60 minutes",
+      "Description": "Receta clásica italiana, con masa crujiente, tomate y queso mozzarella fibroso",
+      "Tags": "Vegetarian,Savory",
+      "Steps": [
+        {
+          "number": 1,
+          "Desciption":  "1: #imagen# Extender la masa y estirarla con un rodillo"
+        },
+        {
+          "number": 2,
+          "Desciption":  "2:#imagen# Poner el tomate sobre la masa y despues la mozzarella"
+        },
+        {
+          "number": 3,
+          "Desciption":  "3:#imagen# Poner la pizza en el horno"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Tiramisu",
+      "Creator": "Maria",
+      "Time": "35 minutes",
+      "Description": "Receta del postre italiano más famoso hecho con bizcochos de soletilla, mascarpone y huevos",
+      "Tags": "Vegetarian,Sweet",
+      "Steps":[
+        {
+          "number": 1,
+          "Desciption":  "1: #imagen# Poner el queso mascarpone en un bol con el azúcar glas"
+        },
+        {
+          "number": 2,
+          "Desciption":  "2:#imagen# Batir las yemas con el azúcar"
+        },
+        {
+          "number": 3,
+          "Desciption":  "3:#imagen# Añadir los huevos al mascarpone"
+        }
+      ]
+    }
+  ],
+  "LikedRecipes": [
+    {
+      "id": 1,
+      "name": "Hummus",
+      "Creator": "Jorge",
+      "Time": "15 minutes",
+      "Tags": "Vegan,Savory,Gluten-free"
+    },
+    {
+      "id": 2,
+      "name": "Pollo a la naranja",
+      "Creator": "Francisco",
+      "Time": "20 minutes",
+      "Tags": "Savory,Acid"
+    },
+    {
+      "id": 3,
+      "name": "Galletas de avena",
+      "Creator": "Sofia",
+      "Time": "15 minutes",
+      "Tags": "Sweet,Vegan"
+    }
+  ],
+  "SavedRecipes": [
+    {
+      "id": 1,
+      "name": "Gnocchi",
+      "Creator": "Juan",
+      "Time": "45 minutes",
+      "Tags": "Savory, Vegetarian"
+    },
+    {
+      "id": 2,
+      "name": "Banana Bread",
+      "Creator": "Jesus",
+      "Time": "20 minutes",
+      "Tags": "Sweet, Vegan"
+    },
+    {
+      "id": 3,
+      "name": "Tortilla con pollo",
+      "Creator": "Susana",
+      "Time": "10 minutes",
+      "Tags": "Savory"
+    }
+  ],
+  "LastView": [
+    {
+      "id": 1,
+      "name": "Pasta carbonara",
+      "Creator": "Alice",
+      "Time": "20 minutes",
+      "Tags": "Savory"
+    },
+    {
+      "id": 2,
+      "name": "Tofu agridulce",
+      "Creator": "Pablo",
+      "Time": "25 minutes",
+      "Tags": "Savory,Vegan"
+    },
+    {
+      "id": 3,
+      "name": "Tarta de manzana",
+      "Creator": "Josefina",
+      "Time": "40 minutes",
+      "Tags": "Sweet"
     }
   ]
 }

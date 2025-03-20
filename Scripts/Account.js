@@ -18,23 +18,34 @@ function loadTemplateFromSource(source, id){
 
 function loadContent(tab) {
     const contentArea = document.getElementById('content-area');
-    const fileName = "./Templates/ListOfRecipes.html";
-    fetch(fileName)
-        .then(response => response.text())
-        .then(data => {
-            contentArea.innerHTML = data;
-            const recipes = contentArea.querySelectorAll('.recipe');
-            const numberOfClones = 3;
+    contentArea.innerHTML = ""; // Limpia el área de contenido antes de cargar nuevas recetas
 
-            for (let i = 0; i < numberOfClones; i++) {
+    // Verifica si la pestaña es "guardado"
+    if (tab === "guardado") {
+        fetch('http://localhost:3000/Recipes') // URL del JSON Server
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error');
+                }
+                return response.json();
+            })
+            .then(recipes => {
                 recipes.forEach(recipe => {
-                    const clone = recipe.cloneNode(true);
-                    contentArea.appendChild(clone);
+                    const recipeElement = document.createElement('div');
+                    recipeElement.classList.add('recipe');
+
+                    recipeElement.innerHTML = `
+                        <img src="${recipe.image}" alt="${recipe.title}" class="recipe-image">
+                        <h3>${recipe.title}</h3>
+                        <p>${recipe.description}</p>
+                    `;
+                    contentArea.appendChild(recipeElement);
                 });
-            }
-        })
-        .catch(error => {
-            console.error('Error al cargar el contenido:', error);
-            contentArea.innerHTML = '<p>Error al cargar el contenido.</p>';
-        });
+            })
+            .catch(error => {
+                console.error('Error al cargar las recetas:', error);
+                contentArea.innerHTML = '<p>Error al cargar las recetas guardadas.</p>';
+            });
+    }
+
 }

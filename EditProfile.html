@@ -21,42 +21,50 @@
         <input type="file" id="profile-pic" name="profile-pic">
         <label for="profile-pic">Seleccionar Archivo</label>
     </div>
-    <form action="Account.html">
+
+    <!-- Formulario principal -->
+    <form id="edit-profile-form">
+        <!-- Campo nombre -->
         <div class="form-group">
             <label class="label" for="name">Nombre de la Cuenta</label>
             <input class="input-bar" type="text" id="name" name="name" placeholder="Tu Nombre" required>
         </div>
+        <!-- Campo email -->
         <div class="form-group">
             <label class="label" for="email">Email</label>
             <input class="input-bar" type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
         </div>
-        <form onsubmit="return validatePasswords()">
-            <div class="form-group">
-                <h2>Cambiar la contraseña</h2>
-                <div class="form-group-horizontal">
-                    <div>
-                        <label class="label" for="current-password">Nueva contraseña</label>
-                        <input class="input-bar" type="password" id="current-password" name="current-password" required>
-                    </div>
-                    <div>
-                        <label class="label" for="new-password">Repita contraseña</label>
-                        <input class="input-bar" type="password" id="new-password" name="new-password" required>
-                    </div>
-                </div>
-                <button type="submit">Guardar Cambios</button>
-            </div>
-        </form>
+        <!-- Cambiar contraseña -->
         <div class="form-group">
-            <h2>Eliminar cuenta</h2>
-            <p>Tu cuenta, así como el contenido creado, guardado y gustado no se podrá restaurar después de la eliminación.</p>
-            <input class="delete-button" type="button" value="Eliminar cuenta">
+            <h2>Cambiar la contraseña</h2>
+            <div class="form-group-horizontal">
+                <div>
+                    <label class="label" for="current-password">Nueva contraseña</label>
+                    <input class="input-bar" type="password" id="current-password" name="current-password" required>
+                </div>
+                <div>
+                    <label class="label" for="new-password">Repita contraseña</label>
+                    <input class="input-bar" type="password" id="new-password" name="new-password" required>
+                </div>
+            </div>
         </div>
-        <div class="form-group-right">
-            <input class="login-button" type="submit" value="Guardar Cambios" formaction="Account.html">
-            <input class="logout-button" type="button" value="Cerrar sesión" onclick="window.location.href='index.html'">
-        </div>
+        <!-- Botón Guardar Cambios -->
+
     </form>
+
+    <!-- Eliminar cuenta -->
+    <div class="form-group">
+        <h2>Eliminar cuenta</h2>
+        <p>Tu cuenta, así como el contenido creado, guardado y gustado no se podrá restaurar después de la eliminación.</p>
+        <input class="delete-button" type="button" value="Eliminar cuenta">
+    </div>
+
+    <div class="form-group-right">
+        <button class="login-button" id="save-changes-button" type="button">Guardar Cambios</button>
+        <input class="logout-button" type="button" value="Cerrar sesión" onclick="window.location.href='index.html'">
+    </div>
 </div>
+
 <footer class="iframe-container">
     <div id="main_footer"></div>
 </footer>
@@ -66,6 +74,7 @@
     loadTemplateFromSource("Templates/footer.html", "main_footer");
     setValidity();
 </script>
+
 </body>
 </html>
 
