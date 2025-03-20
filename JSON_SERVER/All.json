@@ -39,7 +39,8 @@
     {
       "Name": "Chocolate Vegano",
       "Tags": "Sweet, Vegan",
-      "Description": "Disfruta de un chocolate vegano casero, elaborado con ingredientes naturales y sin productos de origen animal. Esta receta es perfecta para los amantes del cacao que buscan una alternativa saludable, cremosa y llena de sabor. Con solo unos pocos ingredientes, podrás crear una tableta de chocolate rica en antioxidantes y con una textura suave y fundente."
+      "Description": "Disfruta de un chocolate vegano casero, elaborado con ingredientes naturales y sin productos de origen animal. Esta receta es perfecta para los amantes del cacao que buscan una alternativa saludable, cremosa y llena de sabor. Con solo unos pocos ingredientes, podrás crear una tableta de chocolate rica en antioxidantes y con una textura suave y fundente.",
+      "Image": "Images/ChocoVegano.webp"
     }
   ],
   "Recipes": [
