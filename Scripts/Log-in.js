@@ -24,8 +24,6 @@ function Log_In_Listener(){
             .then(User => {
                 var introducedPass= document.getElementById('password');
                 var introducedUser = document.getElementById('username');
-                console.log(introducedPass.value);
-                console.log(User.PassWord);
                 var form=document.getElementById('password');
                 if (introducedPass.value === User.PassWord && introducedUser.value === User.email ){
                     window.location.replace("Account.html");
