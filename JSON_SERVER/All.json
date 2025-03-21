@@ -51,16 +51,33 @@
       "Time": "30 minutes",
       "Description": "Clásica receta canaria a basa de papas y una salsa tradicional llamada mojo",
       "Tags": "Vegetarian,Spicy",
+      "Ingredients": [
+        {
+          "Ammount": "500 g",
+          "Ingredient": "Potatoes"
+        },
+        {
+          "Ammount": "1L",
+          "Ingredient": "Water"
+        },
+        {
+          "Ammount": "5g",
+          "Ingredient": "Sal Gruesa"
+        }
+      ],
       "Steps": [
         {
+          "title": "Hervir",
           "number": 1,
           "Desciption":  "1: #imagen# Pon las papas a hervir."
         },
         {
+          "title": "Preparar Mojo",
           "number": 2,
           "Desciption":  "2: #imagen# Mientras tanto, prepare la salsa de mojo combinando todos los ingredientes que figuran en la descripción."
         },
         {
+          "title": "Emplatar",
           "number": 3,
           "Desciption":  "3: #imagen# Verter la salsa recién preparada sobre las patatas y servir caliente."
         }
@@ -73,6 +90,20 @@
       "Time": "60 minutes",
       "Description": "Receta clásica italiana, con masa crujiente, tomate y queso mozzarella fibroso",
       "Tags": "Vegetarian,Savory",
+      "Ingredients": [
+        {
+          "Ammount": "500 g",
+          "Ingredient": "Potatoes"
+        },
+        {
+          "Ammount": "1L",
+          "Ingredient": "Water"
+        },
+        {
+          "Ammount": "5g",
+          "Ingredient": "Sal Gruesa"
+        }
+      ],
       "Steps": [
         {
           "number": 1,
@@ -95,6 +126,20 @@
       "Time": "35 minutes",
       "Description": "Receta del postre italiano más famoso hecho con bizcochos de soletilla, mascarpone y huevos",
       "Tags": "Vegetarian,Sweet",
+      "Ingredients": [
+        {
+          "Ammount": "500 g",
+          "Ingredient": "Potatoes"
+        },
+        {
+          "Ammount": "1L",
+          "Ingredient": "Water"
+        },
+        {
+          "Ammount": "5g",
+          "Ingredient": "Sal Gruesa"
+        }
+      ],
       "Steps":[
         {
           "number": 1,

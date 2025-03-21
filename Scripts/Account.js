@@ -35,9 +35,11 @@ function loadContent(tab) {
                     recipeElement.classList.add('recipe');
 
                     recipeElement.innerHTML = `
-                        <img src="${recipe.image}" alt="${recipe.title}" class="recipe-image">
-                        <h3>${recipe.title}</h3>
-                        <p>${recipe.description}</p>
+                        <a href="Recipe.html">
+                        <img src="${recipe.image}" alt="${recipe.name}" class="recipe-image">
+                        <h3>${recipe.name}</h3>
+                        <p>${recipe.Description}</p>
+                        </a>
                     `;
                     contentArea.appendChild(recipeElement);
                 });

@@ -20,7 +20,7 @@
         <div class="content">
             <div class="image-container">
                 <figure>
-                    <img src="../Images/img.png" width="400" alt="Food Image">
+                    <img id="MainImage" src="../Images/img.png" width="400" alt="Food Image">
                 </figure>
                 <div class="rating">
                     <span class="star" data-value="1">⭐</span>
@@ -40,9 +40,9 @@
                 <label for="person-count">Número de personas:</label>
                 <input type="number" id="person-count" name="person-count" value="1" min="1" max="10">
                 <ul id="ingredient-list">
-                    <li data-base-amount="1" data-unit="taza" data-name="de arroz">1 taza de arroz</li>
-                    <li data-base-amount="2" data-unit="tazas" data-name="de agua">2 tazas de agua</li>
-                    <li data-base-amount="1" data-unit="cucharadita" data-name="de sal">1 cucharadita de sal</li>
+                    <li class="ingredient" data-base-amount="1" data-unit="taza" data-name="de arroz">1 taza de arroz</li>
+                    <li class="ingredient" data-base-amount="2" data-unit="tazas" data-name="de agua">2 tazas de agua</li>
+                    <li class="ingredient" data-base-amount="1" data-unit="cucharadita" data-name="de sal">1 cucharadita de sal</li>
                     <!-- Más ingredientes aquí -->
                 </ul>
             </div>
@@ -70,16 +70,11 @@
             </div>
         </div>
 
-        <!-- Contenedor para los pasos de la receta -->
-        <div id="steps_content" class="steps">
-            <div id="steps_iframe"></div>
+        <div id="bloque_de_pasos">
+            <div id="steps_content" class="steps">
+                <div id="steps_iframe"></div>
+            </div>
         </div>
-
-        <!-- Otro paso más -->
-        <div id="more_steps_content" class="steps">
-            <div id="more_steps_iframe"></div>
-        </div>
-
         <!-- Sección de recomendaciones -->
         <h2 class="recommendations-title">Recomendaciones</h2>
             <div id="recommendations_iframe" ></div>
@@ -96,6 +91,7 @@
     loadTemplateFromSource("Templates/StepsOfRecipes.html", "steps_iframe");
     loadTemplateFromSource("Templates/header.html", "main_header");
     loadTemplateFromSource("Templates/footer.html", "main_footer");
+    loadContent();
 </script>
 
 </body>

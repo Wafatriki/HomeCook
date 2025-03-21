@@ -14,6 +14,7 @@ header, footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
 body {
     display: flex;
@@ -91,8 +92,10 @@ figure {
 }
 
 .ingredients {
+    display: flex;
+    flex-direction: column;
     margin-left: 20px;
-    flex: 0 0 45%;
+    flex: 0 0;
 }
 
 .ingredients h2 {
