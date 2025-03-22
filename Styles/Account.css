@@ -35,21 +35,15 @@ header, footer {
     display: flex;
     align-items: center;
     padding: 20px;
-    border: none;
-    box-shadow: none;
-    background: none;
-    margin: 0;
-    width: 800px;
-    position: absolute;
-    left: 0;
-    top: 50px;
-    margin-top: 100px;
+    width: 80%;
+    max-width: 800px;
+    margin: 100px auto 0;
     font-family: 'Raleway', Arial, sans-serif;
 }
 
 .avatar {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     background-image: url('../Images/account.png');
     background-size: cover;
     background-position: center;
@@ -72,7 +66,6 @@ header, footer {
     display: flex;
     align-items: center;
 }
-
 
 .icon {
     display: flex;
@@ -105,7 +98,6 @@ header, footer {
     margin: 20px 0;
     border-bottom: 2px solid #e0e0e0;
     width: 80%;
-    margin-top: 300px;
 }
 
 .tab {
@@ -129,4 +121,77 @@ header, footer {
 
 .tab:hover {
     border-bottom: 2px solid #000;
+}
+
+#content-area {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 800px;
+}
+
+/* MEDIA QUERIES */
+
+/* Para tablets (tamaño mediano) */
+@media (max-width: 1023px) {
+    .profile-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .avatar {
+        width: 120px;
+        height: 120px;
+    }
+
+    .tabs {
+        width: 100%;
+    }
+
+    .tab {
+        font-size: 16px;
+    }
+
+    .text-field {
+        font-size: 16px;
+        padding: 8px 15px;
+    }
+}
+
+/* Para móviles (tamaño pequeño) */
+@media (max-width: 767px) {
+    .profile-container {
+        flex-direction: column;
+        align-items: center;
+        margin: 50px 0;
+        padding: 10px;
+    }
+
+    .avatar {
+        width: 80px;
+        height: 80px;
+    }
+
+    .info {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tab {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .text-field {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+
+    #content-area {
+        padding: 10px;
+    }
 }
