@@ -9,7 +9,6 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 
-
 .container {
     background: #d3d3d3;
     padding: 30px;
@@ -27,7 +26,6 @@ body {
 .container h1 {
     font-size: 22px;
     font-weight: bold;
-    font-family: 'Raleway', sans-serif;
     margin-bottom: 20px;
     justify-content: center;
 }
@@ -37,7 +35,6 @@ body {
     text-align: left;
     display: block;
     margin-bottom: 5px;
-    font-family: 'Raleway', sans-serif;
 }
 
 .input-bar {
@@ -63,4 +60,75 @@ body {
 
 .login-button:hover {
     background: #d46b6a;
+}
+
+/* MEDIA QUERIES */
+
+/* Para tablets (pantallas medianas: máx. 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        width: 80%; /* Ajusta el ancho relativo */
+        padding: 20px; /* Reduce el padding */
+    }
+
+    .container h1 {
+        font-size: 20px; /* Reduce el tamaño del título */
+    }
+
+    .input-bar {
+        padding: 8px; /* Ajusta el padding interno */
+    }
+
+    .login-button {
+        width: 80px; /* Reduce el tamaño del botón */
+        font-size: 14px;
+    }
+}
+
+/* Para móviles (pantallas pequeñas: máx. 768px) */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Ocupa casi todo el ancho */
+        padding: 15px;
+    }
+
+    .container h1 {
+        font-size: 18px;
+    }
+
+    .input-bar {
+        font-size: 14px; /* Ajusta el tamaño del texto */
+    }
+
+    .login-button {
+        width: 100%; /* Botón ocupa todo el ancho */
+        text-align: center;
+    }
+}
+
+/* Para móviles muy pequeños (pantallas menores de 480px) */
+@media (max-width: 480px) {
+    .container {
+        width: 95%; /* Usa casi todo el ancho de la pantalla */
+        margin: 50px 0; /* Reduce el margen superior/inferior */
+    }
+
+    .container h1 {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .label {
+        font-size: 12px; /* Texto más pequeño */
+    }
+
+    .input-bar {
+        font-size: 12px;
+        padding: 6px; /* Reduce padding interno */
+    }
+
+    .login-button {
+        font-size: 12px; /* Fuente más pequeña */
+        padding: 8px 10px;
+    }
 }

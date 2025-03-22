@@ -108,77 +108,72 @@ nav ul li a:hover {
 }
 
 /* MEDIA QUERIES */
-
-/* Para tablets (pantallas medianas) */
 @media (max-width: 1024px) {
     nav ul {
-        flex-direction: column; /* Cambiar disposición a vertical */
+        flex-direction: column;
         gap: 10px;
     }
 
     nav .logo {
-        height: 50px; /* Reducir tamaño del logo */
+        height: 50px;
         width: 50px;
     }
 
     nav ul li a {
-        font-size: 14px; /* Reducir tamaño de fuente en enlaces */
+        font-size: 14px;
     }
 
     .search-form {
-        flex-direction: column; /* Cambiar disposición a vertical */
+        flex-direction: column;
         padding: 10px;
     }
 }
 
-/* Para móviles (pantallas pequeñas) */
 @media (max-width: 768px) {
     nav {
-        flex-direction: column; /* Cambiar disposición de la navegación a vertical */
+        flex-direction: column;
         align-items: center;
     }
 
     .logo {
-        height: 40px; /* Ajustar tamaño del logo */
+        height: 40px;
         width: 40px;
     }
 
     nav ul {
-        flex-direction: column; /* Apilar los elementos */
+        flex-direction: column;
         align-items: center;
         gap: 5px;
     }
 
     nav ul li a {
-        font-size: 12px; /* Reducir aún más el tamaño de fuente */
+        font-size: 12px;
     }
 
     .search-form {
-        width: 80%; /* Ajustar el ancho del formulario de búsqueda */
+        width: 80%;
     }
 
     .nav-button {
-        width: 100%; /* Los botones ocupan todo el ancho */
+        width: 100%;
         padding: 8px;
         font-size: 12px;
     }
 }
 
-/* Para móviles muy pequeños (pantallas menores de 480px) */
 @media (max-width: 480px) {
     nav ul {
-        gap: 2px; /* Reducir espaciado entre enlaces */
+        gap: 2px;
     }
 
     nav ul li a {
-        font-size: 10px; /* Tamaño mínimo de fuente para enlaces */
+        font-size: 10px;
     }
-
     .search-form {
-        width: 90%; /* Ajustar aún más el ancho */
+        width: 90%;
     }
 
     .nav-button {
-        font-size: 10px; /* Reducir tamaño de fuente en botones */
+        font-size: 10px;
     }
 }
