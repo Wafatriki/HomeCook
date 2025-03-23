@@ -48,6 +48,7 @@ header, footer {
     background-size: cover;
     background-position: center;
     border-radius: 50%;
+
 }
 
 .info {
@@ -152,8 +153,9 @@ header, footer {
     }
 
     .text-field {
-        font-size: 16px;
-        padding: 8px 15px;
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 10px;
     }
 }
 

@@ -11,6 +11,26 @@ function loadTemplate(fileName, id, callback) {
         }
     })
 }
+function loadUserProfile() {
+    fetch('http://localhost:3000/users/1') // Asegúrate de que esta URL funciona
+        .then(res => {
+            if (!res.ok) {
+                throw new Error('No se pudo cargar el usuario. Verifica JSON Server.');
+            }
+            return res.json();
+        })
+        .then(User => {
+            if (User.isLoggedIn) {
+                document.querySelectorAll('.info .text-field')[0].textContent = User.UserName;
+                document.querySelectorAll('.info .text-field')[1].textContent = User.email;
+            } else {
+                document.querySelectorAll('.info .text-field')[0].textContent = "Nombre de usuario";
+                document.querySelectorAll('.info .text-field')[1].textContent = "Email";
+            }
+        })
+        .catch(err => console.error("Error al cargar los datos del usuario:", err));
+}
+
 
 function loadTemplateFromSource(source, id){
     loadTemplate(source, id);
@@ -49,5 +69,8 @@ function loadContent(tab) {
                 contentArea.innerHTML = '<p>Error al cargar las recetas guardadas.</p>';
             });
     }
+
+
+
 
 }
