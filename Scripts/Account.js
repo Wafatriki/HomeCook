@@ -55,11 +55,16 @@ function loadContent(tab) {
                     recipeElement.classList.add('recipe');
 
                     recipeElement.innerHTML = `
-                        <a href="Recipe.html">
-                        <img src="${recipe.image}" alt="${recipe.name}" class="recipe-image">
-                        <h3>${recipe.name}</h3>
-                        <p>${recipe.Description}</p>
-                        </a>
+                        <div class="recipe-card">
+                            <div class="recipe-overlay">
+                                <div class="time">${recipe.Time || "N/A"}</div>
+                                <div class="vegetarian">${recipe.Tags && recipe.Tags.includes("Vegetarian") ? "Vegetariano" : ""}</div>
+                            </div>
+                            <div class="recipe-info">
+                                <h3><a href="Recipe.html" target="_blank">${recipe.name}</a></h3>
+                                <p>${recipe.Creator || "Autor desconocido"}</p>
+                            </div>
+                        </div>
                     `;
                     contentArea.appendChild(recipeElement);
                 });
@@ -69,8 +74,5 @@ function loadContent(tab) {
                 contentArea.innerHTML = '<p>Error al cargar las recetas guardadas.</p>';
             });
     }
-
-
-
 
 }
