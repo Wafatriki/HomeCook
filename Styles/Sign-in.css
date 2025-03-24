@@ -31,6 +31,7 @@ iframe {
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 300px;
+    height: 400px; /* Mantiene la altura fija */
     margin: 100px 0;
 }
 
@@ -67,10 +68,30 @@ iframe {
     font-size: 16px;
     cursor: pointer;
     width: 100px;
-    float: left;
     font-family: 'Raleway', sans-serif;
 }
 
 .login-button:hover {
     background: #d46b6a;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        width: 300px;
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 300px;
+        height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 300px;
+        height: 400px;
+    }
 }

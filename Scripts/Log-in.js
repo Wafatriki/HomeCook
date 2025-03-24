@@ -15,24 +15,33 @@ function loadTemplate(fileName, id, callback) {
 function loadTemplateFromSource(source, id){
     loadTemplate(source, id);
 }
-
-function Log_In_Listener(){
-    document.getElementById("login").addEventListener("submit", function(event){
+function Log_In_Listener() {
+    document.getElementById("login").addEventListener("submit", function(event) {
         event.preventDefault();
+
+        const introducedPass = document.getElementById('password').value;
+        const introducedUser = document.getElementById('username').value;
+
         fetch("http://localhost:3000/users/1")
             .then(res => res.json())
             .then(User => {
-                var introducedPass= document.getElementById('password');
-                var introducedUser = document.getElementById('username');
-                var form=document.getElementById('password');
-                if (introducedPass.value === User.PassWord && introducedUser.value === User.email ){
-                    window.location.replace("Account.html");
-                }else{
-
+                if (introducedPass === User.PassWord && introducedUser === User.email) {
+                    fetch("http://localhost:3000/users/1", {
+                        method: "PATCH",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({ isLoggedIn: true })
+                    })
+                        .then(() => {
+                            window.location.replace("Account.html");
+                        })
+                        .catch(err => console.error("Error al actualizar el estado del usuario:", err));
+                } else {
+                    alert("Usuario o contraseña incorrectos. Por favor, inténtelo nuevamente.");
                 }
-
-            }).catch(
-            err => console.log(err)
-        );
+            })
+            .catch(err => console.error("Error al obtener los datos del usuario:", err));
     });
+
 }

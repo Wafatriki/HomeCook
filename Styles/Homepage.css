@@ -9,6 +9,11 @@ iframe {
     padding: 0;
     box-sizing: border-box;
 }
+
+.content-wrapper {
+    margin-top: 400px; /* Ajusta este valor según la altura de tu header */
+}
+
 body {
     display: flex;
     flex-direction: column; /* Alinea todo en columna */
