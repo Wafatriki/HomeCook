@@ -45,7 +45,7 @@
       "Tags": "Spicy, Vegetarian",
       "Description":  "Greta Piccoli",
       "Image": "Images/soup.png",
-      "id": "2cac"
+      "id": "4"
     }
   ],
   "TiposDeReceta": [
@@ -110,7 +110,7 @@
       "Ingredients": [
         {
           "Ammount": "120g",
-          "Ingredient": "azucar"
+          "Ingredient": "azúcar"
         },
         {
           "Ammount": "4",
@@ -205,23 +205,83 @@
         }
       ],
       "Steps": [
+
+          {
+            "title": "Extender la masa",
+            "number": 1,
+            "Image": "/",
+            "Desciption": "1: Extender la masa y estirarla con un rodillo"
+          },
+          {
+            "title": "Extender la masa",
+            "number": 2,
+            "Image": "/",
+            "Desciption": "2:#imagen# Poner el tomate sobre la masa y despues la mozzarella"
+          },
         {
-          "title": "Combinar Queso con Azucar",
-          "number": 1,
-          "Image": "/",
-          "Desciption": "Poner el queso mascarpone en un bol con el azúcar glas"
-        },
-        {
-          "title": "Batir yemas con Azucar",
-          "number": 2,
-          "Image": "/",
-          "Desciption": "Batir las yemas con el azúcar"
-        },
-        {
-          "title": "Añadir Huevos",
+          "title": "Extender la masa",
           "number": 3,
           "Image": "/",
-          "Desciption": "Añadir los huevos al mascarpone"
+          "Desciption": "3:#imagen# Poner la pizza en el horno"
+        }
+      ]
+    },
+        {
+          "id": "4",
+          "name": "Sopa de Calabaza",
+          "Creator": "Greta Piccoli",
+          "Time": "40 minutes",
+          "Description": "La sopa de calabaza al horno con trozos de halloumi es una receta reconfortante y fácil de preparar. Utiliza calabaza Hokkaido, especias cálidas como nuez moscada, comino y canela, y se acompaña con crujientes cubos de halloumi dorado. Es perfecta para el otoño, con una textura cremosa que se logra mezclando los ingredientes horneados con caldo y un toque de limón.",
+          "Image": "Images/soup.png",
+          "Tags": "Vegetarian,Spicy",
+          "Ingredients": [
+            {
+              "Ammount": "1kg",
+              "Ingredient": "Calabazas"
+            },
+            {
+              "Ammount": "4",
+              "Ingredient": "Cebolla"
+            },
+            {
+              "Ammount": "1",
+              "Ingredient": "Limon"
+            },
+            {
+              "Ammount": "400ml",
+              "Ingredient": "café"
+            },
+            {
+              "Ammount": "250g",
+              "Ingredient": "Halloumi"
+            },
+            {
+              "Ammount": "75",
+              "Ingredient": "Espinacas tiernas"
+            },
+            {
+              "Ammount": "500g",
+              "Ingredient": "Chocolate Amargo"
+            }
+      ],
+      "Steps": [
+        {
+          "title": "Cortar ingredientes",
+          "number": 1,
+          "Image": "Images/Calabaza1.png",
+          "Desciption": "Corta la calabaza por la mitad y raspa las semillas con una cuchara y deséchala. Pela las cebollas y córtalas."
+        },
+        {
+          "title": "Preparación",
+          "number": 2,
+          "Image": "/",
+          "Desciption": "Coloque las cebollas y la calabaza cortada en cubitos en una bandeja para hornear forrada con papel pergamino, dejando algo de espacio para el halloumi. Rocíe las verduras con aceite de oliva y espolvoree con especias, luego mezcle bien. "
+        },
+        {
+          "title": "Batir",
+          "number": 3,
+          "Image": "/",
+          "Desciption": "Transfiera con cuidado la calabaza y la cebolla de la bandeja a una batidora de pie. Agregue el ajo cortando los dientes asados y exprimiendo el contenido de la piel. Deje el halloumi en la bandeja y devuélvalo al horno para mantenerlo caliente."
         }
       ]
     }
