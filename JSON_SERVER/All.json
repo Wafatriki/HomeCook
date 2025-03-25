@@ -56,6 +56,7 @@
       "Time": "30 minutes",
       "Description": "Clásica receta canaria a basa de papas y una salsa tradicional llamada mojo",
       "Tags": "Vegetarian,Spicy",
+      "Image": "Images/Papasarrugadas.jpg",
       "Ingredients": [
         {
           "Ammount": "500 g",
@@ -74,16 +75,19 @@
         {
           "title": "Hervir",
           "number": 1,
+          "Image": "/",
           "Desciption": "1: #imagen# Pon las papas a hervir."
         },
         {
           "title": "Preparar Mojo",
           "number": 2,
+          "Image": "/",
           "Desciption": "2: #imagen# Mientras tanto, prepare la salsa de mojo combinando todos los ingredientes que figuran en la descripción."
         },
         {
           "title": "Emplatar",
           "number": 3,
+          "Image": "/",
           "Desciption": "3: #imagen# Verter la salsa recién preparada sobre las patatas y servir caliente."
         }
       ]
@@ -95,6 +99,7 @@
       "Time": "60 minutes",
       "Description": "Receta clásica italiana, con masa crujiente, tomate y queso mozzarella fibroso",
       "Tags": "Vegetarian,Savory",
+      "Image": "/",
       "Ingredients": [
         {
           "Ammount": "120g",
@@ -133,15 +138,19 @@
         {
           "title": "Extender la masa",
           "number": 1,
-          "Desciption": "1: Extender la masa y estirarla con un rodillo",
-          "Image": ""
+          "Image": "/",
+          "Desciption": "1: Extender la masa y estirarla con un rodillo"
         },
         {
+          "title": "Extender la masa",
           "number": 2,
+          "Image": "/",
           "Desciption": "2:#imagen# Poner el tomate sobre la masa y despues la mozzarella"
         },
         {
+          "title": "Extender la masa",
           "number": 3,
+          "Image": "/",
           "Desciption": "3:#imagen# Poner la pizza en el horno"
         }
       ]
@@ -153,6 +162,7 @@
       "Time": "35 minutes",
       "Description": "Receta del postre italiano más famoso hecho con bizcochos de soletilla, mascarpone y huevos",
       "Tags": "Vegetarian,Sweet",
+      "Image": "/",
       "Ingredients": [
         {
           "Ammount": "120g",
@@ -191,16 +201,19 @@
         {
           "title": "Combinar Queso con Azucar",
           "number": 1,
+          "Image": "/",
           "Desciption": "Poner el queso mascarpone en un bol con el azúcar glas"
         },
         {
           "title": "Batir yemas con Azucar",
           "number": 2,
+          "Image": "/",
           "Desciption": "Batir las yemas con el azúcar"
         },
         {
           "title": "Añadir Huevos",
           "number": 3,
+          "Image": "/",
           "Desciption": "Añadir los huevos al mascarpone"
         }
       ]
