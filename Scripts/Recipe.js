@@ -57,7 +57,7 @@ function loadContent(){
                     '            <h1 id="title" class="title-step">'+ step.title +'</h1>\n' +
                     '        </header>\n' +
                     '        <figure>\n' +
-                    '            <img src="../Images/img.png" width="400">\n' +
+                    '            <img src='+ step.Image + ' width="400">\n' +
                     '        </figure>\n' +
                     '        <h2 class="text-step">' + step.Desciption +'</h2>\n' +
                     '    </article>\n' +

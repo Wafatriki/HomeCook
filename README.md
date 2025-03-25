@@ -4,6 +4,12 @@
 - Nombre de usuario: ernestina@HomeCook.com
 - Contraseña: Soy_Ernestina1
 
+## Dependencias
+- Para poder ejecutar hay que tener instalado el *json-server*
+- Se deve trasladar el directorio de trabajo a "JSON_SERVER"
+- npm install -g json-server
+- json-server --watch All.json
+
 ## Descripción del proyecto:
 Nuestro proyecto consiste en ofrecer una página web de recetas.
 La idea era disponer de un sitio en el que se pudiera buscar la receta deseada, tener una cuenta, buscar recetas por tipo y filtrar por receta.
