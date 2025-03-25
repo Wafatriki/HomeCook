@@ -33,6 +33,18 @@ function loadRecipeOfTheDay(){
         }).catch()
 }
 
+function loadTiposDeReceta(){
+    fetch("http://localhost:3000/TiposDeReceta/")
+    .then(res => res.json())
+    .then(recipe => {
+        var TiposDeRecetaName = document.getElementById("text_type");
+        var TiposDeRecetaImage = document.getElementById("TiposDeReceta1");
+        TiposDeRecetaName.textContent = recipe[0].Name;
+        TiposDeRecetaImage.src = recipe[0].Image;
+        TiposDeRecetaImage.href= "Ensalada";
+    }).catch()
+}
+
 
 function iniciarMenu() {
     const menuToggle = document.querySelector(".menu-toggle");

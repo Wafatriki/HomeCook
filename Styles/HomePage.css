@@ -94,6 +94,10 @@ ul{
     justify-content: center;
     align-items: center;
 }
+.icon_type img{
+    width: 50px;
+    height: auto;
+}
 .icon_type::before,
 .icon_type::after {
     content: "";
