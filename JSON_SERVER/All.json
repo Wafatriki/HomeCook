@@ -97,22 +97,44 @@
       "Tags": "Vegetarian,Savory",
       "Ingredients": [
         {
-          "Ammount": "500 g",
-          "Ingredient": "Potatoes"
+          "Ammount": "120g",
+          "Ingredient": "azucar"
         },
         {
-          "Ammount": "1L",
-          "Ingredient": "Water"
+          "Ammount": "4",
+          "Ingredient": "Huevos"
         },
         {
-          "Ammount": "5g",
-          "Ingredient": "Sal Gruesa"
+          "Ammount": "400g",
+          "Ingredient": "bizcochos de soletilla"
+        },
+        {
+          "Ammount": "400ml",
+          "Ingredient": "café"
+        },
+        {
+          "Ammount": "100ml",
+          "Ingredient": "agua"
+        },
+        {
+          "Ammount": "500g",
+          "Ingredient": "Queso Mascarpone"
+        },
+        {
+          "Ammount": "500g",
+          "Ingredient": "Chocolate Amargo"
+        },
+        {
+          "Ammount": "10ml",
+          "Ingredient": "Licor de Naranja"
         }
       ],
       "Steps": [
         {
+          "title": "Extender la masa",
           "number": 1,
-          "Desciption": "1: #imagen# Extender la masa y estirarla con un rodillo"
+          "Desciption": "1: Extender la masa y estirarla con un rodillo",
+          "Image": ""
         },
         {
           "number": 2,
@@ -133,30 +155,53 @@
       "Tags": "Vegetarian,Sweet",
       "Ingredients": [
         {
-          "Ammount": "500 g",
-          "Ingredient": "Potatoes"
+          "Ammount": "120g",
+          "Ingredient": "azucar"
         },
         {
-          "Ammount": "1L",
-          "Ingredient": "Water"
+          "Ammount": "4",
+          "Ingredient": "Huevos"
         },
         {
-          "Ammount": "5g",
-          "Ingredient": "Sal Gruesa"
+          "Ammount": "400g",
+          "Ingredient": "bizcochos de soletilla"
+        },
+        {
+          "Ammount": "400ml",
+          "Ingredient": "café"
+        },
+        {
+          "Ammount": "100ml",
+          "Ingredient": "agua"
+        },
+        {
+          "Ammount": "500g",
+          "Ingredient": "Queso Mascarpone"
+        },
+        {
+          "Ammount": "500g",
+          "Ingredient": "Chocolate Amargo"
+        },
+        {
+          "Ammount": "10ml",
+          "Ingredient": "Licor de Naranja"
         }
       ],
       "Steps": [
         {
+          "title": "Combinar Queso con Azucar",
           "number": 1,
-          "Desciption": "1: #imagen# Poner el queso mascarpone en un bol con el azúcar glas"
+          "Desciption": "Poner el queso mascarpone en un bol con el azúcar glas"
         },
         {
+          "title": "Batir yemas con Azucar",
           "number": 2,
-          "Desciption": "2:#imagen# Batir las yemas con el azúcar"
+          "Desciption": "Batir las yemas con el azúcar"
         },
         {
+          "title": "Añadir Huevos",
           "number": 3,
-          "Desciption": "3:#imagen# Añadir los huevos al mascarpone"
+          "Desciption": "Añadir los huevos al mascarpone"
         }
       ]
     }

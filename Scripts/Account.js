@@ -61,7 +61,7 @@ function loadContent(tab) {
                                 <div class="vegetarian">${recipe.Tags && recipe.Tags.includes("Vegetarian") ? "Vegetariano" : ""}</div>
                             </div>
                             <div class="recipe-info">
-                                <h3><a href="Recipe.html" target="_blank">${recipe.name}</a></h3>
+                                <h3><a href="Recipe.html?id=${recipe.id}" target="_blank">${recipe.name}</a></h3>
                                 <p>${recipe.Creator || "Autor desconocido"}</p>
                             </div>
                         </div>
