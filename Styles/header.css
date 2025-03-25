@@ -29,7 +29,9 @@ nav {
 }
 
 .logo{
-    position: absolute;
+    display: flex;
+    margin: 0;
+    padding: 0;
     left: 0;
     height: 4em;
     width: 4em;
@@ -108,5 +110,89 @@ nav ul li a:hover {
 
 .nav-button:hover {
     background-color: #E89090;
+}
+
+@media (max-width: 768px) {
+    .logo {
+        height: 2em;
+        width: 2em;
+    }
+    .menu-toggle {
+        display: flex;
+    }
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 20px;
+        margin: 0;
+        width: 100%;
+    }
+    .links{
+        display: none;
+    }
+    nav {
+        flex-direction: row;
+        align-items: center;
+        }
+
+    .logo {
+        display: flex;
+        height: 3em;
+        width: 3em;
+    }
+
+    nav ul {
+        flex-direction: row;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .search-form {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        height: 2.5em;
+        width: 2.5em;
+    }
+    .links{
+        display: none;
+    }
+    nav ul {
+        display: flex; /* Ocultamos el menú en móviles */
+        flex-direction: row;
+        width: 100%;
+    }
+    .Botones-Log-Sign{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .menu-toggle {
+        display: block;
+        background-color: #A86D6D;
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .search-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-input {
+        border-radius: 5px;
+        width: 100%;
+    }
 }
 

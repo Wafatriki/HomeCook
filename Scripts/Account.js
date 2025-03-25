@@ -11,6 +11,26 @@ function loadTemplate(fileName, id, callback) {
         }
     })
 }
+function loadUserProfile() {
+    fetch('http://localhost:3000/users/1') // Asegúrate de que esta URL funciona
+        .then(res => {
+            if (!res.ok) {
+                throw new Error('No se pudo cargar el usuario. Verifica JSON Server.');
+            }
+            return res.json();
+        })
+        .then(User => {
+            if (User.isLoggedIn) {
+                document.querySelectorAll('.info .text-field')[0].textContent = User.UserName;
+                document.querySelectorAll('.info .text-field')[1].textContent = User.email;
+            } else {
+                document.querySelectorAll('.info .text-field')[0].textContent = "Nombre de usuario";
+                document.querySelectorAll('.info .text-field')[1].textContent = "Email";
+            }
+        })
+        .catch(err => console.error("Error al cargar los datos del usuario:", err));
+}
+
 
 function loadTemplateFromSource(source, id){
     loadTemplate(source, id);
@@ -35,9 +55,16 @@ function loadContent(tab) {
                     recipeElement.classList.add('recipe');
 
                     recipeElement.innerHTML = `
-                        <img src="${recipe.image}" alt="${recipe.title}" class="recipe-image">
-                        <h3>${recipe.title}</h3>
-                        <p>${recipe.description}</p>
+                        <div class="recipe-card">
+                            <div class="recipe-overlay">
+                                <div class="time">${recipe.Time || "N/A"}</div>
+                                <div class="vegetarian">${recipe.Tags && recipe.Tags.includes("Vegetarian") ? "Vegetariano" : ""}</div>
+                            </div>
+                            <div class="recipe-info">
+                                <h3><a href="Recipe.html" target="_blank">${recipe.name}</a></h3>
+                                <p>${recipe.Creator || "Autor desconocido"}</p>
+                            </div>
+                        </div>
                     `;
                     contentArea.appendChild(recipeElement);
                 });

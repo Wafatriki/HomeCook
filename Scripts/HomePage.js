@@ -13,7 +13,6 @@ function loadTemplate(fileName, id, callback) {
 }
 
 function init() {
-    loadTemplate('Templates/header.html', 'header');
     loadTemplate('Templates/footer.html', 'footer');
 }
 
@@ -32,6 +31,30 @@ function loadRecipeOfTheDay(){
             RecipeOfTheDayTitle.textContent= recipe[0].Name;
             RecipeOfTheDayDescription.textContent= recipe[0].Description;
         }).catch()
+}
+
+
+function iniciarMenu() {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navMenu = document.querySelector(".nav-menu");
+
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener("click", function () {
+            navMenu.classList.toggle("show");
+        });
+    }
+}
+
+function cargaHeader(){
+    fetch('Templates/header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header').innerHTML = data;
+        })
+        .then(() => {
+            iniciarMenu(); // Llama a la función del menú después de cargar el header
+        })
+        .catch(error => console.error('Error al cargar el header:', error));
 }
 function load_template_from_page(template_name, id, callback) {
 

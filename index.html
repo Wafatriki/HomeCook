@@ -6,6 +6,7 @@
     <title>HomePage</title>
     <link rel="stylesheet" href="Styles/HomePage.css">
     <script src="Scripts/HomePage.js"></script>
+    <script src="Scripts/Header.js"></script>
 </head>
     <body>
         <!--
@@ -30,7 +31,7 @@
 
         <div class="Lista_De_Tipos">
             <h2>Tipos de Receta</h2>
-            <ul>
+            <ul class="Lista_De_Tipos_Item_Lista">
                 <li>
                     <div class="Lista_De_Tipos_Item">
                         <div class="icon_type">
@@ -121,7 +122,7 @@
         <h1 class="SectionHeader">Nuestras Recetas Preferidas</h1>
         <div id="ListOfRecipes"></div>
         <h1 class="SectionHeader">¿Por qué HomeCook?</h1>
-        <ul>
+        <ul class="why_list">
             <li>
                 <div class="Why_item">
                     <div class="Why_icon">
@@ -157,6 +158,7 @@
             init();
             loadRecipeOfTheDay();
             loadTemplateFromSource("Templates/ListOfRecipes.html", "ListOfRecipes");
+            loadTemplateFromSource("Templates/header.html", "header");
         </script>
 
     </body>
