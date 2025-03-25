@@ -17,9 +17,13 @@ function loadTemplateFromSource(source, id){
 }
 
 function loadContent(){
-    fetch("http://localhost:3000/Recipes/1")
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+    fetch(`http://localhost:3000/Recipes/${id}`)
         .then(res => res.json())
         .then(recipe => {
+            const title = document.getElementById("RecipeTitle");
+            title.textContent = recipe.name;
             const image = document.getElementById("MainImage");
             image.src = "Images/Papasarrugadas.jpg";
             const ingredientList = document.getElementById("ingredient-list");
