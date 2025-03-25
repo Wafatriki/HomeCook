@@ -24,11 +24,6 @@ body {
     padding: 0;
 
 }
-#Imagen_Receta_Principal{
-    display: flex;
-    overflow: hidden;
-    max-width: 100%;
-}
 .container {
     position: relative;
     align-self: center;
@@ -37,7 +32,6 @@ body {
     max-width: 900px;
     border-radius: 20px;
     overflow: hidden;
-    margin: 1rem;
     background-color: #d3d3d3;
     aspect-ratio: 16 / 9;
 }
@@ -48,6 +42,21 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.image-placeholder::before,
+.image-placeholder::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    background: black;
+    transform: rotate(45deg);
+}
+.image-placeholder::before {
+    height: 100%;
+}
+.image-placeholder::after {
+    height: 100%;
+    transform: rotate(-45deg);
 }
 .text-section {
     flex: 1;
@@ -173,9 +182,4 @@ ul{
     margin-top: 10px;
     font-size: 16px;
     color: #333;
-}
-.RecipeOfTheDayTitle{
-    display: flex;
-    justify-content: center;
-    font-size: clamp(0.7rem, 2rem, 4rem);
 }
