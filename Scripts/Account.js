@@ -55,16 +55,28 @@ function loadContent(tab) {
                     recipeElement.classList.add('recipe');
 
                     recipeElement.innerHTML = `
-                        <div class="recipe-card">
-                            <div class="recipe-overlay">
-                                <div class="time">${recipe.Time || "N/A"}</div>
-                                <div class="vegetarian">${recipe.Tags && recipe.Tags.includes("Vegetarian") ? "Vegetariano" : ""}</div>
+                        <html>
+                            <head>
+                                <link rel="stylesheet" href="../Styles/item.css">
+                            </head>
+                            <body>
+                            
+                            <div class="recipe-container">
+                            
+                                <div class="recipe-card">
+                                    <img src="../Images/img.png" alt="Recipe Image">
+                                    <div class="recipe-overlay">
+                                        <div class="time">30 min</div>
+                                        <div class="vegetarian">Vegetariano</div>
+                                    </div>
+                                    <div class="recipe-info">
+                                        <h3>Nombre</h3>
+                                        <p>Autor</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="recipe-info">
-                                <h3><a href="Recipe.html?id=${recipe.id}" target="_blank">${recipe.name}</a></h3>
-                                <p>${recipe.Creator || "Autor desconocido"}</p>
-                            </div>
-                        </div>
+                            </body>
+                            </html>
                     `;
                     contentArea.appendChild(recipeElement);
                 });

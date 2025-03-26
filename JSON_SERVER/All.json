@@ -35,15 +35,15 @@
       "title": "Acid"
     },
     {
-    "id": "7",
-    "title": "Vegetarian"
+      "id": "7",
+      "title": "Vegetarian"
     }
   ],
   "RecipeOfTheDay": [
     {
       "Name": "Sopa de calabaza",
       "Tags": "Spicy, Vegetarian",
-      "Description":  "Greta Piccoli",
+      "Description": "Greta Piccoli",
       "Image": "Images/soup.png",
       "id": "4"
     }
@@ -205,19 +205,18 @@
         }
       ],
       "Steps": [
-
-          {
-            "title": "Extender la masa",
-            "number": 1,
-            "Image": "/",
-            "Desciption": "1: Extender la masa y estirarla con un rodillo"
-          },
-          {
-            "title": "Extender la masa",
-            "number": 2,
-            "Image": "/",
-            "Desciption": "2:#imagen# Poner el tomate sobre la masa y despues la mozzarella"
-          },
+        {
+          "title": "Extender la masa",
+          "number": 1,
+          "Image": "/",
+          "Desciption": "1: Extender la masa y estirarla con un rodillo"
+        },
+        {
+          "title": "Extender la masa",
+          "number": 2,
+          "Image": "/",
+          "Desciption": "2:#imagen# Poner el tomate sobre la masa y despues la mozzarella"
+        },
         {
           "title": "Extender la masa",
           "number": 3,
@@ -226,43 +225,43 @@
         }
       ]
     },
+    {
+      "id": "4",
+      "name": "Sopa de Calabaza",
+      "Creator": "Greta Piccoli",
+      "Time": "40 minutes",
+      "Description": "La sopa de calabaza al horno con trozos de halloumi es una receta reconfortante y fácil de preparar. Utiliza calabaza Hokkaido, especias cálidas como nuez moscada, comino y canela, y se acompaña con crujientes cubos de halloumi dorado. Es perfecta para el otoño, con una textura cremosa que se logra mezclando los ingredientes horneados con caldo y un toque de limón.",
+      "Image": "Images/soup.png",
+      "Tags": "Vegetarian,Spicy",
+      "Ingredients": [
         {
-          "id": "4",
-          "name": "Sopa de Calabaza",
-          "Creator": "Greta Piccoli",
-          "Time": "40 minutes",
-          "Description": "La sopa de calabaza al horno con trozos de halloumi es una receta reconfortante y fácil de preparar. Utiliza calabaza Hokkaido, especias cálidas como nuez moscada, comino y canela, y se acompaña con crujientes cubos de halloumi dorado. Es perfecta para el otoño, con una textura cremosa que se logra mezclando los ingredientes horneados con caldo y un toque de limón.",
-          "Image": "Images/soup.png",
-          "Tags": "Vegetarian,Spicy",
-          "Ingredients": [
-            {
-              "Ammount": "1kg",
-              "Ingredient": "Calabazas"
-            },
-            {
-              "Ammount": "4",
-              "Ingredient": "Cebolla"
-            },
-            {
-              "Ammount": "1",
-              "Ingredient": "Limon"
-            },
-            {
-              "Ammount": "400ml",
-              "Ingredient": "café"
-            },
-            {
-              "Ammount": "250g",
-              "Ingredient": "Halloumi"
-            },
-            {
-              "Ammount": "75",
-              "Ingredient": "Espinacas tiernas"
-            },
-            {
-              "Ammount": "500g",
-              "Ingredient": "Chocolate Amargo"
-            }
+          "Ammount": "1kg",
+          "Ingredient": "Calabazas"
+        },
+        {
+          "Ammount": "4",
+          "Ingredient": "Cebolla"
+        },
+        {
+          "Ammount": "1",
+          "Ingredient": "Limon"
+        },
+        {
+          "Ammount": "400ml",
+          "Ingredient": "café"
+        },
+        {
+          "Ammount": "250g",
+          "Ingredient": "Halloumi"
+        },
+        {
+          "Ammount": "75",
+          "Ingredient": "Espinacas tiernas"
+        },
+        {
+          "Ammount": "500g",
+          "Ingredient": "Chocolate Amargo"
+        }
       ],
       "Steps": [
         {
