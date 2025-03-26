@@ -35,15 +35,15 @@
       "title": "Acid"
     },
     {
-      "id": "7",
-      "title": "Vegetarian"
+    "id": "7",
+    "title": "Vegetarian"
     }
   ],
   "RecipeOfTheDay": [
     {
       "Name": "Sopa de calabaza",
       "Tags": "Spicy, Vegetarian",
-      "Description": "Greta Piccoli",
+      "Description":  "Greta Piccoli",
       "Image": "Images/soup.png",
       "id": "4"
     }
@@ -58,44 +58,44 @@
   "Recipes": [
     {
       "id": "1",
-      "name": "Papas arrugadas con mojo",
+      "name": "Espaguetis a la boloñesa",
       "Creator": "Robert",
       "Time": "30 minutes",
-      "Description": "Clásica receta canaria a basa de papas y una salsa tradicional llamada mojo",
-      "Tags": "Vegetarian,Spicy",
-      "Image": "Images/Papasarrugadas.jpg",
+      "Description": "Ricos, con mucha salsa y con un sabor increíble.",
+      "Tags": "Vegetarian",
+      "Image": "Images/boloñesa.png",
       "Ingredients": [
         {
           "Ammount": "500 g",
-          "Ingredient": "Potatoes"
+          "Ingredient": "espaguetis"
         },
         {
-          "Ammount": "1L",
-          "Ingredient": "Water"
+          "Ammount": "500g",
+          "Ingredient": "Carne molida"
         },
         {
-          "Ammount": "5g",
-          "Ingredient": "Sal Gruesa"
+          "Ammount": "40ml",
+          "Ingredient": "aceite de oliva"
         }
       ],
       "Steps": [
         {
-          "title": "Hervir",
+          "title": "Preparación",
           "number": 1,
           "Image": "/",
-          "Desciption": "1: #imagen# Pon las papas a hervir."
+          "Desciption": "Para el sofrito, pela y corta por la mitad la cebolla y el ajo. Pela y pica la zanahoria en trozos grandes. Pica el apio en trozos grandes. Ponlos en un procesador de alimentos o licuadora y pícalo todo uniformemente hasta que quede tan fino como la carne molida."
         },
         {
-          "title": "Preparar Mojo",
+          "title": "Añadir carne",
           "number": 2,
           "Image": "/",
-          "Desciption": "2: #imagen# Mientras tanto, prepare la salsa de mojo combinando todos los ingredientes que figuran en la descripción."
+          "Desciption": "Luego, añade la carne molida a la sartén y fríela durante unos 10-15 minutos más. Mientras se fríe, deshaz la carne con una cuchara de cocina. Sazona con sal y pimienta."
         },
         {
-          "title": "Emplatar",
+          "title": "Añadir tomate",
           "number": 3,
           "Image": "/",
-          "Desciption": "3: #imagen# Verter la salsa recién preparada sobre las patatas y servir caliente."
+          "Desciption": "Añade los tomates triturados enlatados, la pasta de tomate, la sal, la pimienta y el orégano seco. Cocina a fuego medio sin tapar durante unos 15-30 minutos hasta que la salsa espese."
         }
       ]
     },
@@ -106,7 +106,7 @@
       "Time": "60 minutes",
       "Description": "Receta clásica italiana, con masa crujiente, tomate y queso mozzarella fibroso",
       "Tags": "Vegetarian,Savory",
-      "Image": "/",
+      "Image": "Images/pizza.png",
       "Ingredients": [
         {
           "Ammount": "120g",
@@ -145,19 +145,19 @@
         {
           "title": "Extender la masa",
           "number": 1,
-          "Image": "/",
+          "Image": "Images/pizza1.png",
           "Desciption": "1: Extender la masa y estirarla con un rodillo"
         },
         {
           "title": "Extender la masa",
           "number": 2,
-          "Image": "/",
+          "Image": "Images/pizza2.png",
           "Desciption": "2:#imagen# Poner el tomate sobre la masa y despues la mozzarella"
         },
         {
           "title": "Extender la masa",
           "number": 3,
-          "Image": "/",
+          "Image": "Images/pizza3.png",
           "Desciption": "3:#imagen# Poner la pizza en el horno"
         }
       ]
@@ -169,7 +169,7 @@
       "Time": "35 minutes",
       "Description": "Receta del postre italiano más famoso hecho con bizcochos de soletilla, mascarpone y huevos",
       "Tags": "Vegetarian,Sweet",
-      "Image": "/",
+      "Image": "Images/tiramisu.png",
       "Ingredients": [
         {
           "Ammount": "120g",
@@ -205,23 +205,24 @@
         }
       ],
       "Steps": [
+
         {
-          "title": "Extender la masa",
+          "title": "Mezcla",
           "number": 1,
-          "Image": "/",
-          "Desciption": "1: Extender la masa y estirarla con un rodillo"
+          "Image": "Images/tiramisu1.png",
+          "Desciption": "Para nuestra receta de tiramisú, empieza separando las yemas. Coloca las yemas en un bol con azúcar glas y bate hasta obtener una mezcla cremosa. Luego, añade el Amaretto y el mascarpone, removiendo hasta obtener una mezcla suave."
         },
         {
-          "title": "Extender la masa",
+          "title": "Batir",
           "number": 2,
-          "Image": "/",
-          "Desciption": "2:#imagen# Poner el tomate sobre la masa y despues la mozzarella"
+          "Image": "Images/tiramisu2.png",
+          "Desciption": "Batir las claras de huevo con una pizca de sal hasta que formen picos firmes. Incorporar lentamente el resto del azúcar glas. Incorporar con cuidado las claras batidas a la crema de mascarpone."
         },
         {
-          "title": "Extender la masa",
+          "title": "Finalizar",
           "number": 3,
-          "Image": "/",
-          "Desciption": "3:#imagen# Poner la pizza en el horno"
+          "Image": "Images/tiramisu3.png",
+          "Desciption": " Termina con una capa de mascarpone y espolvorea ligeramente con chocolate rallado y cacao en polvo. Deja enfriar en el refrigerador al menos 3 horas."
         }
       ]
     },
@@ -273,13 +274,13 @@
         {
           "title": "Preparación",
           "number": 2,
-          "Image": "/",
+          "Image": "Images/Calabaza2.png",
           "Desciption": "Coloque las cebollas y la calabaza cortada en cubitos en una bandeja para hornear forrada con papel pergamino, dejando algo de espacio para el halloumi. Rocíe las verduras con aceite de oliva y espolvoree con especias, luego mezcle bien. "
         },
         {
           "title": "Batir",
           "number": 3,
-          "Image": "/",
+          "Image": "Images/Calabaza3.png",
           "Desciption": "Transfiera con cuidado la calabaza y la cebolla de la bandeja a una batidora de pie. Agregue el ajo cortando los dientes asados y exprimiendo el contenido de la piel. Deje el halloumi en la bandeja y devuélvalo al horno para mantenerlo caliente."
         }
       ]
