@@ -82,19 +82,19 @@
         {
           "title": "Preparación",
           "number": 1,
-          "Image": "/",
+          "Image": "Images/boloñesa1.png",
           "Desciption": "Para el sofrito, pela y corta por la mitad la cebolla y el ajo. Pela y pica la zanahoria en trozos grandes. Pica el apio en trozos grandes. Ponlos en un procesador de alimentos o licuadora y pícalo todo uniformemente hasta que quede tan fino como la carne molida."
         },
         {
           "title": "Añadir carne",
           "number": 2,
-          "Image": "/",
+          "Image": "Images/boloñesa2.png",
           "Desciption": "Luego, añade la carne molida a la sartén y fríela durante unos 10-15 minutos más. Mientras se fríe, deshaz la carne con una cuchara de cocina. Sazona con sal y pimienta."
         },
         {
           "title": "Añadir tomate",
           "number": 3,
-          "Image": "/",
+          "Image": "Images/boloñesa3.png",
           "Desciption": "Añade los tomates triturados enlatados, la pasta de tomate, la sal, la pimienta y el orégano seco. Cocina a fuego medio sin tapar durante unos 15-30 minutos hasta que la salsa espese."
         }
       ]
