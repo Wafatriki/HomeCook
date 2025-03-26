@@ -5,7 +5,20 @@ html, body {
     overflow-y: auto;
     margin: 0;
 }
+#recommendations_iframe {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 20px auto;
+}
 
+.recipe-container {
+    width: 220px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    }
 header, footer {
     width: 100%;
     height: auto;

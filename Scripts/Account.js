@@ -41,7 +41,7 @@ function loadContent(tab) {
     contentArea.innerHTML = ""; // Limpia el área de contenido antes de cargar nuevas recetas
 
     // Verifica si la pestaña es "guardado"
-    if (tab === "guardado") {
+    if (tab === "guardado" || "me-gusta" || "ultimas-vistas") {
         fetch('http://localhost:3000/Recipes') // URL del JSON Server
             .then(response => {
                 if (!response.ok) {
