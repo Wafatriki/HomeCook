@@ -60,21 +60,23 @@ function loadContent(tab) {
                                 <link rel="stylesheet" href="../Styles/item.css">
                             </head>
                             <body>
-                            
+                            <a href="Recipe.html?id=${recipe.id}">
                             <div class="recipe-container">
                             
                                 <div class="recipe-card">
-                                    <img src="../Images/img.png" alt="Recipe Image">
+                              
+                                    <img src="${recipe.Image !== "/"  ? recipe.Image : "Images/img.png"}" alt="Recipe Image">
                                     <div class="recipe-overlay">
-                                        <div class="time">30 min</div>
+                                        <div class="time">${recipe.Time}</div>
                                         <div class="vegetarian">Vegetariano</div>
                                     </div>
                                     <div class="recipe-info">
-                                        <h3>Nombre</h3>
-                                        <p>Autor</p>
+                                        <h3>${recipe.name}</h3>
+                                        <p>${recipe.Creator}</p>
                                     </div>
                                 </div>
                             </div>
+                            </a>
                             </body>
                             </html>
                     `;

@@ -5,12 +5,10 @@ body {
 }
 .recipe-container {
     display: flex;
-    gap: 10px;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 .recipe-card {
-    width: 22%;
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;

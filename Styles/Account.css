@@ -125,9 +125,25 @@ header, footer {
 }
 
 #content-area {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
     margin-top: 20px;
-    width: 100%;
-    max-width: 800px;
+    width: 80%;
+    gap: 5rem;
+    max-width: 80%;
+}
+.recipe{
+    padding: 0;
+    margin: 0;
+    flex:  1 0;
+    width: 30%;
+    min-width: 10%;
+    max-width: 30%;
+    flex-direction: column;
 }
 
 /* MEDIA QUERIES */
@@ -167,7 +183,25 @@ header, footer {
         margin: 50px 0;
         padding: 10px;
     }
-
+    #content-area {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        align-self: center;
+        justify-content: center;
+        margin-top: 20px;
+        width: 100%;
+        gap: 3rem;
+    }
+    .recipe{
+        padding: 0;
+        margin: 0;
+        flex:  1;
+        width: 100%;
+        min-width: 100%;
+        flex-direction: column;
+    }
     .avatar {
         width: 80px;
         height: 80px;
