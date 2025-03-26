@@ -15,6 +15,11 @@
     gap: 15px;
     justify-content: center;
 }
+.separator {
+    height: 20px;
+    margin: 20px 0;
+    border-top: 1px;
+}
 .recipe-container {
     width: 400px;
     background-color: #fff;
@@ -90,6 +95,30 @@ ul{
     justify-content: center;
 }
 
+.Why_icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.Why_icon img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.Why_text {
+    justify-self: center;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+}
+
+
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -131,6 +160,7 @@ Lista_De_Tipos_Item_Lista {
     overflow: scroll;
 }
 .Lista_De_Tipos{
+    margin-left: 30px;
     overflow-x: scroll;
 }
 .Lista_De_Tipos_Item {
@@ -160,30 +190,11 @@ Lista_De_Tipos_Item_Lista {
     color: #9F6A6A;
 }
 .why_list{
+    gap: 60px;
     overflow-x: scroll;
 }
 
-.Why_icon{
-    background: #c4c4c4;
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.Why_item {
-    display: block;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
-}
-.Why_text{
-    justify-self: center;
-    margin-top: 10px;
-    font-size: 16px;
-    color: #333;
-}
+
 .RecipeOfTheDayTitle{
     display: flex;
     justify-content: center;
