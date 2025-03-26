@@ -14,13 +14,13 @@
 
 #main_step {
     float: left;
-    width: 660px;
     margin: 20px;
 }
 
 article {
-    background: #CCCCCC;
+    background: #FFFFFF; /* Blanco */
     padding: 20px;
     margin-bottom: 10px;
     border-radius: 15px;
 }
+
