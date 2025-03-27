@@ -14,6 +14,7 @@
     flex-wrap: wrap;
     gap: 15px;
     justify-content: center;
+
 }
 .separator {
     height: 20px;
@@ -179,8 +180,8 @@ Lista_De_Tipos_Item_Lista {
 .text_type{
     flex: 1;
     padding: 10px;
-    font-family: serif;
-    font-size: 1.2em;
+    font-family: 'Raleway';
+    font-size: 1.0em;
     line-height: 1.6;
     align-content: center;
     text-align: left;

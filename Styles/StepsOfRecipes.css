@@ -18,9 +18,52 @@
 }
 
 article {
-    background: #FFFFFF; /* Blanco */
+    background: #FFFFFF;
     padding: 20px;
     margin-bottom: 10px;
     border-radius: 15px;
+}
+
+@media screen and (max-width: 768px) {
+    #main_step {
+        float: none;
+        margin: 10px auto;
+        width: 90%;
+    }
+
+    article {
+        padding: 10px;
+    }
+
+    .title-step {
+        font-size: 18px;
+    }
+
+    .text-step {
+        font-size: 14px;
+    }
+
+    figure img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .title-step {
+        font-size: 16px;
+    }
+
+    .text-step {
+        font-size: 12px;
+    }
+
+    figure img {
+        width: 100%;
+        height: auto;
+    }
+
+    article {
+        padding: 5px;
+    }
 }
 

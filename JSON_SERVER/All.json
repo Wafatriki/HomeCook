@@ -77,7 +77,7 @@
       "id": "5"
     },
     {
-      "Name": "Limon",
+      "Name": "Limón",
       "Image": "Images/soup.png",
       "id": "6"
     },
@@ -183,19 +183,19 @@
           "title": "Extender la masa",
           "number": 1,
           "Image": "Images/pizza1.png",
-          "Desciption": "1: Extender la masa y estirarla con un rodillo"
+          "Desciption": "Coloque la masa sobre una superficie de trabajo enharinada y amase hasta que la masa esté suave, pero firme. Transfiera nuevamente a un tazón enharinado, cubra con un paño de cocina y almacene en un lugar cálido y seco durante aprox. 1 a 2 horas hasta que la masa haya duplicado su volumen"
         },
         {
-          "title": "Extender la masa",
+          "title": "Condimentos",
           "number": 2,
           "Image": "Images/pizza2.png",
-          "Desciption": "2:#imagen# Poner el tomate sobre la masa y despues la mozzarella"
+          "Desciption": "Coloque los tomates y la mozzarella encima, regrese al horno y hornee por otros 6 a 7 min. hasta que el queso se derrita y la corteza esté dorada.\n\n"
         },
         {
-          "title": "Extender la masa",
+          "title": "Adorno",
           "number": 3,
           "Image": "Images/pizza3.png",
-          "Desciption": "3:#imagen# Poner la pizza en el horno"
+          "Desciption": "Adorne la pizza con hojas de albahaca fresca. Rocíe con aceite de oliva de alta calidad antes de servir, si lo desea. ¡Disfrutar!"
         }
       ]
     },
