@@ -137,10 +137,11 @@ ul{
     align-items: center;
 }
 .icon_type img{
-    width: 50px;
-    height: auto;
+    width: 80px;
+    height: 100px;
+    object-fit: cover;
 }
-.icon_type::before,
+/*.icon_type::before,
 .icon_type::after {
     content: "";
     position: absolute;
@@ -154,7 +155,7 @@ ul{
 .icon_type::after {
     height: 70%;
     transform: rotate(-45deg);
-}
+}*/
 Lista_De_Tipos_Item_Lista {
     display: flex;
     overflow: scroll;
@@ -177,10 +178,12 @@ Lista_De_Tipos_Item_Lista {
 }
 .text_type{
     flex: 1;
-    padding: 20px;
+    padding: 10px;
     font-family: serif;
     font-size: 1.2em;
     line-height: 1.6;
+    align-content: center;
+    text-align: left;
 }
 
 .SectionHeader{

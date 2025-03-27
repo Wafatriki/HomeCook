@@ -35,17 +35,47 @@ function loadRecipeOfTheDay(){
             RecipeOfTheDayDescription.textContent= recipe[0].Description;
         }).catch()
 }
-
-function loadTiposDeReceta(){
+function loadTiposDeReceta() {
     fetch("http://localhost:3000/TiposDeReceta/")
-    .then(res => res.json())
-    .then(recipe => {
-        var TiposDeRecetaName = document.getElementById("text_type");
-        var TiposDeRecetaImage = document.getElementById("TiposDeReceta1");
-        TiposDeRecetaName.textContent = recipe[0].Name;
-        TiposDeRecetaImage.src = recipe[0].Image;
-        TiposDeRecetaImage.href= "Ensalada";
-    }).catch()
+        .then(res => res.json())
+        .then(recipe => {
+            const textElements = document.querySelectorAll(".text_type");
+
+            textElements.forEach((element, index) => {
+                if (recipe[index]) {
+                    element.textContent = recipe[index].Name;
+                }
+            });
+            const imageElements = document.querySelectorAll(".icon_type img");
+
+            imageElements.forEach((img, index) => {
+                if (recipe[index]) {
+                    img.src = recipe[index].Image;
+                    img.alt = recipe[index].Name;
+                }
+            });
+        })
+        .catch(error => console.error("Error fetching recipes:", error));
+}
+
+function loadTiposDeIngredients() {
+    fetch("http://localhost:3000/TiposDeIngredientes/")
+        .then(res => res.json())
+        .then(ingredients => {
+            ingredients.forEach(ingredient => {
+                const textElement = document.querySelector(`.text_type[data-id="${ingredient.id}"]`);
+                if (textElement) {
+                    textElement.textContent = ingredient.Name;
+                }
+
+                const imageElement = document.querySelector(`.TiposDeReceta${ingredient.id}`);
+                if (imageElement) {
+                    imageElement.src = ingredient.Image;
+                    imageElement.alt = ingredient.Name;
+                }
+            });
+        })
+        .catch(error => console.error("Error fetching ingredients:", error));
 }
 
 

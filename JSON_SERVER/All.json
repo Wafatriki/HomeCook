@@ -50,9 +50,46 @@
   ],
   "TiposDeReceta": [
     {
-      "Name": "Healthy",
-      "Image": "Images/ensalada.png",
+      "Name": "Italiana",
+      "Image": "Images/pizza.png",
       "id": "1"
+    },
+    {
+      "Name": "Pasta",
+      "Image": "Images/boloñesa.png",
+      "id": "2"
+    },
+    {
+      "Name": "Caliente",
+      "Image": "Images/soup.png",
+      "id": "3"
+    },
+    {
+      "Name": "Dulce",
+      "Image": "Images/tiramisu.png",
+      "id": "4"
+    }
+  ],
+  "TiposDeIngredientes": [
+    {
+      "Name": "Cacao",
+      "Image": "Images/tiramisu.png",
+      "id": "5"
+    },
+    {
+      "Name": "Limon",
+      "Image": "Images/soup.png",
+      "id": "6"
+    },
+    {
+      "Name": "Tomate",
+      "Image": "Images/pizza.png",
+      "id": "7"
+    },
+    {
+      "Name": "Carne",
+      "Image": "Images/boloñesa.png",
+      "id": "8"
     }
   ],
   "Recipes": [
