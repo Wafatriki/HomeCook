@@ -35,15 +35,15 @@
       "title": "Acid"
     },
     {
-    "id": "7",
-    "title": "Vegetarian"
+      "id": "7",
+      "title": "Vegetarian"
     }
   ],
   "RecipeOfTheDay": [
     {
       "Name": "Sopa de calabaza",
       "Tags": "Spicy, Vegetarian",
-      "Description":  "Greta Piccoli",
+      "Description": "Greta Piccoli",
       "Image": "Images/soup.png",
       "id": "4"
     }
@@ -242,7 +242,6 @@
         }
       ],
       "Steps": [
-
         {
           "title": "Mezcla",
           "number": 1,
