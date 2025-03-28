@@ -99,7 +99,7 @@
       "Creator": "Robert",
       "Time": "30 minutes",
       "Description": "Ricos, con mucha salsa y con un sabor increíble.",
-      "Tags": "Vegetarian",
+      "Tags": "Vegetarian,Italian,Pasta",
       "Image": "Images/boloñesa.png",
       "Ingredients": [
         {
@@ -142,7 +142,7 @@
       "Creator": "Giuseppe",
       "Time": "60 minutes",
       "Description": "Receta clásica italiana, con masa crujiente, tomate y queso mozzarella fibroso",
-      "Tags": "Vegetarian,Savory",
+      "Tags": "Vegetarian,Savory,Italian",
       "Image": "Images/pizza.png",
       "Ingredients": [
         {
@@ -205,7 +205,7 @@
       "Creator": "Maria",
       "Time": "35 minutes",
       "Description": "Receta del postre italiano más famoso hecho con bizcochos de soletilla, mascarpone y huevos",
-      "Tags": "Vegetarian,Sweet",
+      "Tags": "Vegetarian,Sweet,Choco",
       "Image": "Images/tiramisu.png",
       "Ingredients": [
         {
@@ -269,7 +269,7 @@
       "Time": "40 minutes",
       "Description": "La sopa de calabaza al horno con trozos de halloumi es una receta reconfortante y fácil de preparar. Utiliza calabaza Hokkaido, especias cálidas como nuez moscada, comino y canela, y se acompaña con crujientes cubos de halloumi dorado. Es perfecta para el otoño, con una textura cremosa que se logra mezclando los ingredientes horneados con caldo y un toque de limón.",
       "Image": "Images/soup.png",
-      "Tags": "Vegetarian,Spicy",
+      "Tags": "Vegetarian,Spicy,Warming",
       "Ingredients": [
         {
           "Ammount": "1kg",
