@@ -27,7 +27,6 @@ function loadRecipeOfTheDay(){
             var RecipeOfTheDayImage = document.getElementById("Imagen_Receta_Principal");
             var RecipeOfTheDayTitle =document.getElementById('Recipe_Of_The_Day_Title');
             var RecipeOfTheDayDescription =document.getElementById('Recipe_Of_The_Day_Text');
-            console.log("Recipe.html?id="+recipe[0].id);
             recipeOfTheDayLink.href="Recipe.html?id="+ recipe[0].id;
             RecipeOfTheDayImage.src = recipe[0].Image;
             RecipeOfTheDayImage.href= "Chocolate Vegano";
