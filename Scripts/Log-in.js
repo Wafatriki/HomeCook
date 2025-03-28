@@ -15,6 +15,14 @@ function loadTemplate(fileName, id, callback) {
 function loadTemplateFromSource(source, id){
     loadTemplate(source, id);
 }
+function isLoggedIn(){
+    fetch("http://localhost:3000/users/1")
+        .then(res => res.json()).then(User => {
+            if(User.isLoggedIn){
+                window.location.replace("Account.html");
+            }
+    }).catch(err => console.log(err));
+}
 function Log_In_Listener() {
     document.getElementById("login").addEventListener("submit", function(event) {
         event.preventDefault();

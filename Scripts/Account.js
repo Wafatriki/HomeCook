@@ -35,7 +35,22 @@ function loadUserProfile() {
 function loadTemplateFromSource(source, id){
     loadTemplate(source, id);
 }
+function logOut(){
+    const logoutButton = document.getElementById('Log_Out');
+    logoutButton.addEventListener('click', function(evt){
+        evt.preventDefault();
+        fetch("http://localhost:3000/users/1", {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ isLoggedIn: false })
+        }).then((res) => {
+            window.location.replace("index.html");
+        })
 
+    })
+}
 function loadContent(tab) {
     const contentArea = document.getElementById('content-area');
     contentArea.innerHTML = ""; // Limpia el área de contenido antes de cargar nuevas recetas
