@@ -162,8 +162,10 @@ Lista_De_Tipos_Item_Lista {
     overflow: scroll;
 }
 .Lista_De_Tipos{
-    margin-left: 30px;
-    overflow-x: scroll;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
 }
 .Lista_De_Tipos_Item {
     position: relative;
@@ -186,7 +188,13 @@ Lista_De_Tipos_Item_Lista {
     align-content: center;
     text-align: left;
 }
-
+.Bloque_Tipos{
+    margin-left: 1rem;
+}
+.Bloque_Tipos h2{
+    color: #9F6A6A;
+    font-weight: bold;
+}
 .SectionHeader{
     display: flex;
     justify-self: center;
