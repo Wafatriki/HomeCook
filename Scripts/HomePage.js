@@ -97,7 +97,7 @@ function loadContent(tab) {
                 recipeElement.innerHTML = `
                         <html>
                             <head>
-                                <link rel="stylesheet" href="../Styles/item.css">
+                                <link rel="stylesheet" href="Styles/item.css">
                             </head>
                             <body>
                             <a href="Recipe.html?id=${recipe.id}">
