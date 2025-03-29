@@ -5,20 +5,23 @@ body {
 }
 .recipe-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 15px;
 }
+
 .recipe-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    text-align: center;
     position: relative;
+    flex: 1 1 calc(33.33% - 20px);
+    max-width: 300px;
+    min-width: 200px;
+    transition: all 0.3s ease-in-out;
 }
+
 .recipe-card img {
     width: 100%;
     height: auto;
+    z-index: 1;
 }
 .recipe-info {
     padding: 10px;
@@ -39,6 +42,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 2;
 }
 .time, .vegetarian {
     background-color: rgba(255, 255, 255, 0.8);
@@ -73,18 +77,33 @@ a:hover {
     text-decoration: underline;
 }
 
-
 @media (max-width: 768px) {
     .recipe-card {
-        flex: 1 1 calc(50% - 20px); /* Dos tarjetas por fila */
+        flex: 1 1 calc(50% - 20px);
     }
 }
 
-/* Ajustes para pantallas pequeñas (móviles) */
 @media (max-width: 480px) {
-    .recipe-card {
-        flex: 1 1 100%; /* Ocupa todo el ancho en móviles */
+    .recipe-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column; /* Apila las tarjetas verticalmente */
+        align-items: center; /* Centra las tarjetas */
     }
-}
+    .recipe-card img {
+        width: 100%;
+        height: auto;
+        max-height: 150px; /* Limita la altura de la imagen */
+        object-fit: cover; /* Ajusta la imagen sin distorsionarla */
+    }
 
+    .recipe-info h3 {
+        font-size: 1em; /* Reduce el tamaño del título */
+    }
+
+    .recipe-info p {
+        font-size: 0.9em; /* Reduce el tamaño del texto */
+    }
+
+}
 
