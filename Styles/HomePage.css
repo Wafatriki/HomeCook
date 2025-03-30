@@ -1,13 +1,31 @@
-iframe {
-    width: 100%;
-    border: none;
-    margin: 0;
-    padding: 0;
-}
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.content-wrapper {
+    margin-top: 400px; /* Ajusta este valor según la altura de tu header */
+}
+
+#ListOfRecipes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+
+}
+.separator {
+    height: 20px;
+    margin: 20px 0;
+    border-top: 1px;
+}
+.recipe-container {
+    width: 400px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
 }
 body {
     display: flex;
@@ -17,21 +35,21 @@ body {
     padding: 20px;
 }
 
-.iframe-container {
-    width: 100%;
-    height: auto;
-    text-align: center;
-    padding: 0;
-
+#Imagen_Receta_Principal{
+    display: flex;
+    overflow: hidden;
+    max-width: 100%;
 }
 .container {
     position: relative;
     align-self: center;
     display: flex;
     width: 100%;
-    max-width: 900px;
+    max-width: 1200px;
     border-radius: 20px;
+    height: 500px;
     overflow: hidden;
+    margin: 1rem;
     background-color: #d3d3d3;
     aspect-ratio: 16 / 9;
 }
@@ -43,27 +61,14 @@ body {
     justify-content: center;
     align-items: center;
 }
-.image-placeholder::before,
-.image-placeholder::after {
-    content: "";
-    position: absolute;
-    width: 2px;
-    background: black;
-    transform: rotate(45deg);
-}
-.image-placeholder::before {
-    height: 100%;
-}
-.image-placeholder::after {
-    height: 100%;
-    transform: rotate(-45deg);
-}
 .text-section {
     flex: 1;
+    text-align: center;
     padding: 20px;
-    font-family: serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 1.2em;
     line-height: 1.6;
+    margin-top: 15%;
 }
 .buttons {
     position: absolute;
@@ -71,16 +76,18 @@ body {
     left: 10px;
     display: flex;
     gap: 10px;
+
 }
 .buttons button {
     border: none;
     border-radius: 10px;
     padding: 8px 12px;
-    background-color: #7a7a7a;
+    background-color: #4db43f;
     color: white;
     font-family: sans-serif;
     font-size: 0.9em;
     cursor: pointer;
+
 }
 ul{
     padding: 1em;
@@ -88,6 +95,31 @@ ul{
     display: flex;
     justify-content: center;
 }
+
+.Why_icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.Why_icon img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.Why_text {
+    justify-self: center;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+}
+
+
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -105,7 +137,12 @@ ul{
     justify-content: center;
     align-items: center;
 }
-.icon_type::before,
+.icon_type img{
+    width: 80px;
+    height: 100px;
+    object-fit: cover;
+}
+/*.icon_type::before,
 .icon_type::after {
     content: "";
     position: absolute;
@@ -119,6 +156,16 @@ ul{
 .icon_type::after {
     height: 70%;
     transform: rotate(-45deg);
+}*/
+Lista_De_Tipos_Item_Lista {
+    display: flex;
+    overflow: scroll;
+}
+.Lista_De_Tipos{
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
 }
 .Lista_De_Tipos_Item {
     position: relative;
@@ -132,54 +179,46 @@ ul{
     aspect-ratio: 16 / 9;
     margin: 5em;
 }
+
 .text_type{
     flex: 1;
-    padding: 20px;
-    font-family: serif;
-    font-size: 1.2em;
+    padding: 10px;
+    font-family: 'Raleway';
+    font-size: 1.0em;
     line-height: 1.6;
+    align-content: center;
+    text-align: left;
 }
-
+.Bloque_Tipos{
+    margin-left: 1rem;
+}
+.Bloque_Tipos h2{
+    color: #9F6A6A;
+    font-weight: bold;
+}
 .SectionHeader{
     display: flex;
     justify-self: center;
     justify-content: center;
     color: #9F6A6A;
 }
+.why_list{
+    gap: 60px;
+    overflow-x: scroll;
+}
 
-.Why_icon{
-    background: #c4c4c4;
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.Why_icon::before,
-.Why_icon::after {
-    content: "";
-    position: absolute;
-    width: 0.1em;
-    background: black;
-    transform: rotate(45deg) translate(4em, -1em);
-}
-.Why_icon::before {
-    height: 10%;
-}
-.Why_icon::after {
-    height: 10%;
-    transform: rotate(-45deg) translate(1em, 4em);;
-}
-.Why_item {
-    display: block;
-    gap: 20px;
-    flex-wrap: wrap;
+
+.RecipeOfTheDayTitle{
+    display: flex;
     justify-content: center;
-    padding: 20px;
+    font-size: clamp(0.7rem, 2rem, 4rem);
 }
-.Why_text{
-    justify-self: center;
-    margin-top: 10px;
-    font-size: 16px;
-    color: #333;
+@media (max-width: 480px) {
+    #ListOfRecipes {
+        width: 100%; /* Ajusta el ancho para que no desborde */
+        max-width: none; /* Evita que se haga demasiado pequeña */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Centra las tarjetas */
+    }
 }

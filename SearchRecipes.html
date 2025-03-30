@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Búsqueda de Recetas</title>
     <link rel="stylesheet" href="./Styles/SearchRecipes.css">
-    <script src="Scripts/xlu-include-file.js"></script>
+    <script src="Scripts/SearchRecipes.js"></script>
+    <script src="Scripts/Header.js"></script>
 </head>
 <body>
-<header id="main_header" xlu-include-file="Templates/header.html"></header>
+<header id="main_header" ></header>
 <nav>
     <ul class="menu">
         <li class="Item_Busqueda">Lo que buscaste</li>
@@ -19,12 +20,17 @@
     </ul>
 </nav>
 
-<div id="ListOfRecipes" xlu-include-file="Templates/ListOfRecipes.html"></div>
+<div id="ListOfRecipes"></div>
 
 
-<footer id="main_footer" xlu-include-file="Templates/footer.html"></footer>
+<footer>
+    <div id="main_footer"></div>
+</footer>
+
 <script>
-    xLuIncludeFile();
+    loadTemplateFromSource("Templates/header.html", "main_header");
+    loadTemplateFromSource("Templates/footer.html", "main_footer");
+    loadTemplateFromSource("Templates/ListOfRecipes.html", "ListOfRecipes");
 </script>
 </body>
 </html>

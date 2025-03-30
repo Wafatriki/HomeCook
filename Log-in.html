@@ -1,34 +1,41 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="Styles/Log-in.css">
-    <script src="Scripts/xlu-include-file.js"></script>
-
+    <script src="Scripts/Log-in.js"></script>
+    <script src="Scripts/Header.js"></script>
 </head>
 <body>
-<div class="iframe-container">
-    <header id="main_header" xlu-include-file="Templates/header.html"></header>
-</div>
+<header>
+    <div id="main_header"></div>
+</header>
 <div class="container">
     <h1>Login</h1>
-    <label class="label" for="username">Usuario:</label>
-    <input type="text" id="username" class="input-bar" name="username">
-    <label class="label" for="password">Contrasena:</label>
-    <input type="password" id="password" class="input-bar" name="password">
-    <button class="login-button">Login</button>
+    <form id="login">
+        <label class="label" for="username">Usuario:</label>
+        <input required type="email" id="username" class="input-bar" name="username" placeholder="tucorreo@ejemplo.com"
+               oninput="this.setCustomValidity('')"
+               title="Introduzca una dirección de correo electrónico válida (ejemplo@mail.com)">
+        <label class="label" for="password">Contraseña:</label>
+        <input required type="password" id="password" class="input-bar" name="password"
+
+               title="Mínimo 8 caracteres, al menos un número, un carácter especial y una mayúscula">
+        <button type="submit" class="login-button">Login</button>
+    </form>
 </div>
-<div class="iframe-container">
-    <footer id="main_footer" xlu-include-file="Templates/footer.html"></footer>
-</div>
+<footer id="footer">
+    <div id="main_footer"></div>
+</footer>
 
 
 <script>
-
-    xLuIncludeFile();
-
+    loadTemplateFromSource("/Templates/header.html", "main_header");
+    loadTemplateFromSource("/Templates/footer.html", "main_footer");
+    Log_In_Listener();
+    isLoggedIn();
 </script>
 
 </body>

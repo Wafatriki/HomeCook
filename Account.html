@@ -6,12 +6,14 @@
     <title>Perfil de Usuario</title>
     <link rel="stylesheet" href="Styles/Account.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
-    <script src="Scripts/xlu-include-file.js"></script>
+    <script src="Scripts/Account.js"></script>
+    <script src="Scripts/Header.js"></script>
 </head>
 
 <body>
-<header id="main_header" xlu-include-file="Templates/header.html"></header>
-
+<header>
+    <div id="main_header"></div>
+</header>
 <div class="content-wrapper">
     <div class="profile-container">
         <div class="avatar"></div>
@@ -25,7 +27,7 @@
                 </div>
                 <div class="icon">
                     <span class="power-icon"></span>
-                    <a href="index.html"><span>Cerrar Sesión</span></a>
+                    <a id="Log_Out" href="index.html"><span>Cerrar Sesión</span></a>
                 </div>
             </div>
         </div>
@@ -51,33 +53,15 @@
     </div>
 </div>
 
-<footer id="main_footer" xlu-include-file="Templates/footer.html"></footer>
+<footer id="footer">
+    <div id="main_footer"></div>
+</footer>
 
 <script>
-    function loadContent(tab) {
-        const contentArea = document.getElementById('content-area');
-        const fileName = "./Templates/ListOfRecipes.html";
-        fetch(fileName)
-            .then(response => response.text())
-            .then(data => {
-                contentArea.innerHTML = data;
-                const recipes = contentArea.querySelectorAll('.recipe');
-                const numberOfClones = 3;
-
-                for (let i = 0; i < numberOfClones; i++) {
-                    recipes.forEach(recipe => {
-                        const clone = recipe.cloneNode(true);
-                        contentArea.appendChild(clone);
-                    });
-                }
-            })
-            .catch(error => {
-                console.error('Error al cargar el contenido:', error);
-                contentArea.innerHTML = '<p>Error al cargar el contenido.</p>';
-            });
-    }
-
-    xLuIncludeFile();
+    loadTemplateFromSource("Templates/header.html", "main_header");
+    loadTemplateFromSource("Templates/footer.html", "main_footer");
+    loadUserProfile();
+    logOut();
 </script>
 </body>
 </html>

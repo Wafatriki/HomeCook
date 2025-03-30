@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap');
 
-h1 {
+.title-step {
     font-weight: bold;
     font-size: 20px;
     font-family: 'Raleway', sans-serif;
 }
 
-h2 {
+.text-step {
     font-size: 16px;
     font-family: 'Raleway', sans-serif;
     font-weight: normal;
@@ -14,13 +14,56 @@ h2 {
 
 #main_step {
     float: left;
-    width: 660px;
     margin: 20px;
 }
 
 article {
-    background: #CCCCCC;
+    background: #FFFFFF;
     padding: 20px;
     margin-bottom: 10px;
     border-radius: 15px;
 }
+
+@media screen and (max-width: 768px) {
+    #main_step {
+        float: none;
+        margin: 10px auto;
+        width: 90%;
+    }
+
+    article {
+        padding: 10px;
+    }
+
+    .title-step {
+        font-size: 18px;
+    }
+
+    .text-step {
+        font-size: 14px;
+    }
+
+    figure img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .title-step {
+        font-size: 16px;
+    }
+
+    .text-step {
+        font-size: 12px;
+    }
+
+    figure img {
+        width: 100%;
+        height: auto;
+    }
+
+    article {
+        padding: 5px;
+    }
+}
+

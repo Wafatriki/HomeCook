@@ -5,10 +5,29 @@ html, body {
     overflow-y: auto;
     margin: 0;
 }
+#recommendations_iframe {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 20px auto;
+}
 
+.recipe-container {
+    width: 220px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    }
 header, footer {
     width: 100%;
     height: auto;
+}
+
+.steps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 body {
@@ -33,7 +52,7 @@ article {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: 100%
+    width: 100%;
 }
 
 header h1 {
@@ -87,15 +106,18 @@ figure {
 }
 
 .ingredients {
+    display: flex;
+    flex-direction: column;
     margin-left: 20px;
-    flex: 0 0 45%;
+    flex: 0 0;
 }
 
 .ingredients h2 {
     margin-top: 0;
 }
 
-.ingredients label, .ingredients input {
+.ingredients label,
+.ingredients input {
     display: block;
     margin: 10px auto;
 }
@@ -111,8 +133,6 @@ figure {
     margin-bottom: 5px;
     padding: 10px;
 }
-
-
 
 .nutrition-section {
     display: flex;
@@ -154,7 +174,71 @@ figure {
     font-size: 1em;
 }
 
-
 .recommendations-title {
     color: #9F6A6A;
+}
+
+@media (max-width: 1024px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-container {
+        flex: unset;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .nutrition-info {
+        flex-direction: column;
+        gap: 5px;
+        width: 100%;
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    #main_step {
+        padding: 10px;
+        width: 95%;
+    }
+
+    article {
+        padding: 15px;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    .nutrition-info {
+        max-width: 200px;
+    }
+
+    .rating .star {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .steps {
+        padding: 10px;
+    }
+    article {
+        padding: 10px;
+    }
+    .nutrition-info {
+        font-size: 0.8em;
+        max-width: 100%;
+    }
+
+    #ingredient-list li {
+        padding: 8px;
+    }
+
+    .actions img {
+        width: 20px;
+        height: 20px;
+    }
 }

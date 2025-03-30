@@ -1,0 +1,394 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "first_name": "Ernestina",
+      "UserName": "ErnestinaHomeCook",
+      "PassWord": "Soy_Ernestina1",
+      "email": "ernestina@HomeCook.com",
+      "isLoggedIn": true
+    }
+  ],
+  "Tags": [
+    {
+      "id": "1",
+      "title": "Vegan"
+    },
+    {
+      "id": "2",
+      "title": "Gluten-free"
+    },
+    {
+      "id": "3",
+      "title": "Spicy"
+    },
+    {
+      "id": "4",
+      "title": "Sweet"
+    },
+    {
+      "id": "5",
+      "title": "Savory"
+    },
+    {
+      "id": "6",
+      "title": "Acid"
+    },
+    {
+      "id": "7",
+      "title": "Vegetarian"
+    }
+  ],
+  "RecipeOfTheDay": [
+    {
+      "Name": "Sopa de calabaza",
+      "Tags": "Spicy, Vegetarian",
+      "Description": "Greta Piccoli",
+      "Image": "Images/soup.png",
+      "id": "4"
+    }
+  ],
+  "TiposDeReceta": [
+    {
+      "Name": "Italiana",
+      "Image": "Images/pizza.png",
+      "id": "1"
+    },
+    {
+      "Name": "Pasta",
+      "Image": "Images/boloñesa.png",
+      "id": "2"
+    },
+    {
+      "Name": "Caliente",
+      "Image": "Images/soup.png",
+      "id": "3"
+    },
+    {
+      "Name": "Dulce",
+      "Image": "Images/tiramisu.png",
+      "id": "4"
+    }
+  ],
+  "TiposDeIngredientes": [
+    {
+      "Name": "Cacao",
+      "Image": "Images/tiramisu.png",
+      "id": "5"
+    },
+    {
+      "Name": "Limón",
+      "Image": "Images/soup.png",
+      "id": "6"
+    },
+    {
+      "Name": "Tomate",
+      "Image": "Images/pizza.png",
+      "id": "7"
+    },
+    {
+      "Name": "Carne",
+      "Image": "Images/boloñesa.png",
+      "id": "8"
+    }
+  ],
+  "Recipes": [
+    {
+      "id": "1",
+      "name": "Espaguetis a la boloñesa",
+      "Creator": "Robert",
+      "Time": "30 minutes",
+      "Description": "Ricos, con mucha salsa y con un sabor increíble.",
+      "Tags": "Vegetarian,Italian,Pasta",
+      "Image": "Images/boloñesa.png",
+      "Ingredients": [
+        {
+          "Ammount": "500 g",
+          "Ingredient": "espaguetis"
+        },
+        {
+          "Ammount": "500g",
+          "Ingredient": "Carne molida"
+        },
+        {
+          "Ammount": "40ml",
+          "Ingredient": "aceite de oliva"
+        }
+      ],
+      "Steps": [
+        {
+          "title": "Preparación",
+          "number": 1,
+          "Image": "Images/boloñesa1.png",
+          "Desciption": "Para el sofrito, pela y corta por la mitad la cebolla y el ajo. Pela y pica la zanahoria en trozos grandes. Pica el apio en trozos grandes. Ponlos en un procesador de alimentos o licuadora y pícalo todo uniformemente hasta que quede tan fino como la carne molida."
+        },
+        {
+          "title": "Añadir carne",
+          "number": 2,
+          "Image": "Images/boloñesa2.png",
+          "Desciption": "Luego, añade la carne molida a la sartén y fríela durante unos 10-15 minutos más. Mientras se fríe, deshaz la carne con una cuchara de cocina. Sazona con sal y pimienta."
+        },
+        {
+          "title": "Añadir tomate",
+          "number": 3,
+          "Image": "Images/boloñesa3.png",
+          "Desciption": "Añade los tomates triturados enlatados, la pasta de tomate, la sal, la pimienta y el orégano seco. Cocina a fuego medio sin tapar durante unos 15-30 minutos hasta que la salsa espese."
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Pizza margherita",
+      "Creator": "Giuseppe",
+      "Time": "60 minutes",
+      "Description": "Receta clásica italiana, con masa crujiente, tomate y queso mozzarella fibroso",
+      "Tags": "Vegetarian,Savory,Italian",
+      "Image": "Images/pizza.png",
+      "Ingredients": [
+        {
+          "Ammount": "120g",
+          "Ingredient": "azúcar"
+        },
+        {
+          "Ammount": "4",
+          "Ingredient": "Huevos"
+        },
+        {
+          "Ammount": "400g",
+          "Ingredient": "bizcochos de soletilla"
+        },
+        {
+          "Ammount": "400ml",
+          "Ingredient": "café"
+        },
+        {
+          "Ammount": "100ml",
+          "Ingredient": "agua"
+        },
+        {
+          "Ammount": "500g",
+          "Ingredient": "Queso Mascarpone"
+        },
+        {
+          "Ammount": "500g",
+          "Ingredient": "Chocolate Amargo"
+        },
+        {
+          "Ammount": "10ml",
+          "Ingredient": "Licor de Naranja"
+        }
+      ],
+      "Steps": [
+        {
+          "title": "Extender la masa",
+          "number": 1,
+          "Image": "Images/pizza1.png",
+          "Desciption": "Coloque la masa sobre una superficie de trabajo enharinada y amase hasta que la masa esté suave, pero firme. Transfiera nuevamente a un tazón enharinado, cubra con un paño de cocina y almacene en un lugar cálido y seco durante aprox. 1 a 2 horas hasta que la masa haya duplicado su volumen"
+        },
+        {
+          "title": "Condimentos",
+          "number": 2,
+          "Image": "Images/pizza2.png",
+          "Desciption": "Coloque los tomates y la mozzarella encima, regrese al horno y hornee por otros 6 a 7 min. hasta que el queso se derrita y la corteza esté dorada.\n\n"
+        },
+        {
+          "title": "Adorno",
+          "number": 3,
+          "Image": "Images/pizza3.png",
+          "Desciption": "Adorne la pizza con hojas de albahaca fresca. Rocíe con aceite de oliva de alta calidad antes de servir, si lo desea. ¡Disfrutar!"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Tiramisu",
+      "Creator": "Maria",
+      "Time": "35 minutes",
+      "Description": "Receta del postre italiano más famoso hecho con bizcochos de soletilla, mascarpone y huevos",
+      "Tags": "Vegetarian,Sweet,Choco",
+      "Image": "Images/tiramisu.png",
+      "Ingredients": [
+        {
+          "Ammount": "120g",
+          "Ingredient": "azucar"
+        },
+        {
+          "Ammount": "4",
+          "Ingredient": "Huevos"
+        },
+        {
+          "Ammount": "400g",
+          "Ingredient": "bizcochos de soletilla"
+        },
+        {
+          "Ammount": "400ml",
+          "Ingredient": "café"
+        },
+        {
+          "Ammount": "100ml",
+          "Ingredient": "agua"
+        },
+        {
+          "Ammount": "500g",
+          "Ingredient": "Queso Mascarpone"
+        },
+        {
+          "Ammount": "500g",
+          "Ingredient": "Chocolate Amargo"
+        },
+        {
+          "Ammount": "10ml",
+          "Ingredient": "Licor de Naranja"
+        }
+      ],
+      "Steps": [
+        {
+          "title": "Mezcla",
+          "number": 1,
+          "Image": "Images/tiramisu1.png",
+          "Desciption": "Para nuestra receta de tiramisú, empieza separando las yemas. Coloca las yemas en un bol con azúcar glas y bate hasta obtener una mezcla cremosa. Luego, añade el Amaretto y el mascarpone, removiendo hasta obtener una mezcla suave."
+        },
+        {
+          "title": "Batir",
+          "number": 2,
+          "Image": "Images/tiramisu2.png",
+          "Desciption": "Batir las claras de huevo con una pizca de sal hasta que formen picos firmes. Incorporar lentamente el resto del azúcar glas. Incorporar con cuidado las claras batidas a la crema de mascarpone."
+        },
+        {
+          "title": "Finalizar",
+          "number": 3,
+          "Image": "Images/tiramisu3.png",
+          "Desciption": " Termina con una capa de mascarpone y espolvorea ligeramente con chocolate rallado y cacao en polvo. Deja enfriar en el refrigerador al menos 3 horas."
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Sopa de Calabaza",
+      "Creator": "Greta Piccoli",
+      "Time": "40 minutes",
+      "Description": "La sopa de calabaza al horno con trozos de halloumi es una receta reconfortante y fácil de preparar. Utiliza calabaza Hokkaido, especias cálidas como nuez moscada, comino y canela, y se acompaña con crujientes cubos de halloumi dorado. Es perfecta para el otoño, con una textura cremosa que se logra mezclando los ingredientes horneados con caldo y un toque de limón.",
+      "Image": "Images/soup.png",
+      "Tags": "Vegetarian,Spicy,Warming",
+      "Ingredients": [
+        {
+          "Ammount": "1kg",
+          "Ingredient": "Calabazas"
+        },
+        {
+          "Ammount": "4",
+          "Ingredient": "Cebolla"
+        },
+        {
+          "Ammount": "1",
+          "Ingredient": "Limon"
+        },
+        {
+          "Ammount": "400ml",
+          "Ingredient": "café"
+        },
+        {
+          "Ammount": "250g",
+          "Ingredient": "Halloumi"
+        },
+        {
+          "Ammount": "75",
+          "Ingredient": "Espinacas tiernas"
+        },
+        {
+          "Ammount": "500g",
+          "Ingredient": "Chocolate Amargo"
+        }
+      ],
+      "Steps": [
+        {
+          "title": "Cortar ingredientes",
+          "number": 1,
+          "Image": "Images/Calabaza1.png",
+          "Desciption": "Corta la calabaza por la mitad y raspa las semillas con una cuchara y deséchala. Pela las cebollas y córtalas."
+        },
+        {
+          "title": "Preparación",
+          "number": 2,
+          "Image": "Images/Calabaza2.png",
+          "Desciption": "Coloque las cebollas y la calabaza cortada en cubitos en una bandeja para hornear forrada con papel pergamino, dejando algo de espacio para el halloumi. Rocíe las verduras con aceite de oliva y espolvoree con especias, luego mezcle bien. "
+        },
+        {
+          "title": "Batir",
+          "number": 3,
+          "Image": "Images/Calabaza3.png",
+          "Desciption": "Transfiera con cuidado la calabaza y la cebolla de la bandeja a una batidora de pie. Agregue el ajo cortando los dientes asados y exprimiendo el contenido de la piel. Deje el halloumi en la bandeja y devuélvalo al horno para mantenerlo caliente."
+        }
+      ]
+    }
+  ],
+  "LikedRecipes": [
+    {
+      "id": "1",
+      "name": "Hummus",
+      "Creator": "Jorge",
+      "Time": "15 minutes",
+      "Tags": "Vegan,Savory,Gluten-free"
+    },
+    {
+      "id": "2",
+      "name": "Pollo a la naranja",
+      "Creator": "Francisco",
+      "Time": "20 minutes",
+      "Tags": "Savory,Acid"
+    },
+    {
+      "id": "3",
+      "name": "Galletas de avena",
+      "Creator": "Sofia",
+      "Time": "15 minutes",
+      "Tags": "Sweet,Vegan"
+    }
+  ],
+  "SavedRecipes": [
+    {
+      "id": "1",
+      "name": "Gnocchi",
+      "Creator": "Juan",
+      "Time": "45 minutes",
+      "Tags": "Savory, Vegetarian"
+    },
+    {
+      "id": "2",
+      "name": "Banana Bread",
+      "Creator": "Jesus",
+      "Time": "20 minutes",
+      "Tags": "Sweet, Vegan"
+    },
+    {
+      "id": "3",
+      "name": "Tortilla con pollo",
+      "Creator": "Susana",
+      "Time": "10 minutes",
+      "Tags": "Savory"
+    }
+  ],
+  "LastView": [
+    {
+      "id": "1",
+      "name": "Pasta carbonara",
+      "Creator": "Alice",
+      "Time": "20 minutes",
+      "Tags": "Savory"
+    },
+    {
+      "id": "2",
+      "name": "Tofu agridulce",
+      "Creator": "Pablo",
+      "Time": "25 minutes",
+      "Tags": "Savory,Vegan"
+    },
+    {
+      "id": "3",
+      "name": "Tarta de manzana",
+      "Creator": "Josefina",
+      "Time": "40 minutes",
+      "Tags": "Sweet"
+    }
+  ]
+}
