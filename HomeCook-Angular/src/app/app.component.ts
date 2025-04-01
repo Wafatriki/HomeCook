@@ -4,8 +4,8 @@ import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  templateUrl: './home/home.component.html',
+  styleUrl: './home/home.component.css'
 })
 export class AppComponent {
   title = 'HomeCook-Angular';
