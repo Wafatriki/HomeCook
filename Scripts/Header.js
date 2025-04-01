@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
     fetch("http://localhost:3000/users/1")
         .then(res => res.json()).then(User => {

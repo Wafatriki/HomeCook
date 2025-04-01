@@ -6,7 +6,18 @@
       "UserName": "ErnestinaHomeCook",
       "PassWord": "Soy_Ernestina1",
       "email": "ernestina@HomeCook.com",
-      "isLoggedIn": true
+      "isLoggedIn": false,
+      "LikedRecipes": [
+        {
+          "id": 1
+        },
+        {
+          "id": 2
+        },
+        {
+          "id": 4
+        }
+      ]
     }
   ],
   "Tags": [
