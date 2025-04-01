@@ -1,87 +1,33 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HomePage</title>
-  <script src="Scripts/HomePage.js"></script>
-  <script src="Scripts/Header.js"></script>
-</head>
-<body>
-<div id="header"></div>
 <div class="container">
+  <!-- Receta del día -->
   <div class="image-placeholder">
-    <a href="Recipe.html?id=1" id="paginaRecetaPrincipal">
-      <img id="Imagen_Receta_Principal" src="Images/Icone.png" alt="Choco">
+    <a [href]="'Recipe.html?id=' + recipeOfTheDay.id">
+      <img [src]="recipeOfTheDay.Image || 'Images/Icone.png'" [alt]="recipeOfTheDay.Name">
     </a>
     <div class="buttons">
       <button>Vegetarian</button>
       <button>Spicy</button>
     </div>
   </div>
-  <div class="text-section" id = "Bloque_Receta_Principal">
-    <h1 class="RecipeOfTheDayTitle" id="Recipe_Of_The_Day_Title">Choco</h1>
-    <div id="Recipe_Of_The_Day_Text">
-      Lorem ipsum dolor sit amet.
-    </div>
+  <div class="text-section">
+    <h1>{{ recipeOfTheDay.Name }}</h1>
+    <p>{{ recipeOfTheDay.Description }}</p>
   </div>
 </div>
 
+<!-- Tipos de receta -->
 <div class="Bloque_Tipos">
   <h2>Tipos de Receta</h2>
   <div class="Lista_De_Tipos">
-    <ul class="Lista_De_Tipos_Item_Lista">
-      <li>
-        <a href="Recipes-filter.html?filter=italian">
+    <ul>
+      <li *ngFor="let type of recipeTypes">
+        <a [href]="'Recipes-filter.html?filter=' + type.Name">
           <div class="Lista_De_Tipos_Item">
             <div class="icon_type">
-
-              <img class="TiposDeReceta1" src="Images/Icone.png" alt="Pizza">
-
+              <img [src]="type.Image || 'Images/Icone.png'" [alt]="type.Name">
             </div>
-            <div class="text_type" data-id="1">
-              Lor
-            </div>
-          </div>
-        </a>
-      </li>
-
-      <li>
-        <a href="Recipes-filter.html?filter=pasta">
-          <div class="Lista_De_Tipos_Item">
-            <div class="icon_type">
-
-              <img class="TiposDeReceta2" src="Images/Icone.png" alt="boloñesa">
-
-            </div>
-            <div class="text_type" data-id="2">
-              dol
-            </div>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a href="Recipes-filter.html?filter=warming">
-          <div class="Lista_De_Tipos_Item">
-            <div class="icon_type">
-
-              <img class="TiposDeReceta3" src="Images/Icone.png" alt="soup">
-
-            </div>
-            <div class="text_type" data-id="3">
-              cons
-            </div>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a href="Recipes-filter.html?filter=sweet">
-          <div class="Lista_De_Tipos_Item">
-            <div class="icon_type">
-              <img class="TiposDeReceta4" src="Images/Icone.png" alt="tiramisu">
-            </div>
-            <div class="text_type" data-id="4">
-              adip
+            <div class="text_type">
+              {{ type.Name }}
             </div>
           </div>
         </a>
@@ -89,58 +35,20 @@
     </ul>
   </div>
 </div>
+
+<!-- Tipos de ingredientes -->
 <div class="Bloque_Tipos">
   <h2>Tipos de Ingredientes</h2>
   <div class="Lista_De_Tipos">
     <ul>
-      <li>
-        <a href="Recipe.html?id=3">
+      <li *ngFor="let ingredient of ingredientTypes">
+        <a [href]="'Recipe.html?id=' + ingredient.id">
           <div class="Lista_De_Tipos_Item">
             <div class="icon_type">
-              <img class="TiposDeReceta5" src="Images/Icone.png" alt="tiramisu">
-
+              <img [src]="ingredient.Image || 'Images/Icone.png'" [alt]="ingredient.Name">
             </div>
-            <div class="text_type" data-id="5">
-              Lor
-            </div>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a href="Recipe.html?id=4">
-          <div class="Lista_De_Tipos_Item">
-            <div class="icon_type">
-
-              <img class="TiposDeReceta6" src="Images/Icone.png" alt="tiramisu">
-
-            </div>
-            <div class="text_type" data-id="6">
-              dol
-            </div>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a href="Recipe.html?id=2">
-          <div class="Lista_De_Tipos_Item">
-            <div class="icon_type">
-              <img class="TiposDeReceta7" src="Images/Icone.png" alt="tiramisu">
-            </div>
-            <div class="text_type" data-id="7">
-              cons
-            </div>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a href="Recipe.html?id=1">
-          <div class="Lista_De_Tipos_Item">
-            <div class="icon_type">
-              <img class="TiposDeReceta8" src="Images/Icone.png" alt="tiramisu">
-
-            </div>
-            <div class="text_type" data-id="8">
-              adip
+            <div class="text_type">
+              {{ ingredient.Name }}
             </div>
           </div>
         </a>
@@ -148,57 +56,25 @@
     </ul>
   </div>
 </div>
+
+<!-- Recetas favoritas -->
 <h1 class="SectionHeader">Nuestras Recetas Preferidas</h1>
-<div class="separator"></div> <!-- Separador entre secciones -->
-
-<div id="ListOfRecipes"></div>
-
-<div class="separator"></div> <!-- Separador entre secciones -->
-
-<h1 class="SectionHeader">¿Por qué HomeCook?</h1>
-<div class="separator"></div> <!-- Separador entre secciones -->
-
-<ul class="why_list">
-  <li>
-    <div class="Why_item">
-      <div class="Why_icon">
-        <img src="./Images/filtro-de-barras.png" alt="Descripciones">
+<div id="ListOfRecipes">
+  <div class="recipe" *ngFor="let recipe of favoriteRecipes">
+    <a [href]="'Recipe.html?id=' + recipe.id">
+      <div class="recipe-container">
+        <div class="recipe-card">
+          <img [src]="recipe.Image || 'Images/img.png'" [alt]="recipe.name">
+          <div class="recipe-overlay">
+            <div class="time">{{ recipe.Time }}</div>
+            <div class="vegetarian">Vegetariano</div>
+          </div>
+          <div class="recipe-info">
+            <h3>{{ recipe.name }}</h3>
+            <p>{{ recipe.Creator }}</p>
+          </div>
+        </div>
       </div>
-      <div class="Why_text">
-        Filtros
-      </div>
-    </div>
-  </li>
-  <li>
-    <div class="Why_item">
-      <div class="Why_icon">
-        <img src="./Images/revista-catalogo.png" alt="Descripciones">
-      </div>
-      <div class="Why_text">
-        Buenas Recetas
-      </div>
-    </div>
-  <li>
-    <div class="Why_item">
-      <div class="Why_icon">
-        <img src="./Images/diario-alternativo.png" alt="Descripciones">
-
-      </div>
-      <div class="Why_text">
-        Descripciones
-      </div>
-    </div>
-  </li>
-</ul>
-<div id="footer"></div>
-<script>
-  init();
-  loadRecipeOfTheDay();
-  loadTiposDeReceta();
-  loadTiposDeIngredients();
-  loadTemplateFromSource("Templates/header.html", "header");
-  loadContent(ListOfRecipes);
-</script>
-
-</body>
-</html>
+    </a>
+  </div>
+</div>
