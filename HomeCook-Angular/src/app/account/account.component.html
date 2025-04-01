@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil de Usuario</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+
+</head>
+
+<body>
+<header>
+  <div id="main_header"></div>
+</header>
+<div class="content-wrapper">
+  <div class="profile-container">
+    <div class="avatar"></div>
+    <div class="info">
+      <div class="text-field">Nombre de usuario</div>
+      <div class="text-field">Email</div>
+      <div class="icons">
+        <div class="icon">
+          <span class="gear-icon"></span>
+          <a href=""><span>Ajustes</span></a>
+        </div>
+        <div class="icon">
+          <span class="power-icon"></span>
+          <a id="Log_Out" href="index.html"><span>Cerrar Sesión</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tabs">
+    <div class="tab" onclick="loadContent('guardado')">
+      <img src="" alt="Guardado">
+      <span>Guardado</span>
+    </div>
+    <div class="tab" onclick="loadContent('me-gusta')">
+      <img src="" alt="Me gusta">
+      <span>Me gusta</span>
+    </div>
+    <div class="tab" onclick="loadContent('ultimas-vistas')">
+      <img src="" alt="Últimas vistas">
+      <span>Últimas vistas</span>
+    </div>
+  </div>
+
+  <div id="content-area">
+
+  </div>
+</div>
+
+<footer id="footer">
+  <div id="main_footer"></div>
+</footer>
+
+<script>
+  loadTemplateFromSource("Templates/header.html", "main_header");
+  loadTemplateFromSource("Templates/footer.html", "main_footer");
+  loadUserProfile();
+  logOut();
+</script>
+</body>
+</html>
