@@ -3,6 +3,6 @@ import { AppComponent } from './app/app.component';
 import { HomePageComponent } from './app/home/home.component';
 import { config } from './app/app.config.server';
 
-const bootstrap = () => bootstrapApplication(HomePageComponent, config);
+const bootstrap = () => bootstrapApplication(AppComponent, config);
 
 export default bootstrap;
