@@ -10,6 +10,14 @@
 - npm install -g json-server
 - json-server --watch All.json
 
+## Proyecto en angular
+- Se deve navegar hasta la carpeta ./HomeCook-Angular
+```bash 
+cd ./HomeCook-Angular
+```
+- El propio proyecto angular posee un script que describe su funcionalidad y requisitos.
+
+
 ## Descripción del proyecto:
 Nuestro proyecto consiste en ofrecer una página web de recetas.
 La idea era disponer de un sitio en el que se pudiera buscar la receta deseada, tener una cuenta, buscar recetas por tipo y filtrar por receta.
