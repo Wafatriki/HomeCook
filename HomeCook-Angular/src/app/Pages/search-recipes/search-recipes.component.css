@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+.Item_Busqueda {
+  font-weight: bold;
+}
+
+body{
+  background-color: #FFFFFF;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  list-style: none;
+  padding: 0 1em;
+}
+
+nav ul li:hover {
+  color: #E89090;
+}
