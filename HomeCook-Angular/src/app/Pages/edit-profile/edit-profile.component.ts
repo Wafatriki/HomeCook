@@ -13,20 +13,23 @@ export class EditProfileComponent implements OnInit {
   private id: string | null = localStorage.getItem('id');
 
   ngOnInit() {
-    this.loadTemplate(this.name, this.url, this.id);
-
+    if (this.name && this.url && this.id) {
+      this.loadTemplate(this.url, this.id, () => {
+        console.log('Template loaded successfully');
+      });
+    } else {
+      console.error('Missing required data from localStorage');
+    }
   }
 
   loadTemplate(fileName: string, id: string, callback?: () => void) {
-    if (!fileName || !id)  {
-
-    }
      fetch(fileName).then((res) => {
       return res.text();
     }).then((text) => {
-      // @ts-ignore
-      document.getElementById(id).innerHTML = text;
-      //console.log(text)
+      const element = document.getElementById(id);
+      if (element) {
+        element.innerHTML = text;
+      }
 
       if(callback){
         callback();
