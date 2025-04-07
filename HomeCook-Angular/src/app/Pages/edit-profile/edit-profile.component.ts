@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {Request} from 'express';
 
 @Component({
   selector: 'edit-profile',
-  imports: [],
   templateUrl: './edit-profile.component.html',
-  styleUrl: './edit-profile.component.css'
+  styleUrls: ['./edit-profile.component.css']
 })
 export class EditProfileComponent implements OnInit {
   private name: string | null = localStorage.getItem('name');
@@ -23,7 +21,10 @@ export class EditProfileComponent implements OnInit {
   }
 
   loadTemplate(fileName: string, id: string, callback?: () => void) {
-     fetch(fileName).then((res) => {
+    fetch(fileName).then((res) => {
+      if (!res.ok) {
+        throw new Error(`Failed to fetch template: ${res.statusText}`);
+      }
       return res.text();
     }).then((text) => {
       const element = document.getElementById(id);
@@ -31,102 +32,79 @@ export class EditProfileComponent implements OnInit {
         element.innerHTML = text;
       }
 
-      if(callback){
+      if (callback) {
         callback();
       }
-    })
+    }).catch((error) => {
+      console.error('Error loading template:', error);
+    });
   }
 
+  setValidity() {
+    const pass = document.getElementById('new-password') as HTMLInputElement;
+    const oldPass = document.getElementById('current-password') as HTMLInputElement;
+    const save = document.getElementById('save-changes-button') as HTMLButtonElement;
+    const name = document.getElementById('name') as HTMLInputElement;
+    const email = document.getElementById('email') as HTMLInputElement;
 
-  /*
-  function loadTemplate(fileName, id, callback) {
+    if (!pass || !oldPass || !save || !name || !email) {
+      console.error('One or more elements are missing in the DOM.');
+      return;
+    }
 
-    fetch(fileName).then((res) => {
-        return res.text();
-    }).then((text) => {
-        document.getElementById(id).innerHTML = text;
-        //console.log(text)
-
-        if(callback){
-            callback();
-        }
-    })
-}
-
-function anadirlistener(){
-
-}
-
-function setValidity(){
-    var pass = document.getElementById("new-password");
-    var save = document.getElementById("save-changes-button");
-    var name = document.getElementById("name");
-    var email = document.getElementById("email");
-
-    pass.addEventListener("input", function(evt){
-        var oldPass = document.getElementById("current-password");
-        if (pass.value === oldPass.value) {
-            pass.setCustomValidity(""); // Las contraseñas coinciden
-        } else {
-            pass.setCustomValidity("Las contraseñas no coinciden");
-        }
+    // Validación de contraseñas
+    pass.addEventListener('input', function () {
+      if (pass.value === oldPass.value) {
+        pass.setCustomValidity(''); // Las contraseñas coinciden
+      } else {
+        pass.setCustomValidity('Las contraseñas no coinciden');
+      }
+      pass.reportValidity(); // Refleja el estado de validación en la interfaz
     });
 
-    save.addEventListener("click", function(evt){
-        // Validar Nombre
-        if (!name.value.trim()) {
-            name.setCustomValidity("Por favor, ingresa tu nombre.");
-        } else {
-            name.setCustomValidity("");
-        }
+    save.addEventListener('click', function (evt) {
+      // Validar Nombre
+      if (!name.value.trim()) {
+        name.setCustomValidity('Por favor, ingresa tu nombre.');
+      } else {
+        name.setCustomValidity('');
+      }
 
-        // Validar Email
-        if (!email.value.trim()) {
-            email.setCustomValidity("Por favor, ingresa tu email.");
-        } else if (!validateEmail(email.value.trim())) {
-            email.setCustomValidity("Por favor, ingresa un email válido.");
-        } else {
-            email.setCustomValidity("");
-        }
+      // Validar Email
+      if (!email.value.trim()) {
+        email.setCustomValidity('Por favor, ingresa tu email.');
+      } else if (!validateEmail(email.value.trim())) {
+        email.setCustomValidity('Por favor, ingresa un email válido.');
+      } else {
+        email.setCustomValidity('');
+      }
 
-        // Validar Contraseñas
-        var oldPass = document.getElementById("current-password");
-        if (!oldPass.value.trim() || !pass.value.trim()) {
-            pass.setCustomValidity("Por favor, completa ambos campos de contraseña.");
-        } else if (pass.value === oldPass.value) {
-            pass.setCustomValidity(""); // Las contraseñas coinciden
-        } else {
-            pass.setCustomValidity("Las contraseñas no coinciden.");
-        }
+      // Validar Contraseñas
+      if (!oldPass.value.trim() || !pass.value.trim()) {
+        pass.setCustomValidity('Por favor, completa ambos campos de contraseña.');
+      } else if (pass.value === oldPass.value) {
+        pass.setCustomValidity(''); // Las contraseñas coinciden
+      } else {
+        pass.setCustomValidity('Las contraseñas no coinciden.');
+      }
 
-        if (!name.checkValidity() || !email.checkValidity() || !pass.checkValidity()) {
-            evt.preventDefault();
-            name.reportValidity();
-            email.reportValidity();
-            pass.reportValidity();
-        } else {
-            // Si todo es válido, redirige
-            window.location.href = "../Account.html";
-        }
+      // Verificar la validez de los campos antes de enviar
+      if (!name.checkValidity() || !email.checkValidity() || !pass.checkValidity()) {
+        evt.preventDefault(); // Prevenir el envío si hay errores
+        name.reportValidity();
+        email.reportValidity();
+        pass.reportValidity();
+      } else {
+        // Si todo es válido, redirige a otra página
+        window.location.href = '../Account.html';
+      }
     });
+  }
 }
 
-function validateEmail(email) {
-    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Expresión regular simple para validar email
-    return emailRegex.test(email);
+// Función para validar email
+function validateEmail(email: string): boolean {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Expresión regular simple para validar email
+  return emailRegex.test(email);
 }
 
-function loadTemplateFromSource(source, id){
-    loadTemplate(source, id);
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-    setValidity(); // Asegura que las validaciones se configuren al cargar el DOM
-});
-
-   */
-
-
-
-
-}
