@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {ListOfRecipesComponent} from '../../list-of-recipes/list-of-recipes.component';
-
+import { Router } from '@angular/router'
+import {AuthService} from '../../Services/authentication.service';
 @Component({
   selector: 'app-account',
   imports: [RouterOutlet, ListOfRecipesComponent],
@@ -9,7 +10,7 @@ import {ListOfRecipesComponent} from '../../list-of-recipes/list-of-recipes.comp
   styleUrls: ['./account.component.css']
 })
 export class AccountComponent {
-
+  constructor(private router: Router) {}
   // Carga el template desde una fuente
   loadTemplate(fileName: string, id: string, callback?: () => void): void {
     fetch(fileName)
@@ -59,28 +60,8 @@ export class AccountComponent {
 
   // Función para cerrar sesión
   logOut(): void {
-    const logoutButton = document.getElementById('Log_Out') as HTMLButtonElement;
-
-    if (!logoutButton) {
-      console.error("El botón de cierre de sesión no se encontró.");
-      return;
-    }
-
-    logoutButton.addEventListener('click', (evt) => {
-      evt.preventDefault();
-
-      fetch("http://localhost:3000/users/1", {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ isLoggedIn: false }),
-      })
-        .then(() => {
-          window.location.replace("index.html");
-        })
-        .catch((err) => console.error("Error al cerrar sesión:", err));
-    });
+    localStorage.removeItem('authToken');
+    this.router.navigate(['']);
   }
 
   // Carga el contenido dependiendo de la pestaña seleccionada
