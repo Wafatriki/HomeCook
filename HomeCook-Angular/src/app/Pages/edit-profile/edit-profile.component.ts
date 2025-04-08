@@ -18,6 +18,8 @@ export class EditProfileComponent implements OnInit {
     } else {
       console.error('Missing required data from localStorage');
     }
+
+    this.setValidity();
   }
 
   loadTemplate(fileName: string, id: string, callback?: () => void) {

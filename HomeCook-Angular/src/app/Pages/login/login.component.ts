@@ -57,6 +57,7 @@ export class LoginComponent implements OnInit {
     }).catch(err => console.log(err));
   }
 
+
 }
 /*
 
@@ -88,6 +89,4 @@ function Log_In_Listener() {
             })
             .catch(err => console.error("Error al obtener los datos del usuario:", err));
     });
-
-}
  */
