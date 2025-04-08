@@ -1,8 +1,12 @@
 import { Component } from '@angular/core';
+import {RecommendationsComponent} from '../../recommendations/recommendations.component';
 
 @Component({
   selector: 'app-recipe',
   templateUrl: './recipe.component.html',
+  imports: [
+    RecommendationsComponent
+  ],
   styleUrls: ['./recipe.component.css']
 })
 export class RecipeComponent {
