@@ -10,6 +10,14 @@ import {ListOfRecipesComponent} from '../../list-of-recipes/list-of-recipes.comp
   styleUrls: ['./search-recipes.component.css']
 })
 export class SearchRecipesComponent {
+  private _x = "Hola";
+  get x(): string {
+    return this._x;
+  }
+
+  set x(value: string) {
+    this._x = value;
+  }
 
   // Método para cargar un template desde un archivo
   loadTemplate(fileName: string, id: string, callback?: () => void): void {
