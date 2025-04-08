@@ -43,6 +43,7 @@ export class LoginComponent implements OnInit {
     return localStorage.getItem('authToken') !== null;
   }
 
+
 }
 /*
 
@@ -74,6 +75,4 @@ function Log_In_Listener() {
             })
             .catch(err => console.error("Error al obtener los datos del usuario:", err));
     });
-
-}
  */
