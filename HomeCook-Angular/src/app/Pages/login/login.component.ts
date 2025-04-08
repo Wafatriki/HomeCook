@@ -1,18 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Request} from 'express';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { AuthService } from '../../Services/authentication.service'
 
 @Component({
   selector: 'app-login',
-  imports: [],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
+  email: string = '';
+  password: string = '';
   private name: string | null = localStorage.getItem('name');
   private url: string | null = localStorage.getItem('url');
   private id: string | null = localStorage.getItem('id');
   private source: string | null = localStorage.getItem('source');
 
+  constructor(private authService: AuthService) {}
+  onSubmit() {
+    this.authService.login(this.email, this.password);
+  }
   ngOnInit() {
     if (this.name && this.url && this.id) {
       this.loadTemplate(this.url, this.id, () => {
