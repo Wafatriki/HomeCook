@@ -1,14 +1,16 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, NgModule, OnInit} from '@angular/core';
 import {Request} from 'express';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AuthService } from '../../Services/authentication.service'
+import { Router } from '@angular/router'
+import {AppComponent} from '../../app.component';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  imports: [FormsModule]
 })
-
 export class LoginComponent implements OnInit {
   email: string = '';
   password: string = '';
@@ -17,9 +19,11 @@ export class LoginComponent implements OnInit {
   private id: string | null = localStorage.getItem('id');
   private source: string | null = localStorage.getItem('source');
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
   onSubmit() {
-    this.authService.login(this.email, this.password);
+    this.authService.login(this.email, this.password).then(r => {
+      this.router.navigate(['account']);
+    });
   }
   ngOnInit() {
     if (this.name && this.url && this.id) {
@@ -60,7 +64,6 @@ export class LoginComponent implements OnInit {
     fetch("http://localhost:3000/users/1")
       .then(res => res.json()).then(User => {
       if(User.isLoggedIn){
-        window.location.replace("Account.html");
       }
     }).catch(err => console.log(err));
   }
