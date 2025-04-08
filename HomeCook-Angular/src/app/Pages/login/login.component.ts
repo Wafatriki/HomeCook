@@ -14,58 +14,33 @@ import {AppComponent} from '../../app.component';
 export class LoginComponent implements OnInit {
   email: string = '';
   password: string = '';
-  private name: string | null = localStorage.getItem('name');
-  private url: string | null = localStorage.getItem('url');
+  private mail: string | null = localStorage.getItem('mail');
   private id: string | null = localStorage.getItem('id');
-  private source: string | null = localStorage.getItem('source');
+  private authToken: string | null = localStorage.getItem('authToken');
 
   constructor(private authService: AuthService, private router: Router) {}
   onSubmit() {
     this.authService.login(this.email, this.password).then(r => {
+      const user = r.user;
+      localStorage.setItem('mail', user.email || '');
+      localStorage.setItem('id', user.uid);
+      user.getIdToken().then(idToken => {
+        localStorage.setItem('authToken',idToken);
+      })
+
       this.router.navigate(['account']);
     });
   }
   ngOnInit() {
-    if (this.name && this.url && this.id) {
-      this.loadTemplate(this.url, this.id, () => {
-        console.log('Template loaded successfully');
-      });
-    } else {
-      console.error('Missing required data from localStorage');
+    if (this.isLoggedIn()){
+      this.router.navigate(['account']);
     }
-    if (this.source && this.id) {
-      this.loadTemplateFromSource(this.source, this.id);
-    } else {
-      console.error('Missing required data from localStorage');
-    }
-    this.isLoggedIn();
   }
 
-  loadTemplate(fileName: string, id: string, callback?: () => void) {
-    fetch(fileName).then((res) => {
-      return res.text();
-    }).then((text) => {
-      const element = document.getElementById(id);
-      if (element) {
-        element.innerHTML = text;
-      }
 
-      if (callback) {
-        callback();
-      }
-    })
-  }
-
-  loadTemplateFromSource(source: string, id: string){
-    this.loadTemplate(source, id);
-  }
 
   isLoggedIn(){
-    fetch("http://localhost:3000/users/1")
-      .then(res => res.json()).then(User => {
-      if(User.isLoggedIn){
-      }
-    }).catch(err => console.log(err));
+    return localStorage.getItem('authToken') !== null;
   }
 
 }
@@ -76,7 +51,7 @@ function Log_In_Listener() {
         event.preventDefault();
 
         const introducedPass = document.getElementById('password').value;
-        const introducedUser = document.getElementById('username').value;
+        const introducedUser = document.getElementById('usermail').value;
 
         fetch("http://localhost:3000/users/1")
             .then(res => res.json())
