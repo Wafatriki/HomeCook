@@ -1,9 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
+import {ListOfRecipesComponent} from '../../list-of-recipes/list-of-recipes.component';
+
 
 @Component({
   selector: 'app-home',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, ListOfRecipesComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

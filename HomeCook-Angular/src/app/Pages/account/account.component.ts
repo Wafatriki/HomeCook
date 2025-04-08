@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import {ListOfRecipesComponent} from '../../list-of-recipes/list-of-recipes.component';
 
 @Component({
   selector: 'app-account',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, ListOfRecipesComponent],
   templateUrl: './account.component.html',
   styleUrls: ['./account.component.css']
 })
