@@ -4,6 +4,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+.image_icon{
+ display: flex;
+  max-width: 5rem;
+}
 #Log_in_Section {
   display: flex;
   align-items: center;
