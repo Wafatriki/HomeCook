@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('mail', user.email || '');
       localStorage.setItem('id', user.uid);
       user.getIdToken().then(idToken => {
-        localStorage.setItem('authToken',idToken);
+        this.authService.setAuthToken(idToken);
       })
 
       this.router.navigate(['account']);
@@ -36,8 +36,6 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['account']);
     }
   }
-
-
 
   isLoggedIn(){
     return localStorage.getItem('authToken') !== null;

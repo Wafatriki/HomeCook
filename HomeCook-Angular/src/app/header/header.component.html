@@ -13,12 +13,24 @@
           <input id="BusquedaDeReceta" type="text" name="q" placeholder="Buscar..." class="search-input"/>
           <button id="SearchButton" type="submit" class="search-button"></button>
         </form>
-        <!-- Updated here -->
       </li>
-      <li id="Log_in_Section" class="Botones-Log-Sign">
-        <button id="LoginButton" class="nav-button" onclick="location.href='login'">Log in</button>
-        <button id="Sign-inButton" class="nav-button" onclick="location.href='Sign-In.html'">Sign-In</button>
+      <li id="Log_in_Section">
+        <!-- Si está logueado -->
+      <li *ngIf="authToken">
+        <a href="account">
+          <img src="/../../Images/account.png" alt="Cuenta" />
+        </a>
       </li>
+
+      <!-- Si NO está logueado -->
+      <ng-container *ngIf="!authToken">
+        <li>
+          <button id="LoginButton" class="nav-button" (click)="goToLogin()">Log in</button>
+        </li>
+        <li>
+          <button id="Sign-inButton" class="nav-button" (click)="goToSignIn()">Sign-In</button>
+        </li>
+      </ng-container>
     </ul>
   </nav>
 </header>

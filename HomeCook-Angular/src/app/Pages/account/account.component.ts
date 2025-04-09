@@ -10,7 +10,7 @@ import {AuthService} from '../../Services/authentication.service';
   styleUrls: ['./account.component.css']
 })
 export class AccountComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authService: AuthService) { }
   // Carga el template desde una fuente
   loadTemplate(fileName: string, id: string, callback?: () => void): void {
     fetch(fileName)
@@ -60,7 +60,7 @@ export class AccountComponent {
 
   // Función para cerrar sesión
   logOut(): void {
-    localStorage.removeItem('authToken');
+    this.authService.setAuthToken(null);
     this.router.navigate(['']);
   }
 
