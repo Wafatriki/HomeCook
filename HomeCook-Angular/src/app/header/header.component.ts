@@ -41,4 +41,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
   goToSignIn() {
     this.router.navigate(['/Sign-In']);
   }
+  goToAccount() {
+    this.router.navigate(['/account']);
+  }
+  goTo(target : string) {
+    const [path, query] = target.split('?');
+    const queryParams = Object.fromEntries(new URLSearchParams(query || ''));
+    this.router.navigate([path], { queryParams });
+  }
 }

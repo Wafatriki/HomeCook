@@ -15,7 +15,7 @@ export const routes: Routes = [
   { path: 'recipe', component: RecipeComponent },
   { path: 'edit', component: EditProfileComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'recipes-filter', component: RecipesFilterComponent },
+  { path: 'recipes-filter', component: RecipesFilterComponent},
   { path: 'searchRecipes', component: SearchRecipesComponent },
   { path: 'SignIn', component: SignInComponent }
 ];

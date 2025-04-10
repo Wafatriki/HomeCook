@@ -1,11 +1,11 @@
 <header>
   <nav>
-    <a href="index.html"><img src="Images/Icone.png" alt="HomeCook Logo" class="logo"></a>
+    <a (click)="goTo('')"><img src="Images/Icone.png" alt="HomeCook Logo" class="logo links"></a>
     <ul>
-      <li><a href="index.html" class="links">Inicio</a></li>
-      <li><a href="Recipes-filter.html?filter=all" class="links">Recipes</a></li>
-      <li><a href="Log-in.html" class="links">Saved</a></li>
-      <li><a href="#" class="links" onclick="document.getElementById('footer').scrollIntoView({ behavior: 'smooth' }); return false;">
+      <li><a (click)="goTo('')" class="links clickable">Inicio</a></li>
+      <li><a (click)="goTo('recipes-filter?filter=all')" class="links clickable">Recipes</a></li>
+      <li><a (click)="goTo('login')" class="links clickable">Saved</a></li>
+      <li><a href="#" class="links" onclick="document.getElementById('main_footer').scrollIntoView({ behavior: 'smooth' }); return false;">
         Contact
       </a></li>
       <li>
@@ -17,7 +17,7 @@
       <li id="Log_in_Section">
         <!-- Si está logueado -->
       <li *ngIf="authToken" >
-        <a href="account">
+        <a (click)="goToAccount()" class="links">
           <img src="assets/Images/account.png" alt="Cuenta" class="image_icon"/>
         </a>
       </li>

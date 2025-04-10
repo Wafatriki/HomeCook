@@ -55,7 +55,9 @@ nav .logo {
   height: 60px;
   width: 60px;
 }
-
+.links{
+  cursor: pointer;
+}
 nav ul {
   display: flex;
   list-style: none;
@@ -145,6 +147,7 @@ nav ul li a:hover {
   }
   .links{
     display: none;
+    cursor: pointer;
   }
   nav {
     flex-direction: row;
