@@ -1,11 +1,13 @@
 import {Component, OnInit} from '@angular/core';
+import { Router } from '@angular/router';
 import {RouterOutlet} from '@angular/router';
 import {ListOfRecipesComponent} from '../../list-of-recipes/list-of-recipes.component';
+import {CommonModule} from '@angular/common';
 
 
 @Component({
   selector: 'app-home',
-  imports: [RouterOutlet, ListOfRecipesComponent],
+  imports: [RouterOutlet, ListOfRecipesComponent, CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -15,7 +17,7 @@ export class HomePageComponent implements OnInit {
   ingredientTypes: any[] = []; // Tipos de ingredientes
   favoriteRecipes: any[] = []; // Recetas favoritas
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.loadRecipeOfTheDay();
@@ -32,7 +34,11 @@ export class HomePageComponent implements OnInit {
       })
       .catch(error => console.error('Error al cargar la receta del día:', error));
   }
-
+  goTo(target : string) {
+    const [path, query] = target.split('?');
+    const queryParams = Object.fromEntries(new URLSearchParams(query || ''));
+    this.router.navigate([path], { queryParams });
+  }
   loadTiposDeReceta(): void {
     fetch('http://localhost:3000/TiposDeReceta/')
       .then(res => res.json())
@@ -59,5 +65,4 @@ export class HomePageComponent implements OnInit {
       })
       .catch(error => console.error('Error al cargar recetas favoritas:', error));
   }
-
 }

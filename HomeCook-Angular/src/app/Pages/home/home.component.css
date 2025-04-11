@@ -4,6 +4,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+.clickable {
+  cursor: pointer;
+}
 
 .content-wrapper {
   margin-top: 400px; /* Ajusta este valor según la altura de tu header */
@@ -49,7 +52,7 @@ body {
   border-radius: 20px;
   height: 500px;
   overflow: hidden;
-  margin: 1rem;
+  margin: 1rem auto;
   background-color: #d3d3d3;
   aspect-ratio: 16 / 9;
 }

@@ -20,7 +20,7 @@ body {
   align-self: center;
   justify-content: flex-start;
   width: 300px;
-  margin: 100px 0;
+  margin: 100px auto;
 }
 
 .container h1 {

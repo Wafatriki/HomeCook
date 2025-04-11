@@ -4,12 +4,13 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AuthService } from '../../Services/authentication.service'
 import { Router } from '@angular/router'
 import {AppComponent} from '../../app.component';
+import {CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  imports: [FormsModule]
+  imports: [FormsModule, CommonModule]
 })
 export class LoginComponent implements OnInit {
   email: string = '';

@@ -4,35 +4,29 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-self: center;
   justify-content: center;
   min-height: 100vh;
+  width: 100%;
   margin: 0;
+  padding: 0;
   font-family: 'Raleway', sans-serif;
 }
 
-.iframe-container {
-  width: 100%;
-  text-align: center;
-}
-
-iframe {
-  width: 100%;
-  border: none;
-}
-
-.header-frame {
-  height: 100px;
-}
 
 .container {
   background: #d3d3d3;
   padding: 30px;
+  position: relative;
   border-radius: 15px;
+  align-self: center;
+  justify-content: center;
+  justify-self: center;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 300px;
   height: 400px; /* Mantiene la altura fija */
-  margin: 100px 0;
+  margin: 100px auto;
+  width: 25%;
 }
 
 .container h1 {

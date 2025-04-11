@@ -39,7 +39,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   goToSignIn() {
-    this.router.navigate(['/Sign-In']);
+    this.router.navigate(['/SignIn']);
   }
   goToAccount() {
     this.router.navigate(['/account']);
