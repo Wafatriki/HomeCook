@@ -4,6 +4,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 .image_icon{
  display: flex;
   max-width: 5rem;
@@ -24,6 +25,7 @@ body {
 }
 
 header {
+  font-family: 'Raleway', sans-serif;
   background-color: #FBDBDB;
   color: #A86D6D;
   padding: 0;
