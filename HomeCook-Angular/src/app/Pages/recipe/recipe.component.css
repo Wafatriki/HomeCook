@@ -3,7 +3,7 @@
 html, body {
   height: 100%;
   overflow-y: auto;
-  margin: 0;
+  margin: 0 auto;
 }
 #recommendations_iframe {
   display: flex;
@@ -43,6 +43,8 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  align-self: center;
+  margin: 20px auto;
   width: 100%;
   max-width: 900px;
 }
@@ -72,7 +74,7 @@ header h1 {
 }
 
 figure {
-  margin: 0;
+  margin: 0 auto;
 }
 
 .rating {
