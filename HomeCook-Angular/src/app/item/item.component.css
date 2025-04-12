@@ -7,7 +7,7 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 10px;
 }
 
 .recipe-card {
@@ -16,12 +16,15 @@ body {
   max-width: 300px;
   min-width: 200px;
   transition: all 0.3s ease-in-out;
+  margin-top: 40px;
 }
 
 .recipe-card img {
   width: 100%;
   height: auto;
   z-index: 1;
+  border-radius: 9px;
+
 }
 .recipe-info {
   padding: 10px;

@@ -20,9 +20,9 @@
         </div>
         <div class="actions">
           <!-- Botones de acciones como "Me gusta", "Guardar", y "Compartir" -->
-          <button title="Me Gusta"><img src="../Images/heart_icon.png" alt="Me Gusta" width="30"></button>
-          <button title="Guardar"><img src="../Images/saved.png" alt="Guardar" width="30"></button>
-          <button title="Compartir"><img src="../Images/share.png" alt="Compartir" width="30"></button>
+          <button title="Me Gusta"><img src="assets/Images/heart_icon.png" alt="Me Gusta" width="30"></button>
+          <button title="Guardar"><img src="assets/Images/saved.png" alt="Guardar" width="30"></button>
+          <button title="Compartir"><img src="assets/Images/share.png" alt="Compartir" width="30"></button>
         </div>
       </div>
       <div class="ingredients">
@@ -43,19 +43,19 @@
       <div class="nutrition-info">
         <div class="nutrition-item">
           <span>Cal</span>
-          <div class="nutrition-value">{{ recipe.Calories || 'No disponible' }}</div>
+          <div class="nutrition-value">1088</div>
         </div>
         <div class="nutrition-item">
           <span>Grasa</span>
-          <div class="nutrition-value">{{ recipe.Fat || 'No disponible' }} g</div>
+          <div class="nutrition-value">70 g</div>
         </div>
         <div class="nutrition-item">
           <span>Proteína</span>
-          <div class="nutrition-value">{{ recipe.Protein || 'No disponible' }} g</div>
+          <div class="nutrition-value">52 g</div>
         </div>
         <div class="nutrition-item">
           <span>Carb</span>
-          <div class="nutrition-value">{{ recipe.Carbs || 'No disponible' }} g</div>
+          <div class="nutrition-value">61 g</div>
         </div>
       </div>
     </div>
@@ -76,6 +76,8 @@
     <!-- Sección de recomendaciones -->
     <div>
       <h2 class="recommendations-title">Recomendaciones</h2>
+      <app-item *ngFor="let recipe of recommendations" [recipe]="recipe"></app-item>
+
     </div>
   </article>
 </section>

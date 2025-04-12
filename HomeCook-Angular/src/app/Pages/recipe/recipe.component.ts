@@ -1,18 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { FirestoreService } from '../../Services/firestore.service';
+import {ItemComponent} from '../../item/item.component';
+import {NgForOf} from '@angular/common';
 
 @Component({
   selector: 'app-recipe',
   templateUrl: './recipe.component.html',
   styleUrls: ['./recipe.component.css'],
+  imports: [
+    ItemComponent,
+    NgForOf
+  ]
 })
 export class RecipeComponent implements OnInit {
-  recipe: any = {}; // Objeto que almacenará los datos de la receta cargada
+  recipe: any = {};
+  recommendations: any[] = []
 
   constructor(private firestoreService: FirestoreService) {}
 
   ngOnInit(): void {
     this.loadContent();
+    this.loadRecomendations();
+
   }
 
   // Método para cargar una receta específica desde Firestore
@@ -40,37 +49,15 @@ export class RecipeComponent implements OnInit {
   }
 
   loadRecomendations(): void {
-    const listOfRecipes = document.getElementById('recommendations_iframe');
-    if (listOfRecipes) {
-      listOfRecipes.innerHTML = ""; // Limpia el área de recetas recomendadas
-
-      this.firestoreService.getRecipes().subscribe(recipes => {
-        recipes.forEach((recipe: any) => {
-          const recipeElement = document.createElement('div');
-          recipeElement.classList.add('recipe');
-
-          recipeElement.innerHTML = `
-          <div class="recipe-container">
-            <div class="recipe-card">
-              <img src="${recipe.Image || 'Images/img.png'}" alt="Recipe Image">
-              <div class="recipe-overlay">
-                <div class="time">${recipe.time}</div>
-                <div class="vegetarian">Vegetariano</div>
-              </div>
-              <div class="recipe-info">
-                <h3>${recipe.name}</h3>
-                <p>${recipe.Creator}</p>
-              </div>
-            </div>
-          </div>
-        `;
-          listOfRecipes.appendChild(recipeElement);
-        });
-      }, error => {
-        console.error('Error al cargar las recetas recomendadas:', error);
-        listOfRecipes.innerHTML = '<p>Error al cargar las recetas preferidas.</p>';
-      });
-    }
+    this.firestoreService.getRecipes().subscribe(
+      (recipes) => {
+        this.recommendations = recipes; // Asigna las recetas al array recommendations
+        console.log('Recomendaciones cargadas:', this.recommendations); // Depuración
+      },
+      (error) => {
+        console.error('Error al cargar las recomendaciones:', error);
+      }
+    );
   }
 
 }
