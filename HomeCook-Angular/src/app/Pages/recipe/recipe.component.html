@@ -1,14 +1,17 @@
 <section id="main_step">
   <article>
     <header>
-      <h1 id="RecipeTitle">Title of the Recipe</h1>
+      <!-- Título de la receta cargado dinámicamente -->
+      <h1 id="RecipeTitle">{{ recipe.name || 'Título de la receta no disponible' }}</h1>
     </header>
     <div class="content">
       <div class="image-container">
         <figure>
-          <img id="MainImage" src="../../assets/Images/Icone.png" width="600" alt="Food Image">
+          <!-- Imagen principal de la receta cargada dinámicamente -->
+          <img id="MainImage" [src]="recipe.Image || 'assets/Images/Icone.png'" width="600" alt="Imagen de la comida">
         </figure>
         <div class="rating">
+          <!-- Estrellas de valoración (puedes conectar con lógica de valoración en TypeScript) -->
           <span class="star" data-value="1">⭐</span>
           <span class="star" data-value="2">⭐</span>
           <span class="star" data-value="3">⭐</span>
@@ -16,6 +19,7 @@
           <span class="star" data-value="5">⭐</span>
         </div>
         <div class="actions">
+          <!-- Botones de acciones como "Me gusta", "Guardar", y "Compartir" -->
           <button title="Me Gusta"><img src="../Images/heart_icon.png" alt="Me Gusta" width="30"></button>
           <button title="Guardar"><img src="../Images/saved.png" alt="Guardar" width="30"></button>
           <button title="Compartir"><img src="../Images/share.png" alt="Compartir" width="30"></button>
@@ -26,10 +30,10 @@
         <label for="person-count">Número de personas:</label>
         <input type="number" id="person-count" name="person-count" value="1" min="1" max="10">
         <ul id="ingredient-list">
-          <li class="ingredient" data-base-amount="1" data-unit="taza" data-name="de arroz">1 taza de arroz</li>
-          <li class="ingredient" data-base-amount="2" data-unit="tazas" data-name="de agua">2 tazas de agua</li>
-          <li class="ingredient" data-base-amount="1" data-unit="cucharadita" data-name="de sal">1 cucharadita de sal</li>
-          <!-- Más ingredientes aquí -->
+          <!-- Lista dinámica de ingredientes -->
+          <li *ngFor="let ingredient of recipe.Ingredients">
+            {{ ingredient.Ammount }} {{ ingredient.Ingredient }}
+          </li>
         </ul>
       </div>
     </div>
@@ -39,33 +43,39 @@
       <div class="nutrition-info">
         <div class="nutrition-item">
           <span>Cal</span>
-          <div class="nutrition-value">1088</div>
+          <div class="nutrition-value">{{ recipe.Calories || 'No disponible' }}</div>
         </div>
         <div class="nutrition-item">
           <span>Grasa</span>
-          <div class="nutrition-value">70 g</div>
+          <div class="nutrition-value">{{ recipe.Fat || 'No disponible' }} g</div>
         </div>
         <div class="nutrition-item">
           <span>Proteína</span>
-          <div class="nutrition-value">52 g</div>
+          <div class="nutrition-value">{{ recipe.Protein || 'No disponible' }} g</div>
         </div>
         <div class="nutrition-item">
           <span>Carb</span>
-          <div class="nutrition-value">61 g</div>
+          <div class="nutrition-value">{{ recipe.Carbs || 'No disponible' }} g</div>
         </div>
       </div>
     </div>
 
     <div id="bloque_de_pasos">
-      <div id="steps_content" class="steps">
-        <div id="steps_iframe"></div>
+      <h2>Pasos</h2>
+      <!-- Pasos dinámicos cargados desde Firebase -->
+      <div *ngFor="let step of recipe.Steps" class="steps">
+        <header>
+          <h3>{{ step.title }}</h3>
+        </header>
+        <figure>
+          <img [src]="step.Image || 'assets/Images/default_step_image.png'" width="400" alt="Imagen del paso">
+        </figure>
+        <p>{{ step.Desciption }}</p>
       </div>
     </div>
     <!-- Sección de recomendaciones -->
     <div>
-    <h2 class="recommendations-title">Recomendaciones</h2>
-    <app-recommendations></app-recommendations>
+      <h2 class="recommendations-title">Recomendaciones</h2>
     </div>
-
   </article>
 </section>
