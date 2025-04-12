@@ -1,7 +1,7 @@
 <div class="container">
   <!-- Receta del día -->
   <div class="image-placeholder">
-    <a (click)="goTo('recipe?id=' + recipeOfTheDay.id)" class="clickable">
+    <a [href]="'recipe?id=' + recipeOfTheDay.id">
       <img [src]="recipeOfTheDay.Image || 'Images/Icone.png'" [alt]="recipeOfTheDay.Name">
     </a>
     <div class="buttons">
@@ -14,6 +14,7 @@
     <p>{{ recipeOfTheDay.Description }}</p>
   </div>
 </div>
+
 <!-- Tipos de receta -->
 <div class="Bloque_Tipos">
   <h2>Tipos de Receta</h2>
@@ -58,25 +59,9 @@
 
 <!-- Recetas favoritas -->
 <h1 class="SectionHeader">Nuestras Recetas Preferidas</h1>
-<app-list-of-recipes></app-list-of-recipes>
+
 
 <div id="ListOfRecipes">
-  <div class="recipe" *ngFor="let recipe of favoriteRecipes">
-    <a [href]="'Recipe.html?id=' + recipe.id">
-      <div class="recipe-container">
-        <div class="recipe-card">
-          <img [src]="recipe.Image || 'Images/img.png'" [alt]="recipe.name">
+  <app-item *ngFor="let recipe of favoriteRecipes" [recipe]="recipe"></app-item>
 
-          <div class="recipe-overlay">
-            <div class="time">{{ recipe.Time }}</div>
-            <div class="vegetarian">Vegetariano</div>
-          </div>
-          <div class="recipe-info">
-            <h3>{{ recipe.name }}</h3>
-            <p>{{ recipe.Creator }}</p>
-          </div>
-        </div>
-      </div>
-    </a>
-  </div>
 </div>

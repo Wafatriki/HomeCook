@@ -8,6 +8,8 @@
   },
   "private": true,
   "dependencies": {
-    "n": "^10.1.0"
+    "@angular/fire": "^19.1.0",
+    "firebase": "^11.6.0",
+    "zone.js": "^0.15.0"
   }
 }

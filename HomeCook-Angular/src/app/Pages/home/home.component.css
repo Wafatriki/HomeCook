@@ -56,14 +56,14 @@ body {
   background-color: #d3d3d3;
   aspect-ratio: 16 / 9;
 }
-.image-placeholder {
-  position: relative;
-  flex: 2;
-  background: #c4c4c4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.image-placeholder img {
+  width: 500%;
+  max-width: 750px; /* Limita el ancho máximo */
+  height: auto; /* Mantiene la proporción */
+  object-fit: cover; /* Recorta para que encaje sin distorsión */
+  border-radius: 10px; /* Bordes redondeados para estética */
 }
+
 .text-section {
   flex: 1;
   text-align: center;
