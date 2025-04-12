@@ -1,7 +1,7 @@
 <div class="container">
   <!-- Receta del día -->
   <div class="image-placeholder">
-    <a (click)="goTo('recipe?id=' + recipeOfTheDay.id)" class="clickable">
+    <a [href]="'recipe?id=' + recipeOfTheDay.id">
       <img [src]="recipeOfTheDay.Image || 'Images/Icone.png'" [alt]="recipeOfTheDay.Name">
     </a>
     <div class="buttons">
@@ -14,6 +14,7 @@
     <p>{{ recipeOfTheDay.Description }}</p>
   </div>
 </div>
+
 <!-- Tipos de receta -->
 <div class="Bloque_Tipos">
   <h2>Tipos de Receta</h2>
