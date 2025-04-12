@@ -1,50 +1,68 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FirestoreService } from '../../Services/firestore.service';
-import {ItemComponent} from '../../item/item.component';
+import {Component, OnInit} from '@angular/core';
+import { Router } from '@angular/router';
+import {RouterOutlet} from '@angular/router';
+import {ListOfRecipesComponent} from '../../list-of-recipes/list-of-recipes.component';
+import {CommonModule} from '@angular/common';
+
 
 @Component({
   selector: 'app-home',
-  standalone: true,
-  imports: [CommonModule, ItemComponent],
+  imports: [RouterOutlet, ListOfRecipesComponent, CommonModule],
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrl: './home.component.css'
 })
 export class HomePageComponent implements OnInit {
-  recipeOfTheDay: any = {};
-  recipeTypes: any[] = [];
-  ingredientTypes: any[] = [];
-  favoriteRecipes: any[] = [];
+  recipeOfTheDay: any = {}; // Datos de la receta del día
+  recipeTypes: any[] = [];  // Tipos de recetas
+  ingredientTypes: any[] = []; // Tipos de ingredientes
+  favoriteRecipes: any[] = []; // Recetas favoritas
 
-  constructor(private firestoreService: FirestoreService) {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
-    // Carga la receta del día
-    this.firestoreService.getRecipeOfTheDay().then(recipe => {
-      this.recipeOfTheDay = recipe || {
-        Name: 'Sin receta',
-        Description: 'No hay datos disponibles',
-        Image: 'Images/Icone.png'
-      };
-      console.log('Receta del día:', this.recipeOfTheDay);
-    });
+    this.loadRecipeOfTheDay();
+    this.loadTiposDeReceta();
+    this.loadTiposDeIngredientes();
+    this.loadRecipes();
+  }
 
-    // Carga los tipos de recetas
-    this.firestoreService.getRecipeTypes().subscribe(types => {
-      this.recipeTypes = types;
-      console.log('Tipos de receta:', this.recipeTypes);
-    });
+  loadRecipeOfTheDay(): void {
+    fetch('http://localhost:3000/RecipeOfTheDay/')
+      .then(res => res.json())
+      .then(recipe => {
+        this.recipeOfTheDay = recipe[0];
+      })
+      .catch(error => console.error('Error al cargar la receta del día:', error));
+  }
+  goTo(target : string) {
+    const [path, query] = target.split('?');
+    const queryParams = Object.fromEntries(new URLSearchParams(query || ''));
+    this.router.navigate([path], { queryParams });
+  }
+  loadTiposDeReceta(): void {
+    fetch('http://localhost:3000/TiposDeReceta/')
+      .then(res => res.json())
+      .then(recipes => {
+        this.recipeTypes = recipes;
+      })
+      .catch(error => console.error('Error al cargar tipos de recetas:', error));
+  }
 
-    // Carga los tipos de ingredientes
-    this.firestoreService.getIngredientTypes().subscribe(ingredients => {
-      this.ingredientTypes = ingredients;
-      console.log('Tipos de ingredientes:', this.ingredientTypes);
-    });
+  loadTiposDeIngredientes(): void {
+    fetch('http://localhost:3000/TiposDeIngredientes/')
+      .then(res => res.json())
+      .then(ingredients => {
+        this.ingredientTypes = ingredients;
+      })
+      .catch(error => console.error('Error al cargar tipos de ingredientes:', error));
+  }
 
-    // Carga las recetas favoritas
-    this.firestoreService.getRecipes().subscribe(recipes => {
-      this.favoriteRecipes = recipes;
-      console.log('Recetas favoritas:', this.favoriteRecipes);
-    });
+  loadRecipes(): void {
+    fetch('http://localhost:3000/Recipes')
+      .then(res => res.json())
+      .then(recipes => {
+        this.favoriteRecipes = recipes;
+      })
+      .catch(error => console.error('Error al cargar recetas favoritas:', error));
   }
 }
