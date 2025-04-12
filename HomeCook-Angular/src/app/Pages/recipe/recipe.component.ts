@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FirestoreService } from '../../Services/firestore.service';
 import {ItemComponent} from '../../item/item.component';
 import {NgForOf} from '@angular/common';
+import {StepsOfRecipesComponent} from '../../steps-of-recipes/steps-of-recipes.component';
 
 @Component({
   selector: 'app-recipe',
@@ -9,12 +10,14 @@ import {NgForOf} from '@angular/common';
   styleUrls: ['./recipe.component.css'],
   imports: [
     ItemComponent,
-    NgForOf
+    NgForOf,
+    StepsOfRecipesComponent
   ]
 })
 export class RecipeComponent implements OnInit {
   recipe: any = {};
   recommendations: any[] = []
+  stepsOfRecipe: any[] = []
 
   constructor(private firestoreService: FirestoreService) {}
 
@@ -24,10 +27,9 @@ export class RecipeComponent implements OnInit {
 
   }
 
-  // Método para cargar una receta específica desde Firestore
   loadContent(): void {
     const params = new URLSearchParams(window.location.search);
-    const id = params.get('id'); // Obtiene el ID de la receta desde la URL
+    const id = params.get('id'); // Obtén el ID de la receta desde la URL
 
     if (!id) {
       console.error('No se encontró el parámetro ID en la URL.');
@@ -42,11 +44,15 @@ export class RecipeComponent implements OnInit {
 
       // Asigna los datos de la receta al objeto recipe
       this.recipe = recipe;
-      console.log('Receta cargada:', this.recipe);
+      this.stepsOfRecipe = recipe.Steps || [];
+      console.log('Receta cargada:', this.recipe); // Depura la receta completa
+      console.log('Pasos cargados:', this.stepsOfRecipe); // Depura los pasos específicamente
     }).catch((error) => {
       console.error('Error al cargar el contenido de la receta:', error);
     });
   }
+
+
 
   loadRecomendations(): void {
     this.firestoreService.getRecipes().subscribe(
@@ -60,4 +66,5 @@ export class RecipeComponent implements OnInit {
     );
   }
 
+  protected readonly StepsOfRecipesComponent = StepsOfRecipesComponent;
 }

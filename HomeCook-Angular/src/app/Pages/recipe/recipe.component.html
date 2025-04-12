@@ -62,17 +62,9 @@
 
     <div id="bloque_de_pasos">
       <h2>Pasos</h2>
-      <!-- Pasos dinámicos cargados desde Firebase -->
-      <div *ngFor="let step of recipe.Steps" class="steps">
-        <header>
-          <h3>{{ step.title }}</h3>
-        </header>
-        <figure>
-          <img [src]="step.Image || 'assets/Images/default_step_image.png'" width="400" alt="Imagen del paso">
-        </figure>
-        <p>{{ step.Desciption }}</p>
-      </div>
+      <app-steps-of-recipes [steps]="stepsOfRecipe"></app-steps-of-recipes>
     </div>
+
     <!-- Sección de recomendaciones -->
     <div>
       <h2 class="recommendations-title">Recomendaciones</h2>
