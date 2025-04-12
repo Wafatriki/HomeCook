@@ -1,15 +1,11 @@
-
-<div class="recipe-container">
-
-  <div class="recipe-card">
-    <img src="../Images/img.png" alt="Recipe Image">
-    <div class="recipe-overlay">
-      <div class="time">30 min</div>
-      <div class="vegetarian">Vegetariano</div>
-    </div>
+<div class="recipe-card">
+  <a [href]="'Recipe.html?id=' + recipe.id">
+    <img [src]="recipe.Image || 'assets/Images/default_image.png'" [alt]="recipe.name || 'Sin nombre'">
     <div class="recipe-info">
-      <h3>Nombre</h3>
-      <p>Autor</p>
+      <h3>{{ recipe.name }}</h3>
+      <p>{{ recipe.description }}</p>
+      <span>{{ recipe.time }}</span>
+      <p>Creado por: {{ recipe.Creator }}</p>
     </div>
-  </div>
+  </a>
 </div>

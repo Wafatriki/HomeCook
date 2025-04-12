@@ -1,14 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-item',
-  imports: [],
   templateUrl: './item.component.html',
-  styleUrl: './item.component.css'
+  styleUrls: ['./item.component.css']
 })
 export class ItemComponent {
-
+  @Input() recipe: any; // Recibir datos desde el componente principal
 }
+
 
 export class ListOfRecipesComponent {
 }

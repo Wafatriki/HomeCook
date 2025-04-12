@@ -59,25 +59,9 @@
 
 <!-- Recetas favoritas -->
 <h1 class="SectionHeader">Nuestras Recetas Preferidas</h1>
-<app-list-of-recipes></app-list-of-recipes>
+
 
 <div id="ListOfRecipes">
-  <div class="recipe" *ngFor="let recipe of favoriteRecipes">
-    <a [href]="'Recipe.html?id=' + recipe.id">
-      <div class="recipe-container">
-        <div class="recipe-card">
-          <img [src]="recipe.Image || 'Images/img.png'" [alt]="recipe.name">
+  <app-item *ngFor="let recipe of favoriteRecipes" [recipe]="recipe"></app-item>
 
-          <div class="recipe-overlay">
-            <div class="time">{{ recipe.Time }}</div>
-            <div class="vegetarian">Vegetariano</div>
-          </div>
-          <div class="recipe-info">
-            <h3>{{ recipe.name }}</h3>
-            <p>{{ recipe.Creator }}</p>
-          </div>
-        </div>
-      </div>
-    </a>
-  </div>
 </div>
