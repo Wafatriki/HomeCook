@@ -21,8 +21,8 @@
   <div class="Lista_De_Tipos">
     <ul>
       <li *ngFor="let type of recipeTypes">
-        <a [href]="'Recipes-filter.html?filter=' + type.Name">
-          <div class="Lista_De_Tipos_Item">
+        <a [href]="'recipe?id=' + type.id">
+        <div class="Lista_De_Tipos_Item">
             <div class="icon_type">
               <img [src]="type.Image || 'Images/Icone.png'" [alt]="type.Name">
             </div>
@@ -42,7 +42,7 @@
   <div class="Lista_De_Tipos">
     <ul>
       <li *ngFor="let ingredient of ingredientTypes">
-        <a [href]="'Recipe.html?id=' + ingredient.id">
+        <a [href]="'Recipe.html?Name=' + ingredient.Name">
           <div class="Lista_De_Tipos_Item">
             <div class="icon_type">
               <img [src]="ingredient.Image || 'Images/Icone.png'" [alt]="ingredient.Name">

@@ -1,0 +1,11 @@
+<section id="steps-section">
+  <article *ngFor="let step of steps" class="step-item">
+    <header>
+      <h1 class="title-step">{{ step.title || 'Título no disponible' }}</h1>
+    </header>
+    <figure>
+      <img [src]="step.Image || 'assets/Images/default_step_image.png'" width="400" alt="Imagen del paso">
+    </figure>
+    <h2 class="text-step">{{ step.Desciption || 'Descripción no disponible' }}</h2>
+  </article>
+</section>

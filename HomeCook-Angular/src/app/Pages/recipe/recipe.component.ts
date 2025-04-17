@@ -1,24 +1,35 @@
 import { Component, OnInit } from '@angular/core';
 import { FirestoreService } from '../../Services/firestore.service';
+import {ItemComponent} from '../../item/item.component';
+import {NgForOf} from '@angular/common';
+import {StepsOfRecipesComponent} from '../../steps-of-recipes/steps-of-recipes.component';
 
 @Component({
   selector: 'app-recipe',
   templateUrl: './recipe.component.html',
   styleUrls: ['./recipe.component.css'],
+  imports: [
+    ItemComponent,
+    NgForOf,
+    StepsOfRecipesComponent
+  ]
 })
 export class RecipeComponent implements OnInit {
-  recipe: any = {}; // Objeto que almacenará los datos de la receta cargada
+  recipe: any = {};
+  recommendations: any[] = []
+  stepsOfRecipe: any[] = []
 
   constructor(private firestoreService: FirestoreService) {}
 
   ngOnInit(): void {
     this.loadContent();
+    this.loadRecomendations();
+
   }
 
-  // Método para cargar una receta específica desde Firestore
   loadContent(): void {
     const params = new URLSearchParams(window.location.search);
-    const id = params.get('id'); // Obtiene el ID de la receta desde la URL
+    const id = params.get('id'); // Obtén el ID de la receta desde la URL
 
     if (!id) {
       console.error('No se encontró el parámetro ID en la URL.');
@@ -33,44 +44,27 @@ export class RecipeComponent implements OnInit {
 
       // Asigna los datos de la receta al objeto recipe
       this.recipe = recipe;
-      console.log('Receta cargada:', this.recipe);
+      this.stepsOfRecipe = recipe.Steps || [];
+      console.log('Receta cargada:', this.recipe); // Depura la receta completa
+      console.log('Pasos cargados:', this.stepsOfRecipe); // Depura los pasos específicamente
     }).catch((error) => {
       console.error('Error al cargar el contenido de la receta:', error);
     });
   }
 
+
+
   loadRecomendations(): void {
-    const listOfRecipes = document.getElementById('recommendations_iframe');
-    if (listOfRecipes) {
-      listOfRecipes.innerHTML = ""; // Limpia el área de recetas recomendadas
-
-      this.firestoreService.getRecipes().subscribe(recipes => {
-        recipes.forEach((recipe: any) => {
-          const recipeElement = document.createElement('div');
-          recipeElement.classList.add('recipe');
-
-          recipeElement.innerHTML = `
-          <div class="recipe-container">
-            <div class="recipe-card">
-              <img src="${recipe.Image || 'Images/img.png'}" alt="Recipe Image">
-              <div class="recipe-overlay">
-                <div class="time">${recipe.time}</div>
-                <div class="vegetarian">Vegetariano</div>
-              </div>
-              <div class="recipe-info">
-                <h3>${recipe.name}</h3>
-                <p>${recipe.Creator}</p>
-              </div>
-            </div>
-          </div>
-        `;
-          listOfRecipes.appendChild(recipeElement);
-        });
-      }, error => {
-        console.error('Error al cargar las recetas recomendadas:', error);
-        listOfRecipes.innerHTML = '<p>Error al cargar las recetas preferidas.</p>';
-      });
-    }
+    this.firestoreService.getRecipes().subscribe(
+      (recipes) => {
+        this.recommendations = recipes; // Asigna las recetas al array recommendations
+        console.log('Recomendaciones cargadas:', this.recommendations); // Depuración
+      },
+      (error) => {
+        console.error('Error al cargar las recomendaciones:', error);
+      }
+    );
   }
 
+  protected readonly StepsOfRecipesComponent = StepsOfRecipesComponent;
 }
