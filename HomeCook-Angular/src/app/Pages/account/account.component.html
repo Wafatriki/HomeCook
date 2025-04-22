@@ -5,12 +5,11 @@
   <div class="profile-container">
     <div class="avatar"></div>
     <div class="info">
-      <div class="text-field">Nombre de usuario</div>
-      <div class="text-field">Email</div>
+      <div class="text-field">{{ account_name }}</div>
       <div class="icons">
         <div class="icon">
           <span class="gear-icon"></span>
-          <a href=""><span>Ajustes</span></a>
+          <a class="clickable" (click)="navigate('edit')"><span>Ajustes</span></a>
         </div>
         <div class="icon">
           <span class="power-icon"></span>
@@ -22,20 +21,21 @@
 
   <div class="tabs">
 
-    <div class="tab" onclick="loadContent('guardado')">
+    <div class="tab" (click)="loadContent('guardado')">
       <img src="" alt="Guardado">
       <span>Guardado</span>
     </div>
-    <div class="tab" onclick="loadContent('me-gusta')">
+    <div class="tab" (click)="loadContent('me-gusta')">
       <img src="" alt="Me gusta">
       <span>Me gusta</span>
     </div>
-    <div class="tab" onclick="loadContent('ultimas-vistas')">
-      <img src="" alt="Últimas vistas">
-      <span>Últimas vistas</span>
-    </div>
   </div>
-
+  <div *ngIf="selectedTab === 'guardado'">
+    <app-item *ngFor="let recipe of recommendations" [recipe]="recipe"></app-item>
+  </div>
+  <div *ngIf="selectedTab === 'me-gusta'">
+    <app-item *ngFor="let recipe of recommendations" [recipe]="recipe"></app-item>
+  </div>
   <div id="content-area">
 
   </div>

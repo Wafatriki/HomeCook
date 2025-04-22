@@ -3,15 +3,26 @@ import { RouterOutlet } from '@angular/router';
 import {ListOfRecipesComponent} from '../../list-of-recipes/list-of-recipes.component';
 import { Router } from '@angular/router'
 import {AuthService} from '../../Services/authentication.service';
+import {ItemComponent} from '../../item/item.component';
+import {NgForOf, NgIf} from '@angular/common';
+import { CommonModule} from '@angular/common';
+import {FirestoreService} from '../../Services/firestore.service';
+
 @Component({
   selector: 'app-account',
-  imports: [RouterOutlet, ListOfRecipesComponent],
+  imports: [RouterOutlet, ListOfRecipesComponent, ItemComponent, NgForOf, NgIf, CommonModule],
   templateUrl: './account.component.html',
   styleUrls: ['./account.component.css']
 })
 export class AccountComponent {
-  constructor(private router: Router, private authService: AuthService) { }
+
+  account_name: string = localStorage.getItem('mail') ?? 'invitado';
+  selectedTab: string | null = null;
+  recommendations: any[] = []
+  constructor(private router: Router, private authService: AuthService,
+              private firestoreService: FirestoreService ) { }
   // Carga el template desde una fuente
+
   loadTemplate(fileName: string, id: string, callback?: () => void): void {
     fetch(fileName)
       .then((res) => {
@@ -31,7 +42,9 @@ export class AccountComponent {
       })
       .catch((err) => console.error('Error al cargar el template:', err));
   }
-
+  navigate(target:string){
+    this.router.navigate([target]);
+  }
   // Carga los datos del perfil del usuario
   loadUserProfile(): void {
     fetch('http://localhost:3000/users/1') // URL del JSON Server
@@ -61,55 +74,24 @@ export class AccountComponent {
   // Función para cerrar sesión
   logOut(): void {
     this.authService.setAuthToken(null);
+    this.authService.logout();
     this.router.navigate(['']);
   }
 
   // Carga el contenido dependiendo de la pestaña seleccionada
   loadContent(tab: string): void {
-    const contentArea = document.getElementById('content-area');
+    if (tab != null) {
 
-    if (!contentArea) {
-      console.error("El área de contenido no se encontró.");
-      return;
     }
-
-    contentArea.innerHTML = ""; // Limpia el área de contenido antes de cargar nuevas recetas
-
-    if (tab === "guardado" || tab === "me-gusta" || tab === "ultimas-vistas") {
-      fetch('http://localhost:3000/Recipes') // URL del JSON Server
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error('Error al cargar las recetas.');
-          }
-          return response.json();
-        })
-        .then((recipes) => {
-          recipes.forEach((recipe: any) => {
-            const recipeElement = document.createElement('div');
-            recipeElement.classList.add('recipe');
-
-            recipeElement.innerHTML = `
-              <div class="recipe-container">
-                <div class="recipe-card">
-                  <img src="${recipe.Image !== "/" ? recipe.Image : "Images/img.png"}" alt="Recipe Image">
-                  <div class="recipe-overlay">
-                    <div class="time">${recipe.Time}</div>
-                    <div class="vegetarian">Vegetariano</div>
-                  </div>
-                  <div class="recipe-info">
-                    <h3>${recipe.name}</h3>
-                    <p>${recipe.Creator}</p>
-                  </div>
-                </div>
-              </div>
-            `;
-            contentArea.appendChild(recipeElement);
-          });
-        })
-        .catch((error) => {
-          console.error('Error al cargar las recetas:', error);
-          contentArea.innerHTML = '<p>Error al cargar las recetas guardadas.</p>';
-        });
-    }
+    this.selectedTab = tab;
+    this.firestoreService.getRecipes().subscribe(
+      (recipes) => {
+        this.recommendations = recipes; // Asigna las recetas al array recommendations
+        console.log('Recomendaciones cargadas:', this.recommendations); // Depuración
+      },
+      (error) => {
+        console.error('Error al cargar las recomendaciones:', error);
+      }
+    );
   }
 }
