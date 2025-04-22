@@ -18,6 +18,7 @@ export class RecipeComponent implements OnInit {
   recipe: any = {};
   recommendations: any[] = []
   stepsOfRecipe: any[] = []
+  selectedRating: number = 0;
 
   constructor(private firestoreService: FirestoreService) {}
 
@@ -69,4 +70,9 @@ export class RecipeComponent implements OnInit {
   }
 
   protected readonly StepsOfRecipesComponent = StepsOfRecipesComponent;
+
+  setRating(rating: number): void {
+    this.selectedRating = rating;
+    console.log('Valoración seleccionada:', this.selectedRating); // Depuración en la consola
+  }
 }
