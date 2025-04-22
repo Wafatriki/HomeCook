@@ -18,8 +18,15 @@ export class RecipeComponent implements OnInit {
   recipe: any = {};
   recommendations: any[] = []
   stepsOfRecipe: any[] = []
+  selectedRating: number = 0;
 
   constructor(private firestoreService: FirestoreService) {}
+
+  setRating(rating: number): void {
+    this.selectedRating = rating;
+    console.log('Valoración seleccionada:', this.selectedRating); // Depuración en la consola
+  }
+
 
   ngOnInit(): void {
     this.loadContent();
@@ -29,7 +36,7 @@ export class RecipeComponent implements OnInit {
 
   loadContent(): void {
     const params = new URLSearchParams(window.location.search);
-    const id = params.get('id'); // Obtén el ID de la receta desde la URL
+    const id = params.get('id');
 
     if (!id) {
       console.error('No se encontró el parámetro ID en la URL.');
@@ -42,11 +49,8 @@ export class RecipeComponent implements OnInit {
         return;
       }
 
-      // Asigna los datos de la receta al objeto recipe
       this.recipe = recipe;
       this.stepsOfRecipe = recipe.Steps || [];
-      console.log('Receta cargada:', this.recipe); // Depura la receta completa
-      console.log('Pasos cargados:', this.stepsOfRecipe); // Depura los pasos específicamente
     }).catch((error) => {
       console.error('Error al cargar el contenido de la receta:', error);
     });
@@ -54,11 +58,11 @@ export class RecipeComponent implements OnInit {
 
 
 
+
   loadRecomendations(): void {
     this.firestoreService.getRecipes().subscribe(
       (recipes) => {
-        this.recommendations = recipes; // Asigna las recetas al array recommendations
-        console.log('Recomendaciones cargadas:', this.recommendations); // Depuración
+        this.recommendations = recipes;
       },
       (error) => {
         console.error('Error al cargar las recomendaciones:', error);
@@ -67,4 +71,6 @@ export class RecipeComponent implements OnInit {
   }
 
   protected readonly StepsOfRecipesComponent = StepsOfRecipesComponent;
+
+
 }

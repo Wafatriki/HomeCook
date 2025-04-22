@@ -1,114 +1,104 @@
-
-
+/* Fuente y ajustes generales */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap');
 
 body {
   font-family: 'Raleway', sans-serif;
-}
-.recipe-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
+  background-color: #f8f8f8;
+  margin: 0;
+  padding: 0;
 }
 
-.recipe-card {
-  position: relative;
-  flex: 1 1 calc(33.33% - 20px);
-  max-width: 300px;
-  min-width: 200px;
-  transition: all 0.3s ease-in-out;
-  margin-top: 40px;
-}
-
-.recipe-card img {
+/* Contenedor principal de los pasos */
+#steps-section {
   width: 100%;
-  height: auto;
-  z-index: 1;
-  border-radius: 9px;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
-}
-.recipe-info {
-  padding: 10px;
-}
-.recipe-info h3 {
-  margin: 10px 0;
+/* Mensaje cuando no hay pasos */
+#steps-section p {
+  text-align: center;
   font-size: 1.2em;
-}
-.recipe-info p {
-  margin: 5px 0;
   color: #555;
 }
-.recipe-overlay {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  right: 10px;
+
+/* Estilo para cada paso */
+.step-item {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  z-index: 2;
-}
-.time, .vegetarian {
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 5px;
-  padding: 5px 10px;
-  display: inline-block;
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-.vegetarian {
-  background-color: rgba(212, 237, 218, 0.8);
-  color: #155724;
+/* Título de cada paso */
+.title-step {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 15px;
 }
 
-.time, .vegan {
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 5px;
-  padding: 5px 10px;
-  display: inline-block;
+/* Imagen de cada paso */
+.step-item figure {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 15px;
 }
 
-.vegan {
-  background-color: rgba(212, 237, 218, 0.8);
-  color: #155724;
-}
-a {
-  color: inherit;
-  text-decoration: none;
+.step-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 
-
-a:hover {
-  text-decoration: underline;
+/* Descripción de cada paso */
+.text-step {
+  font-size: 1.1em;
+  color: #555;
+  text-align: center;
+  line-height: 1.6;
 }
 
+/* Diseño responsivo */
 @media (max-width: 768px) {
-  .recipe-card {
-    flex: 1 1 calc(50% - 20px);
+  #steps-section {
+    padding: 15px;
+  }
+
+  .step-item {
+    padding: 15px;
+  }
+
+  .title-step {
+    font-size: 1.3em;
+  }
+
+  .text-step {
+    font-size: 1em;
   }
 }
 
 @media (max-width: 480px) {
-  .recipe-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column; /* Apila las tarjetas verticalmente */
-    align-items: center; /* Centra las tarjetas */
-  }
-  .recipe-card img {
-    width: 100%;
-    height: auto;
-    max-height: 150px; /* Limita la altura de la imagen */
-    object-fit: cover; /* Ajusta la imagen sin distorsionarla */
+  .step-item {
+    flex-direction: column;
+    padding: 10px;
   }
 
-  .recipe-info h3 {
-    font-size: 1em; /* Reduce el tamaño del título */
+  .title-step {
+    font-size: 1.2em;
   }
 
-  .recipe-info p {
-    font-size: 0.9em; /* Reduce el tamaño del texto */
+  .text-step {
+    font-size: 0.9em;
   }
-
 }
-

@@ -73,6 +73,21 @@ figure {
 
 .rating {
   display: flex;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.star {
+  font-size: 30px;
+  color: #ccc; /* Estrellas sin seleccionar */
+  transition: color 0.3s ease-in-out;
+}
+
+.star.active {
+  color: gold; /* Estrellas seleccionadas */
+}
+.rating {
+  display: flex;
   justify-content: center;
   margin: 10px 0;
 }
@@ -238,3 +253,10 @@ figure {
     height: 20px;
   }
 }
+
+
+
+
+
+
+

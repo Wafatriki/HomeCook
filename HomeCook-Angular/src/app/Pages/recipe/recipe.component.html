@@ -11,13 +11,16 @@
           <img id="MainImage" [src]="recipe.Image || 'assets/Images/Icone.png'" width="600" alt="Imagen de la comida">
         </figure>
         <div class="rating">
-          <!-- Estrellas de valoración (puedes conectar con lógica de valoración en TypeScript) -->
-          <span class="star" data-value="1">⭐</span>
-          <span class="star" data-value="2">⭐</span>
-          <span class="star" data-value="3">⭐</span>
-          <span class="star" data-value="4">⭐</span>
-          <span class="star" data-value="5">⭐</span>
+          <span *ngFor="let star of [1, 2, 3, 4, 5]"
+                class="star"
+                [class.active]="star <= selectedRating"
+                (click)="setRating(star)">
+            ⭐
+          </span>
         </div>
+
+
+
         <div class="actions">
           <!-- Botones de acciones como "Me gusta", "Guardar", y "Compartir" -->
           <button title="Me Gusta"><img src="assets/Images/heart_icon.png" alt="Me Gusta" width="30"></button>

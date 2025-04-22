@@ -1,4 +1,5 @@
 <section id="steps-section">
+  <p *ngIf="!steps || steps.length === 0">No hay pasos disponibles.</p>
   <article *ngFor="let step of steps" class="step-item">
     <header>
       <h1 class="title-step">{{ step.title || 'Título no disponible' }}</h1>
