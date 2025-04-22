@@ -44,7 +44,9 @@ export class RecipeComponent implements OnInit {
 
       // Asigna los datos de la receta al objeto recipe
       this.recipe = recipe;
+
       this.stepsOfRecipe = recipe.Steps || [];
+      console.log(this.stepsOfRecipe);
       console.log('Receta cargada:', this.recipe); // Depura la receta completa
       console.log('Pasos cargados:', this.stepsOfRecipe); // Depura los pasos específicamente
     }).catch((error) => {
