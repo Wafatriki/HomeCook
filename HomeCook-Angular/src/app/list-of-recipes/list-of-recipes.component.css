@@ -1,7 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap');
+
 .blockOfRecipes{
   display: flex;
   gap: 2rem;
 }
-.clickable{
+.clickable {
   cursor: pointer;
 }
+.recipe-card {
+  background-color: #f3f3f3;
+  padding: 16px;
+  margin: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.recipe-card:hover {
+  transform: scale(1.02);
+}
+
+.recipe-info h3 {
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.recipe-info p {
+  margin: 4px 0;
+}
+
+.recipe-info span {
+  font-weight: bold;
+}
+
+
