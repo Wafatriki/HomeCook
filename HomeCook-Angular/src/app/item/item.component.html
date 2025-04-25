@@ -1,5 +1,4 @@
-<div class="recipe-card">
-  <a [href]="'recipe?id=' + recipe.id">
+<div class="recipe-card" (click)="onclick()">
     <img [src]="recipe.Image || 'assets/Images/default_image.png'" [alt]="recipe.name || 'Sin nombre'">
     <div class="recipe-info">
       <h3>{{ recipe.name }}</h3>
@@ -7,5 +6,4 @@
       <span>{{ recipe.time }}</span>
       <p>Creado por: {{ recipe.Creator }}</p>
     </div>
-  </a>
 </div>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FirestoreService } from '../../Services/firestore.service';
-import {ItemComponent} from '../../item/item.component';
+import { ItemComponent } from '../../item/item.component';
 
 @Component({
   selector: 'app-home',

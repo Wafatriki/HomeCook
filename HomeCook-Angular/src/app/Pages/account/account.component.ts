@@ -18,7 +18,7 @@ export class AccountComponent {
 
   account_name: string = localStorage.getItem('mail') ?? 'invitado';
   selectedTab: string | null = null;
-  recommendations: any[] = []
+  recommendations: any[] = [];
   constructor(private router: Router, private authService: AuthService,
               private firestoreService: FirestoreService ) { }
   // Carga el template desde una fuente
@@ -66,10 +66,6 @@ export class AccountComponent {
       .catch((err) => console.error("Error al cargar los datos del usuario:", err));
   }
 
-  // Carga un template desde una fuente
-  loadTemplateFromSource(source: string, id: string): void {
-    this.loadTemplate(source, id);
-  }
 
   // Función para cerrar sesión
   logOut(): void {

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-item',
@@ -7,8 +8,8 @@ import { Component, Input } from '@angular/core';
 })
 export class ItemComponent {
   @Input() recipe: any; // Recibir datos desde el componente principal
-}
-
-
-export class ListOfRecipesComponent {
+  constructor(private router: Router) { }
+  onclick(){
+    this.router.navigate(['recipe'], { queryParams: { id: this.recipe.id } });
+  }
 }
