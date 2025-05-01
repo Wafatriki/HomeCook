@@ -1,20 +1,27 @@
-
 <body id="content">
 <div class="iframe-container">
   <header>
     <div id="main_header"></div>
   </header>
 </div>
+
 <div class="container">
   <h1 id="Filtro-Receta">Recetas</h1>
 </div>
-<div id="list-container" class="list-container">
+
+<!-- Mostrar resultados de búsqueda si hay búsqueda activa -->
+<div id="search-results-container" class="search-results-container" *ngIf="searchQuery">
+  <app-search-results></app-search-results>
+</div>
+
+<!-- Mostrar lista completa de recetas si NO hay búsqueda activa -->
+<div id="list-container" class="list-container" *ngIf="!searchQuery">
   <app-list-of-recipes></app-list-of-recipes>
 </div>
+
 <div class="iframe-container">
   <footer id="footer">
     <div id="main_footer"></div>
   </footer>
 </div>
-
 </body>

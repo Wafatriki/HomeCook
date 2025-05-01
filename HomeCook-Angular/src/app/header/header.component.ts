@@ -3,15 +3,18 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../Services/authentication.service';
+import {FormsModule} from '@angular/forms';
+import {SearchComponent} from '../search/search.component';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
-  imports: [CommonModule]
+  imports: [CommonModule, FormsModule, SearchComponent]
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   authToken: string | null = null;
+  searchQuery: string = '';
 
   constructor(private router: Router, private authService: AuthService) { }
 
@@ -21,6 +24,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
       this.authToken = token || null;
     });
   }
+  onSearch(): void {
+    if (this.searchQuery.trim()) {
+      this.router.navigate(['/recipes-filter'], { queryParams: { search: this.searchQuery } });
+    }
+  }
+
 
   ngOnDestroy(): void {
     if (typeof window !== 'undefined') {
