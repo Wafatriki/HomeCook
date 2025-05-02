@@ -22,11 +22,38 @@
 
 
         <div class="actions">
-          <!-- Botones de acciones como "Me gusta", "Guardar", y "Compartir" -->
-          <button title="Me Gusta"><img src="assets/Images/heart_icon.png" alt="Me Gusta" width="30"></button>
-          <button title="Guardar"><img src="assets/Images/saved.png" alt="Guardar" width="30"></button>
-          <button title="Compartir"><img src="assets/Images/share.png" alt="Compartir" width="30"></button>
+          <button title="Me Gusta" (click)="toggleLike()">
+            <img [src]="isLiked ? 'assets/Images/corazon.png' : 'assets/Images/heart_icon.png'" alt="Me Gusta" width="30">
+          </button>
+
+          <button title="Guardar" (click)="toggleSave()">
+            <img [src]="isSaved ? 'assets/Images/saved2.png' : 'assets/Images/saved.png'" alt="Guardar" width="30">
+          </button>
+
+          <!-- Botón de compartir con menú desplegable -->
+          <div class="share-container">
+            <button title="Compartir" (click)="toggleShareMenu()">
+              <img src="assets/Images/share.png" alt="Compartir" width="30">
+            </button>
+
+            <!-- Menú desplegable de redes sociales -->
+            <div class="share-menu" *ngIf="shareMenuVisible">
+              <a [href]="'https://www.facebook.com/sharer/sharer.php?u=' + recipeUrl" target="_blank">
+                Compartir en Facebook
+              </a>
+              <a [href]="'https://twitter.com/intent/tweet?url=' + recipeUrl + '&text=¡Mira esta receta!'" target="_blank">
+                Compartir en Twitter
+              </a>
+              <a [href]="'https://api.whatsapp.com/send?text=' + recipeUrl" target="_blank">
+                Compartir en WhatsApp
+              </a>
+              <button (click)="copyLink()">Copiar enlace</button>
+            </div>
+          </div>
         </div>
+
+
+
       </div>
       <div class="ingredients">
         <h2>Ingredientes</h2>

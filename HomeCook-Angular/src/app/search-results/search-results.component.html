@@ -1,0 +1,20 @@
+<h2 *ngIf="searchQuery">Resultados para "{{ searchQuery }}"</h2>
+<h2 *ngIf="!searchQuery">Todas las recetas</h2>
+
+<div class="recipe-container">
+  <p *ngIf="filteredRecipes.length === 0">No se encontraron recetas.</p>
+
+  <div *ngFor="let recipe of filteredRecipes" class="recipe-card">
+    <a [href]="'/recipe?id=' + recipe.id">
+      <img [src]="recipe.Image || 'assets/Images/Icone.png'" alt="Recipe Image">
+      <div class="recipe-overlay">
+        <div class="time">{{ recipe.Time || 'Tiempo desconocido' }}</div>
+        <div *ngIf="recipe.Vegetarian" class="vegetarian">Vegetariano</div>
+      </div>
+      <div class="recipe-info">
+        <h3>{{ recipe.name }}</h3>
+        <p>{{ recipe.Creator }}</p>
+      </div>
+    </a>
+  </div>
+</div>

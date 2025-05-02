@@ -9,11 +9,9 @@
         Contact
       </a></li>
       <li>
-        <form action="#" method="GET" class="search-form">
-          <input id="BusquedaDeReceta" type="text" name="q" placeholder="Buscar..." class="search-input"/>
-          <button id="SearchButton" type="submit" class="search-button"></button>
-        </form>
+        <app-search></app-search>
       </li>
+
       <li id="Log_in_Section">
         <!-- Si está logueado -->
       <li *ngIf="authToken" >

@@ -1,30 +1,43 @@
 import { Component, OnInit } from '@angular/core';
 import { FirestoreService } from '../../Services/firestore.service';
 import {ItemComponent} from '../../item/item.component';
-import {NgForOf} from '@angular/common';
+import {NgForOf, CommonModule} from '@angular/common';
 import {StepsOfRecipesComponent} from '../../steps-of-recipes/steps-of-recipes.component';
+
+
+interface Recipe {
+  id: string;
+  name: string;
+  Image: string;
+}
 
 @Component({
   selector: 'app-recipe',
   templateUrl: './recipe.component.html',
   styleUrls: ['./recipe.component.css'],
-  imports: [
-    ItemComponent,
-    NgForOf,
-    StepsOfRecipesComponent
-  ]
+  standalone: true,
+  imports: [CommonModule, ItemComponent, StepsOfRecipesComponent]
 })
 export class RecipeComponent implements OnInit {
   recipe: any = {};
   recommendations: any[] = []
   stepsOfRecipe: any[] = []
   selectedRating: number = 0;
+  isLiked: boolean = false;
+  isSaved: boolean = false;
+  shareMenuVisible: boolean = false;
+  recipeUrl: string = '';
+  likedRecipes: any[] = [];
+  savedRecipes: any[] = [];
 
   constructor(private firestoreService: FirestoreService) {}
 
   ngOnInit(): void {
     this.loadContent();
     this.loadRecomendations();
+    this.loadSavedRecipes();
+    this.checkIfLiked();
+
 
   }
 
@@ -75,4 +88,72 @@ export class RecipeComponent implements OnInit {
     this.selectedRating = rating;
     console.log('Valoración seleccionada:', this.selectedRating); // Depuración en la consola
   }
+
+
+  toggleLike(): void {
+    this.isLiked = !this.isLiked;
+
+    let savedLikes = localStorage.getItem('likedRecipes');
+    let likedRecipes: Recipe[] = savedLikes ? JSON.parse(savedLikes) : [];
+
+    if (this.isLiked) {
+      if (!likedRecipes.some((r: Recipe) => r.id === this.recipe.id)) {
+        likedRecipes.push(this.recipe);
+      }
+    } else {
+      likedRecipes = likedRecipes.filter((r: Recipe) => r.id !== this.recipe.id); // ❌ Elimina la receta
+    }
+
+    localStorage.setItem('likedRecipes', JSON.stringify(likedRecipes));
+  }
+
+
+  checkIfLiked(): void {
+    let savedLikes = localStorage.getItem('likedRecipes');
+    let likedRecipes: Recipe[] = savedLikes ? JSON.parse(savedLikes) : [];
+
+    this.isLiked = likedRecipes.some((r: Recipe) => r.id === this.recipe.id);
+  }
+
+
+  loadLikedRecipes(): void {
+    const savedLikes = localStorage.getItem('likedRecipes');
+    this.likedRecipes = savedLikes ? JSON.parse(savedLikes) : [];
+  }
+
+  toggleSave(): void {
+    this.isSaved = !this.isSaved;
+
+    let savedData = localStorage.getItem('savedRecipes');
+    let savedRecipes: Recipe[] = savedData ? JSON.parse(savedData) : [];
+
+    if (this.isSaved) {
+      if (!savedRecipes.some((r: Recipe) => r.id === this.recipe.id)) {
+        savedRecipes.push(this.recipe);
+      }
+    } else {
+      savedRecipes = savedRecipes.filter((r: Recipe) => r.id !== this.recipe.id); // ❌ Elimina la receta
+    }
+
+    localStorage.setItem('savedRecipes', JSON.stringify(savedRecipes));
+  }
+
+
+  loadSavedRecipes(): void {
+    const savedData = localStorage.getItem('savedRecipes');
+    this.savedRecipes = savedData ? JSON.parse(savedData) : [];
+  }
+
+  toggleShareMenu(): void {
+    this.shareMenuVisible = !this.shareMenuVisible;
+  }
+
+  copyLink(): void {
+    navigator.clipboard.writeText(this.recipeUrl).then(() => {
+      console.log('🔗 Enlace copiado:', this.recipeUrl);
+      alert('Enlace copiado al portapapeles!');
+    });
+  }
+
+
 }
