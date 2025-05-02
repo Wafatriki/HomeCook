@@ -22,20 +22,24 @@
   <div class="tabs">
 
     <div class="tab" (click)="loadContent('guardado')">
-      <img src="" alt="Guardado">
+      <img src="../../../assets/Images/saved.png" alt="Guardado">
       <span>Guardado</span>
     </div>
     <div class="tab" (click)="loadContent('me-gusta')">
-      <img src="" alt="Me gusta">
+      <img src="../../../assets/Images/heart_icon.png" alt="Me gusta">
       <span>Me gusta</span>
     </div>
   </div>
-  <div *ngIf="selectedTab === 'guardado'">
-    <app-item *ngFor="let recipe of recommendations" [recipe]="recipe"></app-item>
-  </div>
   <div *ngIf="selectedTab === 'me-gusta'">
-    <app-item *ngFor="let recipe of recommendations" [recipe]="recipe"></app-item>
+    <app-item *ngFor="let recipe of likedRecipes" [recipe]="recipe"></app-item>
   </div>
+
+  <div *ngIf="selectedTab === 'guardado'">
+    <app-item *ngFor="let recipe of savedRecipes" [recipe]="recipe"></app-item>
+  </div>
+
+
+
   <div id="content-area">
 
   </div>

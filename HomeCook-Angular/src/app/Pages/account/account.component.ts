@@ -8,6 +8,13 @@ import {NgForOf, NgIf} from '@angular/common';
 import { CommonModule} from '@angular/common';
 import {FirestoreService} from '../../Services/firestore.service';
 
+
+interface Recipe {
+  id: string;
+  name: string;
+  Image: string;
+}
+
 @Component({
   selector: 'app-account',
   imports: [RouterOutlet, ListOfRecipesComponent, ItemComponent, NgForOf, NgIf, CommonModule],
@@ -17,8 +24,11 @@ import {FirestoreService} from '../../Services/firestore.service';
 export class AccountComponent {
 
   account_name: string = localStorage.getItem('mail') ?? 'invitado';
-  selectedTab: string | null = null;
+  selectedTab: string = 'guardado';
+  likedRecipes: any[] = [];
   recommendations: any[] = [];
+  savedRecipes: any[] = [];
+
   constructor(private router: Router, private authService: AuthService,
               private firestoreService: FirestoreService ) { }
   // Carga el template desde una fuente
@@ -80,6 +90,8 @@ export class AccountComponent {
 
     }
     this.selectedTab = tab;
+    this.loadLikedRecipes();
+    this.loadSavedRecipes();
     this.firestoreService.getRecipes().subscribe(
       (recipes) => {
         this.recommendations = recipes; // Asigna las recetas al array recommendations
@@ -89,5 +101,20 @@ export class AccountComponent {
         console.error('Error al cargar las recomendaciones:', error);
       }
     );
+  }
+
+  ngOnInit(): void {
+    this.loadLikedRecipes();
+    this.loadSavedRecipes();
+  }
+
+  loadSavedRecipes(): void {
+    const savedData = localStorage.getItem('savedRecipes');
+    this.savedRecipes = savedData ? JSON.parse(savedData) : [];
+  }
+
+  loadLikedRecipes(): void {
+    const savedLikes = localStorage.getItem('likedRecipes');
+    this.likedRecipes = savedLikes ? JSON.parse(savedLikes) : [];
   }
 }
