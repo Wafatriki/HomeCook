@@ -24,6 +24,7 @@ interface Recipe {
 export class AccountComponent {
 
   account_name: string = localStorage.getItem('mail') ?? 'invitado';
+  account_email: string = localStorage.getItem('email') ?? 'Sin email';
   selectedTab: string = 'guardado';
   likedRecipes: any[] = [];
   recommendations: any[] = [];
@@ -106,6 +107,7 @@ export class AccountComponent {
   ngOnInit(): void {
     this.loadLikedRecipes();
     this.loadSavedRecipes();
+    this.account_name = localStorage.getItem('name') ?? 'Invitado';
   }
 
   loadSavedRecipes(): void {

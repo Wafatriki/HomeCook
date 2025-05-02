@@ -11,6 +11,7 @@ export class EditProfileComponent implements OnInit {
   private name: string | null = localStorage.getItem('name');
   private url: string | null = localStorage.getItem('url');
   private id: string | null = localStorage.getItem('id');
+  email: string | null = localStorage.getItem('email');
 
   constructor(private router: Router, private authService: AuthService) {}
   ngOnInit() {
@@ -23,6 +24,7 @@ export class EditProfileComponent implements OnInit {
     }
 
     this.setValidity();
+    this.loadProfileData();
   }
 
   logOut(): void {
@@ -111,7 +113,39 @@ export class EditProfileComponent implements OnInit {
       }
     });
   }
+
+  loadProfileData(): void {
+    const nameInput = document.getElementById('name') as HTMLInputElement;
+    const emailInput = document.getElementById('email') as HTMLInputElement;
+
+    if (nameInput && this.name) {
+      nameInput.value = this.name;
+    }
+    if (emailInput && this.email) {
+      emailInput.value = this.email;
+    }
+  }
+
+  saveChanges(): void {
+    const nameInput = document.getElementById('name') as HTMLInputElement;
+    const emailInput = document.getElementById('email') as HTMLInputElement;
+
+    if (!nameInput || !emailInput) {
+      console.error('Error: No se encontraron los campos de nombre y email.');
+      return;
+    }
+
+    // Guardar en localStorage
+    localStorage.setItem('name', nameInput.value);
+    localStorage.setItem('email', emailInput.value);
+
+    alert('✅ Cambios guardados correctamente.');
+  }
+
+
 }
+
+
 
 // Función para validar email
 function validateEmail(email: string): boolean {
