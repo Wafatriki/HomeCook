@@ -59,9 +59,42 @@ header, footer {
   flex: 1;
 }
 
+.icon-image {
+  width: 30px; /* Tamaño más pequeño */
+
+}
+
+
 .icons {
   display: flex;
   align-items: center;
+}
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.icon:hover {
+  background-color: rgba(0, 0, 0, 0.05); /* Pequeño efecto al pasar el mouse */
+}
+
+.icon-small {
+  width: 22px; /* Tamaño mejorado */
+  height: 18px;
+  object-fit: contain;
+  transition: transform 0.2s ease-in-out;
+}
+
+.icon-small:hover {
+  transform: scale(1.2); /* Efecto sutil al pasar el mouse */
 }
 
 .icons .icon a {
@@ -74,7 +107,6 @@ header, footer {
 .icon {
   display: flex;
   align-items: center;
-  margin-right: 20px;
 }
 
 .gear-icon::before,
