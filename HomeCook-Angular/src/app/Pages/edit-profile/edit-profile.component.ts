@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from '../../Services/authentication.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'edit-profile',
@@ -10,6 +12,7 @@ export class EditProfileComponent implements OnInit {
   private url: string | null = localStorage.getItem('url');
   private id: string | null = localStorage.getItem('id');
 
+  constructor(private router: Router, private authService: AuthService) {}
   ngOnInit() {
     if (this.name && this.url && this.id) {
       this.loadTemplate(this.url, this.id, () => {
@@ -20,6 +23,12 @@ export class EditProfileComponent implements OnInit {
     }
 
     this.setValidity();
+  }
+
+  logOut(): void {
+    this.authService.setAuthToken(null);
+    this.authService.logout();
+    this.router.navigate(['']); // ✅ Redirigir a la página de inicio tras cerrar sesión
   }
 
   loadTemplate(fileName: string, id: string, callback?: () => void) {
