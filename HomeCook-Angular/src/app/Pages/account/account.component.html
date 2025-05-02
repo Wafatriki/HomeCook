@@ -4,15 +4,19 @@
 <div class="content-wrapper">
   <div class="profile-container">
     <div class="avatar"></div>
+    <img src="../../../assets/Images/account.png" alt="Ajustes" class="avatar">
+    <span class="gear-icon"></span>
     <div class="info">
       <div class="text-field">{{ account_name }}</div>
+      <div class="text-field">{{ account_email }}</div>
+
       <div class="icons">
         <div class="icon">
-          <span class="gear-icon"></span>
+          <img src="../../../assets/Images/gear.png" alt="Ajustes" class="icon-small">          <span class="gear-icon"></span>
           <a class="clickable" (click)="navigate('edit')"><span>Ajustes</span></a>
         </div>
         <div class="icon">
-          <span class="power-icon"></span>
+          <img src="../../../assets/Images/power.png" alt="Cerrar Sesión" class="icon-small">          <span class="power-icon"></span>
           <div id="Log_Out" (click)="logOut()"><span>Cerrar Sesión</span></div>
         </div>
       </div>
@@ -22,20 +26,24 @@
   <div class="tabs">
 
     <div class="tab" (click)="loadContent('guardado')">
-      <img src="" alt="Guardado">
+      <img src="../../../assets/Images/saved.png" alt="Guardado">
       <span>Guardado</span>
     </div>
     <div class="tab" (click)="loadContent('me-gusta')">
-      <img src="" alt="Me gusta">
+      <img src="../../../assets/Images/heart_icon.png" alt="Me gusta">
       <span>Me gusta</span>
     </div>
   </div>
-  <div *ngIf="selectedTab === 'guardado'">
-    <app-item *ngFor="let recipe of recommendations" [recipe]="recipe"></app-item>
-  </div>
   <div *ngIf="selectedTab === 'me-gusta'">
-    <app-item *ngFor="let recipe of recommendations" [recipe]="recipe"></app-item>
+    <app-item *ngFor="let recipe of likedRecipes" [recipe]="recipe"></app-item>
   </div>
+
+  <div *ngIf="selectedTab === 'guardado'">
+    <app-item *ngFor="let recipe of savedRecipes" [recipe]="recipe"></app-item>
+  </div>
+
+
+
   <div id="content-area">
 
   </div>

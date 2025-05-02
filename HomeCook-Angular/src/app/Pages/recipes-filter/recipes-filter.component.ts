@@ -1,15 +1,24 @@
 import { Component } from '@angular/core';
 import {ListOfRecipesComponent} from '../../list-of-recipes/list-of-recipes.component';
+import {SearchResultsComponent} from '../../search-results/search-results.component';
+import {ActivatedRoute} from '@angular/router';
+import {CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-recipes-filter',
   templateUrl: './recipes-filter.component.html',
   imports: [
-    ListOfRecipesComponent
+    ListOfRecipesComponent,
+    SearchResultsComponent,
+    CommonModule
   ],
   styleUrls: ['./recipes-filter.component.css']
 })
 export class RecipesFilterComponent {
+  searchQuery: string = '';
+
+  constructor(private route: ActivatedRoute) {}
+
   "TiposDeReceta": [
     {
       "Name": "Italiana",
@@ -32,8 +41,11 @@ export class RecipesFilterComponent {
       "id": "4"
     }
   ];
-  constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+      this.searchQuery = params['search'] || '';
+    });
+  }
 
 }
