@@ -11,7 +11,7 @@ import {AccountComponent} from './Pages/account/account.component';
 
 export const routes: Routes = [
   { path: '', component: HomePageComponent },
-  {path: 'account', component: AccountComponent},
+  { path: 'account', component: AccountComponent},
   { path: 'recipe', component: RecipeComponent },
   { path: 'edit', component: EditProfileComponent },
   { path: 'login', component: LoginComponent },
