@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FirestoreService } from '../../Services/firestore.service';
 import { ItemComponent } from '../../item/item.component';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,7 @@ export class HomePageComponent implements OnInit {
   ingredientTypes: any[] = [];
   favoriteRecipes: any[] = [];
 
-  constructor(private firestoreService: FirestoreService) {}
+  constructor(private firestoreService: FirestoreService, private router: Router) {}
 
   ngOnInit(): void {
     this.firestoreService.getRecipeOfTheDay().then(recipe => {
@@ -38,4 +39,9 @@ export class HomePageComponent implements OnInit {
       this.favoriteRecipes = recipes;
     });
   }
+  goto(target: string, param?: any) {
+    this.router.navigate([target], { queryParams: { filter: param.Name } });
+  }
+
 }
+
