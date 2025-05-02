@@ -40,7 +40,7 @@ export class HomePageComponent implements OnInit {
     });
   }
   goto(target: string, param?: any) {
-    this.router.navigate([target], { queryParams: { filter: param.Name } });
+    this.router.navigate([target], { queryParams: param });
   }
 
 }
