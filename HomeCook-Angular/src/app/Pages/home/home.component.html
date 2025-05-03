@@ -1,7 +1,7 @@
 <div class="container">
   <!-- Receta del día -->
-  <div class="image-placeholder">
-    <a [href]="'recipe?id=' + recipeOfTheDay.id">
+  <div class="image-placeholder clickable">
+    <a (click)="goto('recipe',{id: recipeOfTheDay.id})">
       <img [src]="recipeOfTheDay.Image || 'Images/Icone.png'" [alt]="recipeOfTheDay.Name">
     </a>
     <div class="buttons">
@@ -14,14 +14,15 @@
     <p>{{ recipeOfTheDay.Creator }}</p>
   </div>
 </div>
+
 <!-- Tipos de receta -->
 <div class="Bloque_Tipos">
   <h2>Tipos de Receta</h2>
   <div class="Lista_De_Tipos">
     <ul>
       <li *ngFor="let type of recipeTypes">
-        <a (click)="goto('recipes-filter',type)" class="clickable">
-          <div class="Lista_De_Tipos_Item">
+        <a (click)="goto('recipes-filter',{filter: type.Name})" class="clickable">
+        <div class="Lista_De_Tipos_Item">
             <div class="icon_type">
               <img [src]="type.Image || 'Images/Icone.png'" [alt]="type.Name">
             </div>
@@ -41,7 +42,7 @@
   <div class="Lista_De_Tipos">
     <ul>
       <li *ngFor="let ingredient of ingredientTypes">
-        <a (click)="goto('recipes-filter',ingredient.Name)" class="clickable">
+        <a (click)="goto('recipes-filter',{ingredient: ingredient.Name})" class="clickable">
           <div class="Lista_De_Tipos_Item">
             <div class="icon_type">
               <img [src]="ingredient.Image || 'Images/Icone.png'" [alt]="ingredient.Name">
@@ -61,6 +62,5 @@
 
 
 <div id="ListOfRecipes">
-  <app-item *ngFor="let recipe of favoriteRecipes" [recipe]="recipe"></app-item>
-
+  <app-item *ngFor="let recipe of favoriteRecipes" [recipe]="recipe" class="clickable"></app-item>
 </div>

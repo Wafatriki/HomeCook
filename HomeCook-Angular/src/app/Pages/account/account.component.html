@@ -34,12 +34,12 @@
       <span>Me gusta</span>
     </div>
   </div>
-  <div *ngIf="selectedTab === 'me-gusta'">
-    <app-item *ngFor="let recipe of likedRecipes" [recipe]="recipe"></app-item>
+  <div *ngIf="selectedTab === 'me-gusta'" class="guardados">
+    <app-item *ngFor="let recipe of likedRecipes" [recipe]="recipe" class="clickable item"></app-item>
   </div>
 
-  <div *ngIf="selectedTab === 'guardado'">
-    <app-item *ngFor="let recipe of savedRecipes" [recipe]="recipe"></app-item>
+  <div *ngIf="selectedTab === 'guardado'" class="guardados">
+    <app-item *ngFor="let recipe of savedRecipes" [recipe]="recipe" class="clickable item"></app-item>
   </div>
 
 

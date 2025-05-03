@@ -3,6 +3,15 @@
 .clickable{
   cursor: pointer;
 }
+.guardados{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.guardados .item{
+  margin: 0 1rem;
+}
 body {
   font-family: 'Raleway', Arial, sans-serif;
   display: flex;

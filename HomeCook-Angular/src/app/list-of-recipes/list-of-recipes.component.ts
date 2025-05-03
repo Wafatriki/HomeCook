@@ -21,13 +21,18 @@ export class ListOfRecipesComponent implements OnInit {
   ngOnInit() {
     const params = new URLSearchParams(window.location.search);
     const filter = params.get('filter'); // Obtén el ID de la receta desde la URL
-    if (!filter){
+    const ingredient: string | null = params.get('ingredient');
+
+
+    if (!filter && !ingredient) {
       return;
     }
     if (filter === "all") {
       this.loadAllRecipes();
-    }else{
+    }else if (filter){
       this.loadRecipes(filter);
+    }else if (ingredient){
+      this.loadRecipesByIngredients(ingredient);
     }
   }
   loadAllRecipes() {
@@ -56,5 +61,26 @@ export class ListOfRecipesComponent implements OnInit {
         console.error('Error al cargar las recomendaciones:', error);
       }
     );
+  }
+  loadRecipesByIngredients(param: string){
+    let finalrec: any[] = [];
+    this.firestoreService.getRecipes().subscribe(
+      (recipes) => {
+        for (let rec of recipes) {
+          for (let ingrediens of rec.Ingredients) {
+            console.log(ingrediens);
+            if (ingrediens.Ingredient.includes(param)){
+              finalrec.push(rec);
+              break;
+            }
+          }
+        }
+        this.recipes = finalrec; // Asigna las recetas al array recommendations
+      },
+      (error) => {
+        console.error('Error al cargar las recomendaciones:', error);
+      }
+    );
+    return;
   }
 }
