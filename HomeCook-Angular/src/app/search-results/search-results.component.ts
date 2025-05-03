@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, RouterLink} from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 import { FirestoreService } from '../Services/firestore.service';
 import {NgForOf, NgIf} from '@angular/common';
 
@@ -7,7 +7,6 @@ import {NgForOf, NgIf} from '@angular/common';
   selector: 'app-search-results',
   templateUrl: './search-results.component.html',
   imports: [
-    RouterLink,
     NgIf,
     NgForOf
   ],
