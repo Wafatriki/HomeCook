@@ -6,7 +6,17 @@
   gap: 10px;
   justify-content: center;
 }
+.clickable{
+  cursor: pointer;
+}
+.bloque{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-evenly;
 
+}
 .recipe-container {
   width: 220px;
   background-color: #fff;

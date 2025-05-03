@@ -98,8 +98,9 @@
     <!-- Sección de recomendaciones -->
     <div>
       <h2 class="recommendations-title">Recomendaciones</h2>
-      <app-item *ngFor="let recipe of recommendations" [recipe]="recipe"></app-item>
-
+      <div class="bloque">
+      <app-item *ngFor="let recipe of recommendations" [recipe]="recipe" class="clickable"></app-item>
+      </div>
     </div>
   </article>
 </section>
