@@ -4,43 +4,57 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Raleway', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .container h1 {
   font-size: 26px;
   font-weight: bold;
   font-family: 'Raleway', sans-serif;
-  max-width: 1050px;
+  max-width: 90%;
   margin: 0 auto 20px;
-  padding-left: 10px;
+  text-align: center;
 }
 
 .list-container {
-  display: grid;
-  width: 100%;
-  grid-template-columns: repeat(auto-fill, minmax(1000px, 1fr));
-  gap: 10px;
-  max-width: 1000px;
-  margin: 0 auto;
-  row-gap: 1px;
-  column-gap: 10px;
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos bajen en pantallas pequeñas */
+  gap: 20px;
   justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1000px;
   padding-bottom: 50px;
 }
 
-.iframe-container {
-  width: 100%;
-  text-align: center;
-  margin: 0;
-  padding: 0;
+.recipe-container {
+  flex: 1 1 calc(33.33% - 20px); /* 3 columnas en pantallas grandes */
+  max-width: 300px;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-iframe {
-  width: 100%;
-  border: none;
-  display: block;
+/* MEDIA QUERIES - Adaptabilidad */
+@media (max-width: 1024px) {
+  .recipe-container {
+    flex: 1 1 calc(50% - 20px); /* 2 columnas en pantalla mediana */
+    max-width: 90%;
+  }
 }
 
-.header-frame {
-  height: 100px;
+@media (max-width: 768px) {
+  .list-container {
+    flex-direction: column; /* Hace que las recetas bajen completamente */
+    align-items: center;
+    gap: 15px;
+  }
+
+  .recipe-container {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
 }

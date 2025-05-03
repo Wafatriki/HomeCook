@@ -27,3 +27,14 @@ nav ul li {
 nav ul li:hover {
   color: #E89090;
 }
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  nav ul li {
+    padding: 0.5em;
+  }
+}
