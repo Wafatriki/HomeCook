@@ -5,7 +5,7 @@ import { provideClientHydration, withEventReplay } from '@angular/platform-brows
 
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
-import { firebaseConfig } from './firebase/firebase.config'; // Assicurati che il path sia corretto
+import { firebaseConfig } from './firebase/firebase.config';
 
 export const appConfig: ApplicationConfig = {
   providers: [
