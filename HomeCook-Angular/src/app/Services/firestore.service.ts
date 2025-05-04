@@ -1,12 +1,21 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collection, collectionData, doc, getDoc, setDoc, updateDoc, deleteDoc } from '@angular/fire/firestore';
+import {
+  Firestore as AngularFirestore,
+  collection,
+  collectionData,
+  doc,
+  getDoc,
+  setDoc,
+  updateDoc,
+  deleteDoc
+} from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FirestoreService {
-  constructor(private firestore: Firestore) {}
+  constructor(private firestore: AngularFirestore) {}
 
   getRecipes(): Observable<any[]> {
     const recipesCollection = collection(this.firestore, 'Recipes');
