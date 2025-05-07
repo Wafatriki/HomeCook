@@ -1,0 +1,32 @@
+ <nav>
+    <a (click)="goTo('')"><img src="assets/Images/Icone.png" alt="HomeCook Logo" class="logo links"></a>
+    <ul>
+      <li><a (click)="goTo('')" class="links clickable">Inicio</a></li>
+      <li><a (click)="goTo('recipes-filter?filter=all')" class="links clickable">Recipes</a></li>
+      <li><a (click)="goTo('login')" class="links clickable">Saved</a></li>
+      <li><a href="#" class="links" onclick="document.getElementById('main_footer').scrollIntoView({ behavior: 'smooth' }); return false;">
+        Contact
+      </a></li>
+      <li class="search">
+        <app-search></app-search>
+      </li>
+
+      <li id="Log_in_Section">
+        <!-- Si está logueado -->
+      <li *ngIf="authToken" >
+        <a (click)="goToAccount()" class="links">
+          <img src="assets/Images/account.png" alt="Cuenta" class="image_icon"/>
+        </a>
+      </li>
+
+      <!-- Si NO está logueado -->
+      <ng-container *ngIf="!authToken">
+        <li>
+          <button id="LoginButton" class="nav-button" (click)="goToLogin()">Log in</button>
+        </li>
+        <li>
+          <button id="Sign-inButton" class="nav-button" (click)="goToSignIn()">Sign-In</button>
+        </li>
+      </ng-container>
+    </ul>
+  </nav>
