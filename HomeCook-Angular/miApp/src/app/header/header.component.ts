@@ -5,13 +5,14 @@ import {CommonModule, NgIf} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import { AuthService } from '../Services/authentication.service'
 import {SearchComponent} from "../../../../src/app/search/search.component";
+import {IonHeader, IonTitle, IonToolbar} from "@ionic/angular/standalone";
 
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  imports: [CommonModule, FormsModule, NgIf, SearchComponent]
+  imports: [CommonModule, FormsModule, NgIf, SearchComponent, IonHeader, IonToolbar, IonTitle]
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   authToken: string | null = null;

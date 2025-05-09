@@ -1,0 +1,15 @@
+<ion-card class="recipe-card" (click)="onclick()">
+  <ion-img [src]="recipe.Image || 'assets/Images/default_image.png'" [alt]="recipe.name || 'Sin nombre'"></ion-img>
+
+  <ion-card-header>
+    <ion-card-title>{{ recipe.name }}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <p>{{ recipe.description }}</p>
+    <ion-label>
+      <strong>Tiempo:</strong> {{ recipe.time }}
+    </ion-label>
+    <p><strong>Creado por:</strong> {{ recipe.Creator }}</p>
+  </ion-card-content>
+</ion-card>

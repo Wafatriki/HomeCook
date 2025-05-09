@@ -5,6 +5,13 @@ $hover-color: #E89090;
 $background-color: #FBDBDB;
 $font-family: 'Raleway', sans-serif;
 
+ion-header.headerbox,
+ion-toolbar {
+  --background: #FBDBDB; // o $background-color si está definido en variables.scss
+  --ion-background-color: #FBDBDB;
+  background-color: #FBDBDB !important;
+  color: #A86D6D; // o $primary-color
+}
 * {
   margin: 0;
   padding: 0;

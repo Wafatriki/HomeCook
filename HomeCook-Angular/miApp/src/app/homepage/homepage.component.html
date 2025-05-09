@@ -1,3 +1,60 @@
-<p>
-  homepage works!
-</p>
+<ion-content class="ion-padding">
+  <!-- Receta del día -->
+  <ion-card class="clickable">
+    <ion-img [src]="recipeOfTheDay.Image || 'assets/Images/Icone.png'" [alt]="recipeOfTheDay.Name"></ion-img>
+    <ion-card-content>
+      <ion-button size="small" fill="outline" color="success">Vegetarian</ion-button>
+      <ion-button size="small" fill="outline" color="danger">Spicy</ion-button>
+      <h1>{{ recipeOfTheDay.Name }}</h1>
+      <p>{{ recipeOfTheDay.Creator }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Tipos de receta -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Tipos de Receta</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="6" size-sm="4" size-md="3" *ngFor="let type of recipeTypes">
+            <ion-card class="clickable">
+              <ion-img [src]="type.Image || 'assets/Images/Icone.png'" [alt]="type.Name"></ion-img>
+              <ion-card-content>
+                <ion-label>{{ type.Name }}</ion-label>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Tipos de ingredientes -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Tipos de Ingredientes</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="6" size-sm="4" size-md="3" *ngFor="let ingredient of ingredientTypes">
+            <ion-card class="clickable">
+              <ion-img [src]="ingredient.Image || 'assets/Images/Icone.png'" [alt]="ingredient.Name"></ion-img>
+              <ion-card-content>
+                <ion-label>{{ ingredient.Name }}</ion-label>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Recetas favoritas -->
+  <h2 class="SectionHeader">Nuestras Recetas Preferidas</h2>
+  <div id="ListOfRecipes">
+    <app-item *ngFor="let recipe of favoriteRecipes" [recipe]="recipe" class="clickable"></app-item>
+  </div>
+</ion-content>
