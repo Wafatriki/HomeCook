@@ -1,0 +1,69 @@
+<!-- edit-profile.page.html -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Editar Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Editar Perfil</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item lines="none" class="ion-text-center">
+        <ion-avatar slot="start">
+          <img src="../../../assets/Images/account.png" />
+        </ion-avatar>
+        <ion-label>
+          <input type="file" (change)="onFileSelected($event)" hidden #fileInput>
+          <ion-button expand="block" fill="outline" (click)="fileInput.click()">Seleccionar Archivo</ion-button>
+        </ion-label>
+      </ion-item>
+
+      <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+        <ion-item>
+          <ion-label position="floating">Nombre de la Cuenta</ion-label>
+          <ion-input formControlName="name" required></ion-input>
+        </ion-item>
+        <ion-text color="danger" *ngIf="profileForm.get('name')?.invalid && profileForm.get('name')?.touched">
+          <p class="ion-padding-start">El nombre es obligatorio.</p>
+        </ion-text>
+
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input formControlName="email" type="email" required></ion-input>
+        </ion-item>
+        <ion-text color="danger" *ngIf="profileForm.get('email')?.invalid && profileForm.get('email')?.touched">
+          <p class="ion-padding-start">Ingresa un email válido.</p>
+        </ion-text>
+
+        <ion-item-divider>Cambiar la contraseña</ion-item-divider>
+
+        <ion-item>
+          <ion-label position="floating">Nueva contraseña</ion-label>
+          <ion-input formControlName="currentPassword" type="password"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Repita contraseña</ion-label>
+          <ion-input formControlName="newPassword" type="password"></ion-input>
+        </ion-item>
+        <ion-text color="danger" *ngIf="passwordsMismatch">
+          <p class="ion-padding-start">Las contraseñas no coinciden.</p>
+        </ion-text>
+
+        <ion-button expand="block" type="submit">Guardar Cambios</ion-button>
+      </form>
+
+      <ion-item-divider>Eliminar cuenta</ion-item-divider>
+      <p>
+        Tu cuenta, así como el contenido creado, guardado y gustado no se podrá restaurar después de la eliminación.
+      </p>
+      <ion-button expand="block" color="danger" (click)="deleteAccount()">Eliminar cuenta</ion-button>
+
+      <ion-button expand="block" color="medium" (click)="logOut()">Cerrar sesión</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
